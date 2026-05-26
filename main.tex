@@ -95,6 +95,45 @@
         \item \textbf{LLM Decision Making:} The final prompt is submitted to the decision LLM to output a structured JSON containing the action and rationale.
     \end{enumerate}
 
+    \section{Temporal Encoding: The Chronos-Bolt Module}
+    To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos-Bolt} (\texttt{amazon/chronos-bolt-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos-Bolt learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
+
+    The module is loaded via the \texttt{BaseChronosPipeline} abstraction, which handles device placement automatically. When a CUDA-capable GPU is available, the model is instantiated in \texttt{bfloat16} precision to reduce VRAM consumption while preserving numerical stability. In CPU-only environments, standard floating-point inference is applied as a fallback.
+
+    \subsection{Input Formulation and Batch Processing}
+    Each asset's historical prices are stored per-day as a serialized list in the \texttt{prices\_sequence} column of the dataset. Prior to inference, each entry is deserialized into a typed list of floats, forming the context window fed to the model.
+
+    To maximize GPU throughput, sequences are grouped into batches of 16 and converted to PyTorch tensors. For each batch, the model is queried with \texttt{prediction\_length=1}, restricting the forecast horizon to a single future time step — the next trading day. This deliberate constraint enforces that the model can only reason over observed history, preserving temporal isolation and avoiding any form of look-ahead bias.
+
+    \subsection{Forecast Extraction and Direction Classification}
+    Chronos-Bolt outputs a probabilistic forecast tensor of shape $(\text{batch} \times \text{num\_samples} \times \text{prediction\_length})$, where the \texttt{num\_samples} dimension represents draws from the learned predictive distribution. To obtain a single point estimate per sequence, we compute the \textbf{median} across the sample dimension:
+
+    \begin{equation}
+        \hat{p}_{t+1} = \mathrm{median}_{s} \; F_s(x_{1:t})
+    \end{equation}
+
+    where $F_s$ denotes the $s$-th sample of the forecast distribution conditioned on the observed price history $x_{1:t}$. The resulting scalar $\hat{p}_{t+1}$ is then converted into a discrete directional class by computing the relative price change with respect to the last observed price $p_t$:
+
+    \begin{equation}
+        \Delta = \frac{\hat{p}_{t+1} - p_t}{p_t}
+    \end{equation}
+
+    A symmetric threshold $\tau = 0.001$ ($\pm$0.1\%) governs the classification into three mutually exclusive categories:
+
+    \begin{equation}
+        \text{class} =
+        \begin{cases}
+            1 & \text{if } \Delta > \tau \quad (\textsc{up}) \\
+            2 & \text{if } \Delta < -\tau \quad (\textsc{down}) \\
+            0 & \text{otherwise} \quad (\textsc{hold})
+        \end{cases}
+    \end{equation}
+
+    This threshold was selected to filter out negligible price fluctuations below the level of market noise, ensuring that the \textsc{hold} class captures genuine price stability rather than prediction imprecision.
+
+    \subsection{Evaluation and Output}
+    Upon completing inference over the full dataset, the module computes both global and per-asset evaluation metrics. Global performance is assessed via accuracy, macro-averaged F1, and weighted F1 scores, while per-asset metrics allow identification of assets whose temporal price patterns are more or less amenable to the model's forecasting strategy. The complete predictions and metrics are persisted to \texttt{predictions.csv} and \texttt{metrics.csv} respectively, serving as structured inputs to subsequent stages of the pipeline.
+
     \section{Multimodal Sentiment Extraction: The \textit{finvert} Module}
     The \textit{finvert} module acts as the market sentiment sensor of our architecture. Its primary objective is to process unstructured financial texts and quantify them into actionable numerical probabilities.
 
