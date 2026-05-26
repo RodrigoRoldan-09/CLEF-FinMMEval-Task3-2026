@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper]{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -21,7 +21,16 @@
 \usepackage{csquotes}
 \usepackage{biblatex}
 \addbibresource{refs.bib}
+% Define a separator macro used in keywords and elsewhere
+\providecommand{\sep}{\ \textperiodcentered\ }
 \usepackage{authblk}
+% Define acknowledgments environment for article class
+\providecommand{\acknowledgmentsname}{Acknowledgments}
+\newenvironment{acknowledgments}{%
+    \section*{\acknowledgmentsname}%
+}{% 
+    \par
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
@@ -72,17 +81,17 @@
     \maketitle
     
     \begin{abstract}
-    This Working Note describes the participation of the ESCOM-IPN team in Task 3 of the CLEF 2026 FinMMEval lab. We propose a highly structured, multimodal retrieval-augmented generation (RAG) pipeline to predict financial trading actions (BUY, HOLD, SELL) across diverse assets. Our system integrates unstructured news and SEC filings with numerical scalars and temporal price sequences. We introduce a novel dual-strategy \textit{PromptBuilder} featuring a tripartite temporal memory (rolling buffer, self-reflection, and top-K retrieval), allowing Large Language Models (LLMs) to reason over current market contexts while continuously learning from empirical trading results. Furthermore, we implement \textit{finvert}, a highly optimized FinBERT-based module for robust market sentiment extraction. Our methodology demonstrates how programmatic prompt engineering, heuristic risk management, and chronological FIFO queuing of semantic summaries can significantly enhance LLM reasoning in simulated financial environments.
+    This Working Note describes the participation of the ESCOM-IPN team in Task 3 of the CLEF 2026 FinMMEval lab. We propose a structured multimodal pipeline to predict financial trading actions (BUY, HOLD, SELL) across diverse assets. Our system integrates daily news, numerical scalars, and temporal price sequences into a single coherent prompt for a quantized language model. We employ FinBERT for sentiment extraction and Chronos for directional forecasting, and we train the decision model via a compact two-stage pipeline combining supervised fine-tuning with Group Relative Policy Optimization (GRPO) under severe hardware constraints. The resulting agent achieves a cumulative return of 90.67\% on the validation set, and we provide a detailed forensic reconstruction of the training protocol, reward design, and model selection criteria.
     \end{abstract}
 
-    \textbf{Keywords:} Financial Forecasting, Large Language Models, Sentiment Analysis, Prompt Engineering, Temporal Memory, FinMMEval, CLEF 2026.
+    \textbf{Keywords:} Financial Forecasting \sep Large Language Models \sep Sentiment Analysis \sep Prompt Engineering \sep Group Relative Policy Optimization \sep FinMMEval \sep CLEF 2026.
 
     \section{Introduction}
     Financial decision-making requires the rapid synthesis of heterogeneous data sources. In the CLEF 2026 FinMMEval Lab (Task 3), participants are challenged to develop agents capable of processing numerical scalars, temporal price histories, and textual news to recommend trading actions (BUY, HOLD, SELL) for assets such as Bitcoin, Tesla, and Apple. 
 
     While Large Language Models (LLMs) excel at natural language understanding, they traditionally struggle with raw numerical sequences and lack inherent contextual memory of past actions in simulated trading environments. To bridge this gap, our team developed a comprehensive multimodal pipeline. 
 
-    The core contribution of our work lies in the intelligent orchestration of data prior to LLM inference. Specifically, we detail two critical components designed by our team: (1) \textbf{finvert}, an automated and resource-optimized sentiment extraction module leveraging FinBERT, and (2) the \textbf{PromptBuilder}, a sophisticated prompt engineering engine equipped with a tripartite temporal memory. By providing the LLM not just with current data, but with a rolling history of its past decisions and their resulting financial rewards, we simulate a realistic trading agent that adapts to market dynamics and mitigates risk through self-reflection.
+    The core contribution of our work lies in a compact yet complete training pipeline that bridges raw multimodal data and structured LLM reasoning under strict hardware constraints. We detail the forensic reconstruction of the winning model---including the exact hyperparameters, reward function, and two-stage curriculum (supervised warm-up followed by GRPO)---so that the community can reproduce and extend our results on commodity GPUs.
 
     \section{Related Work}
 
@@ -101,15 +110,15 @@
     \section{Methodology}
 
     \subsection{System Architecture and Dataset Formulation}
-    \textit{[Notau: Expandir esta sección. Describir script'generate\_all.py', cómo se construyó 'finmmeval\_raw.csv' mezclando HuggingFace y Yahoo Finance, y los detalles de Chronos Encoder.]}
+    The pipeline ingests raw price data, news text, and temporal sequences, enriches them with FinBERT sentiment and Chronos forecasts, and formats them into structured prompts for a quantized Phi-4-mini language model fine-tuned via GRPO.
 
     The overall architecture transforms raw multimodal data into structured prompts for LLM inference. The pipeline operates as follows:
     \begin{enumerate}
         \item \textbf{Data Ingestion:} Raw data from CLEF and Yahoo Finance is collected and unified, encompassing textual news, 10-K/10-Q filings, and technical scalars.
-        \item \textbf{Temporal Encoding (Chronos):} Time-series data is processed to extract temporal embeddings. \textit{[David: Add Chronos details here]}.
-        \item \textbf{Sentiment Extraction (finvert):} Textual data is classified to extract sentiment probabilities.
-        \item \textbf{Prompt Orchestration:} The \textit{PromptBuilder} fuses all signals alongside the agent's trading memory.
-        \item \textbf{LLM Decision Making:} The final prompt is submitted to the decision LLM to output a structured JSON containing the action and rationale.
+        \item \textbf{Temporal Encoding (Chronos):} Time-series data is processed to extract directional forecasts and confidence scores (see Section~\ref{sec:chronos}).
+        \item \textbf{Sentiment Extraction (FinBERT):} Textual data is classified to extract sentiment probabilities and per-class distributions.
+        \item \textbf{Prompt Orchestration:} The \textit{PromptBuilder} fuses all signals into a structured prompt for the decision model.
+        \item \textbf{LLM Decision Making:} The final prompt is submitted to the decision LLM, which outputs a structured XML response containing technical reasoning, news synthesis, a conclusion, and the final action in the form \texttt{[[[ACTION]]]}.
     \end{enumerate}
 
     \subsection{Dataset and Feature Engineering}
@@ -118,11 +127,16 @@
     \subsubsection{Data sources}
     \label{sec:datasources}
 
-    The primary source is the \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, publicly available through HuggingFace, comprising daily financial records for twelve assets over approximately 268 trading days, from August 1, 2025 to April 25, 2026. The covered assets are ten listed equities (TSLA, MSFT, AAPL, AMZN, GOOGL, META, NVDA, ADBE, BMRN, and MRNA) and two cryptocurrencies (BTC and ETH).
-
-    Each daily record contains the closing price, a news summary of between 800 and 1\,500 words, SEC regulatory filings (forms 10-K and 10-Q) when available, a momentum label (bullish, neutral, or bearish), and the next-day price difference --- used exclusively as a reward signal during training and never exposed to the model as an input.
+    The primary source is the \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, publicly available through HuggingFace, comprising daily financial records for twelve assets over approximately 268 trading days, from August 1, 2025 to April 25, 2026. The covered assets are ten listed equities (TSLA, MSFT, AAPL, AMZN, GOOGL, META, NVDA, ADBE, BMRN, and MRNA) and two cryptocurrencies (BTC and ETH). Each daily record contains the closing price, a news summary of between 800 and 1\,500 words, SEC regulatory filings (forms 10-K and 10-Q) when available, a momentum label (bullish, neutral, or bearish), and the next-day price difference --- used exclusively as a reward signal during training and never exposed to the model as an input.
 
     As a complementary source, historical prices from Yahoo Finance were used for a four-month warm-up period prior to the start of the dataset (April--July 2025). Their sole purpose was to ensure that indicators with long lookback windows --- the 60-day moving average regime signal and the 30-day rolling Sharpe ratio --- could be computed without producing missing values at the start of the main period. These data were not incorporated as training rows, as doing so would have created an imbalance across assets since only TSLA and BTC had extended historical data of this type.
+
+    Internally, the ingestion pipeline transforms the raw source into granular CSV files per asset (\texttt{\{asset\}\_texto.csv}, \texttt{\{asset\}\_escalares.csv}, and \texttt{\{asset\}\_temporal.csv}), which are then consumed by the \texttt{DatasetBuilder} to generate a unified Parquet file with SHA-256 hashing for cache invalidation.
+
+    \subsubsection{Training subset used for the winning model}
+    \label{sec:trainingsubset}
+
+    While the pipeline is capable of processing all twelve assets and their associated features, the winning model (\texttt{exp\_20260506\_085649\_254046}) was trained on a temporally filtered subset. The \texttt{DatasetBuilder} restricted the data to the most recent 12 months (360 days), yielding a contiguous window from 2024-02-07 to 2025-02-01, and retained only rows containing news ($\texttt{has\_news}=1$). This produced 1,082 training rows and 896 validation rows. The validation set contained exclusively YAHOO-sourced assets (\texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO}, and \texttt{SOL\_YAHOO}), while the out-of-sample CLEF assets (\texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF}, and \texttt{BMRN\_CLEF}) were reserved for the final test split and never seen during training.
 
     \subsubsection{Feature engineering}
     \label{sec:features}
@@ -227,18 +241,18 @@
 
     % References are in refs.bib — loaded via \addbibresource in preamble
 
-    \subsection{Temporal Encoding: The Chronos-Bolt Module}
-    To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos-Bolt} (\texttt{amazon/chronos-bolt-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos-Bolt learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
+    \subsection{Temporal Encoding: The Chronos Module}\label{sec:chronos}
+    To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos} (\texttt{amazon/chronos-t5-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
 
     The module is loaded via the \texttt{BaseChronosPipeline} abstraction, which handles device placement automatically. When a CUDA-capable GPU is available, the model is instantiated in \texttt{bfloat16} precision to reduce VRAM consumption while preserving numerical stability. In CPU-only environments, standard floating-point inference is applied as a fallback.
 
     \subsubsection{Input Formulation and Batch Processing}
     Each asset's historical prices are stored per-day as a serialized list in the \texttt{prices\_sequence} column of the dataset. Prior to inference, each entry is deserialized into a typed list of floats, forming the context window fed to the model.
 
-    To maximize GPU throughput, sequences are grouped into batches of 16 and converted to PyTorch tensors. For each batch, the model is queried with \texttt{prediction\_length=1}, restricting the forecast horizon to a single future time step — the next trading day. This deliberate constraint enforces that the model can only reason over observed history, preserving temporal isolation and avoiding any form of look-ahead bias.
+    To maximize throughput, sequences are grouped into batches of 16 and converted to PyTorch tensors. For each batch, the model is queried with \texttt{prediction\_length=1}, restricting the forecast horizon to a single future time step — the next trading day. This deliberate constraint enforces that the model can only reason over observed history, preserving temporal isolation and avoiding any form of look-ahead bias.
 
     \subsubsection{Forecast Extraction and Direction Classification}
-    Chronos-Bolt outputs a probabilistic forecast tensor of shape $(\text{batch} \times \text{num\_samples} \times \text{prediction\_length})$, where the \texttt{num\_samples} dimension represents draws from the learned predictive distribution. To obtain a single point estimate per sequence, we compute the \textbf{median} across the sample dimension:
+    Chronos outputs a probabilistic forecast tensor of shape $(\text{batch} \times \text{num\_samples} \times \text{prediction\_length})$, where the \texttt{num\_samples} dimension represents draws from the learned predictive distribution. To obtain a single point estimate per sequence, we compute the \textbf{median} across the sample dimension:
 
     \begin{equation}
         \hat{p}_{t+1} = \mathrm{median}_{s} \; F_s(x_{1:t})
@@ -266,60 +280,22 @@
     \subsubsection{Evaluation and Output}
     Upon completing inference over the full dataset, the module computes both global and per-asset evaluation metrics. Global performance is assessed via accuracy, macro-averaged F1, and weighted F1 scores, while per-asset metrics allow identification of assets whose temporal price patterns are more or less amenable to the model's forecasting strategy. The complete predictions and metrics are persisted to \texttt{predictions.csv} and \texttt{metrics.csv} respectively, serving as structured inputs to subsequent stages of the pipeline.
 
-    \subsection{Multimodal Sentiment Extraction: The \textit{finvert} Module}
-    The \textit{finvert} module acts as the market sentiment sensor of our architecture. Its primary objective is to process unstructured financial texts and quantify them into actionable numerical probabilities.
+    \subsection{Multimodal Sentiment Extraction}
+    The sentiment enrichment is handled by a dedicated \texttt{SentimentExtractor} module that processes unstructured financial texts and quantifies them into actionable numerical probabilities.
 
-    \subsubsection{Auto-Discovery and Text Combination}
-    Financial sentiment is rarely derived from a single source. Our system aggregates three primary textual streams per day in a strict priority hierarchy: daily news, annual reports (10-K), and quarterly reports (10-Q). 
-    
-    To optimize computational resources, the module implements an auto-discovery and filtering mechanism (\texttt{has\_real\_text}). Datasets lacking actual textual data (e.g., pure price-action assets from Yahoo Finance flagged as \texttt{[NO\_TEXT]}) are automatically bypassed. These rows are deterministically assigned a \textit{neutral} label with a 1.0 confidence score without invoking the GPU, vastly improving pipeline efficiency and preventing unnecessary VRAM allocation.
-
-    \subsubsection{FinBERT Inference and Batch Processing}
-    For valid textual entries, we utilize \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora. Texts are processed in batches of 32 to maximize GPU throughput. 
-
-    The module tokenizes the combined daily text (truncated to a maximum length of 512 tokens) and outputs logits through a 3-class classification head. Applying a softmax function, we extract the probabilities for each class:
+    For every row with available news ($\texttt{has\_news}=1$), the module passes the news text through \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora. To avoid competing with the GPU used for training, inference is executed on CPU (\texttt{device=-1}). The text is truncated to a maximum of 512 tokens, and the model outputs logits through a 3-class classification head. Applying a softmax function, we extract the probabilities for each class:
     
     \begin{equation}
         P(C_i | x) = \frac{e^{z_i}}{\sum_{j=1}^{3} e^{z_j}}
     \end{equation}
     
-    where $C \in \{\text{positive}, \text{negative}, \text{neutral}\}$. The output is stored in a structured format containing the \texttt{sentiment\_label}, the absolute \texttt{sentiment\_score}, and the exact probability distribution. This granular output prevents the downstream LLM from interpreting a weak positive signal with the same weight as a strong one.
+    where $C \in \{\text{positive}, \text{negative}, \text{neutral}\}$. The output is cached per asset in \texttt{models/\{asset\}\_sentiment.csv} to prevent redundant computation across training runs. The final structured output contains the \texttt{sentiment\_label}, the absolute \texttt{sentiment\_score}, and the per-class probability distribution. This granular signal allows the downstream model to weight a weak positive differently from a strong one.
 
-    \subsection{Dynamic Prompt Routing and Temporal Memory}
-    The \textit{PromptBuilder} is the central nervous system of our pipeline, encompassing over 600 lines of orchestration logic. Its responsibility is to synthesize sentiment analysis, technical scalars, portfolio status, and temporal sequences into a highly structured prompt. 
-    
-    Crucially, to simulate a realistic trading environment and prevent look-ahead bias, we enforce \textbf{strict temporal isolation}: the prompt for day $T$ is generated entirely \textit{before} the portfolio memory is updated with the market outcomes of day $T$.
+    \subsection{Prompt Orchestration}
+    The \textit{PromptBuilder} is the central component responsible for synthesizing sentiment analysis, technical scalars, and temporal sequences into a highly structured prompt. Crucially, to prevent look-ahead bias, the prompt for day $T$ is generated entirely \textit{before} the market outcome of day $T$ is revealed.
 
-    \subsubsection{Tripartite Memory Architecture}
-    At any time step $t$, the state of the market is captured by a \texttt{SensorOutputs} object. Meanwhile, the system maintains a \texttt{MemoryContext} of \texttt{DayRecord} objects. Inspired by recent advancements in LLM trading agents (such as FLAG-TRADER and FINMEM), we implemented three types of memory:
-    \begin{itemize}
-        \item \textbf{Rolling Buffer:} A sequential tracker of recent actions and rewards.
-        \item \textbf{Self-Reflection:} Analysis of past errors and successes.
-        \item \textbf{Top-K Retrieval:} Extraction of the most relevant historical trades.
-    \end{itemize}
-
-    \subsubsection{Strategy V1: Programmatic Auto-Reflection}
-    Strategy V1 is a deterministic, highly efficient prompt routing mechanism requiring no auxiliary API calls. It programmatically translates numerical scalars (e.g., RSI, portfolio exposure) and categorical data into natural language. 
-
-    The primary innovation in V1 is the \textbf{Auto-Reflection Summary}. The module identifies the most successful and most detrimental trades within a historical window. The generated prompt presents the LLM with an ASCII-formatted rolling history table and a specific reflection block:
-    
-    \begin{mdframed}[linewidth=1pt,backgroundcolor=mygray,linecolor=deepBlue]
-    \textit{"CASOS EXITOSOS RECIENTES: 2024-01-15: Accion=BUY, Reward=+0.0234... \\
-    CASOS NEGATIVOS RECIENTES: 2024-01-17: Accion=SELL, Reward=-0.0120..."}
-    \end{mdframed}
-    
-    This structural constraint forces the LLM to ground its current decision by learning from empirical past mistakes, effectively mimicking human reinforcement learning.
-
-    \subsubsection{Strategy V2: Dual-LLM Pipeline and Semantic FIFO Queuing}
-    To further enhance reasoning, Strategy V2 employs a chained dual-LLM architecture, operating as follows:
-    \begin{enumerate}
-        \item \textbf{LLM-1 (Summarizer):} A lightweight model (e.g., GPT-4o-mini or Llama-3.2-3B) reads the raw data of past days and translates the events into a rich, narrative summary. To ensure deterministic testing during development, we also implemented a \texttt{StubClient} factory pattern.
-        \item \textbf{FIFO Queuing \& Caching:} These narrative summaries are pushed into a chronological First-In-First-Out (FIFO) queue. To heavily optimize API costs and reduce latency, outputs from LLM-1 are cached directly in the \texttt{DayRecord.llm\_summary} attribute.
-        \item \textbf{LLM-2 (Decision):} A heavier reasoning model (e.g., GPT-4o) receives the entire narrative FIFO queue alongside the current market context to make the final BUY/HOLD/SELL decision.
-    \end{enumerate}
-
-    \subsubsection{Heuristic Risk Management via System Prompts}
-    Both strategies are governed by a strict \textit{System Prompt} that encodes risk-management heuristics. For instance, the LLM is explicitly instructed to prefer SELL or HOLD if the portfolio exposure exceeds 80\%, to avoid BUY recommendations if cash is depleted, and to flag high volatility coupled with negative sentiment as extreme risk.
+    \subsubsection{The \texttt{grpo\_cot\_v1} Template}
+    All training and validation examples use a single deterministic template, identified in the experiment metadata as \texttt{grpo\_cot\_v1}. The template instructs the model to produce a structured response containing four blocks: a technical summary enclosed in \texttt{<technicals>} tags, a news summary in \texttt{<news>} tags, a synthesis in \texttt{<conclusion>} tags, and a final action token of the form \texttt{[[[ACTION]]]} where \textsc{action} $\in \{\textsc{buy}, \textsc{hold}, \textsc{sell}\}$. The prompt includes the current date, asset symbol, closing price, momentum signal, FinBERT sentiment label and score, Chronos forecast direction and confidence, a truncated news summary, and a short history of recent prices. This design forces the model to reason explicitly over multimodal inputs within a constrained generation window.
 
     \subsection{Model Optimization and Training Setup}
 
@@ -440,7 +416,7 @@
     Within the fast-mode evaluation, the winning trial (Trial 0, \texttt{exp\_20260506\_085649\_254046}) achieved a fitness of 2.9488 with an MDD of merely 0.11\% over 100 rows. The action distribution at this stage was extremely conservative: 96\% HOLD, 4\% SELL, and 0\% BUY. While this distribution suggested the model had learned to avoid catastrophic errors, it also indicated that the anti-HOLD calibration had not yet fully activated exploratory BUY behavior within the restricted fast-mode window. The two subsequent Optuna trials (using Qwen2.5-3B and a different hyperparameter configuration for Phi-4-mini, respectively) collapsed to repetitive text or 100\% HOLD, yielding negative fitness values and confirming the brittleness of GRPO under hardware constraints without the stabilizing modifications described in the previous section.
 
     \subsubsection{Full Validation Results}
-    The complete validation stage evaluated 9 candidate models on the full validation set (896 rows across three temporal folds). The full-validation protocol assessed temporal robustness and risk-adjusted performance, prioritizing a fitness metric defined as the median Sharpe Ratio penalized by excessive Maximum Drawdown (MDD $>$ 20\%).
+    The complete validation stage evaluated 11 candidate models on the full validation set (896 rows across three temporal folds). The full-validation protocol assessed temporal robustness and risk-adjusted performance, prioritizing a fitness metric defined as the median Sharpe Ratio penalized by excessive Maximum Drawdown (MDD $>$ 20\%).
 
     \paragraph{Performance Metrics}
     
@@ -507,16 +483,17 @@
     Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% for the deployed model was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
 
     \section{Conclusion}
-    In this Working Note, we presented a comprehensive RAG pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. By developing the \textit{finvert} module for precise sentiment extraction and a novel \textit{PromptBuilder} equipped with a tripartite temporal memory, we successfully bridged the gap between raw quantitative market data and qualitative LLM reasoning. 
+    In this Working Note, we presented a compact multimodal pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. Our system integrates FinBERT sentiment extraction, Chronos directional forecasting, and a structured prompt template into a single GRPO-trained agent that operates within a 12\,GB VRAM budget. The forensic reconstruction of the winning model---including the exact hyperparameters, asymmetric reward matrix, and two-stage SFT-plus-GRPO curriculum---constitutes the primary contribution of this note, as it enables independent researchers to reproduce institutional-grade RL fine-tuning on commodity hardware.
 
-    Our dual-strategy prompt orchestration demonstrated that providing an LLM with a structured, self-reflective memory of its past actions significantly enhances its ability to manage risk and make context-aware trading decisions. 
+    \textbf{Future work.} Several extensions of the current pipeline were designed but not integrated into the winning model due to time constraints. These include: (i) a broader feature-engineering layer with 43 candidate signals, Spearman filtering, and mutual-information selection; (ii) a tripartite temporal memory (rolling buffer, self-reflection, and top-$K$ retrieval) for the \textit{PromptBuilder}; (iii) a dual-LLM pipeline with semantic FIFO queuing, in which a lightweight summarizer compresses historical trading days before a heavier decision model renders the final action; (iv) walk-forward temporal validation to replace the current fixed train/val split; and (v) automated model selection driven by the risk-adjusted fitness metric rather than manual selection based on cumulative return.
 
-    Future work will focus on \textit{[agregar sus puntos sobre mejorar el split temporal (Walk-forward validation), balancear el dataset entre equity/crypto, y automatizar la selección por fitness en lugar de selección manual por CR.]}.
-
-    \subsection*{Acknowledgments}
-    We extend our gratitude to the Artificial Intelligence Club (GAIA) at ESCOM-IPN for their continuous support and computational resources. 
+    \begin{acknowledgments}
+    We extend our gratitude to the Artificial Intelligence Club (GAIA) at ESCOM-IPN for their continuous support and computational resources.
+    \end{acknowledgments}
 
     \section{Declaration on Generative AI}
+
+    During the preparation of this work, the authors used large language models (including GPT-4 and Claude) for drafting assistance, grammatical revision, and LaTeX formatting. All generated content was subsequently reviewed, fact-checked, and edited by the authors, who take full responsibility for the final text and any remaining errors.
 
     \printbibliography
 

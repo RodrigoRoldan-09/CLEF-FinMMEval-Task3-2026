@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  26 MAY 2026 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  26 MAY 2026 13:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -907,20 +907,20 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -992,159 +992,175 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.bbl)
-Package biblatex Info: Reference section=0 on input line 71.
-Package biblatex Info: Reference segment=0 on input line 71.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
+Package biblatex Info: Reference section=0 on input line 80.
+Package biblatex Info: Reference segment=0 on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5]
-Overfull \hbox (32.64095pt too wide) in paragraph at lines 241--242
-\OT1/cmr/m/n/10.95 Chronos-Bolt out-puts a prob-a-bilis-tic fore-cast ten-sor of shape $([] \OMS/cmsy/m/n/10.95 ^^B [] ^^B []\OT1/cmr/m/n/10.95 )$,
+{C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 134.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 134.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 134.
+
+[3] [4] [5]
+Overfull \hbox (1.57935pt too wide) in paragraph at lines 245--246
+\OT1/cmr/m/n/10.95 proaches, Chronos learns a dis-tri-bu-tion over fu-ture val-ues, en-abling the ex-trac-tion of uncertainty-
  []
 
-[6] [7]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 306.
 
-Overfull \hbox (2.52112pt too wide) in paragraph at lines 318--319
-\OT1/cmr/m/n/10.95 tive FIFO queue along-side the cur-rent mar-ket con-text to make the fi-nal BUY/HOLD/SELL
+Overfull \hbox (8.45966pt too wide) in paragraph at lines 255--256
+\OT1/cmr/m/n/10.95 Chronos out-puts a prob-a-bilis-tic fore-cast ten-sor of shape $([] \OMS/cmtt/m/n/10.95 ^^B [] ^^B []\OT1/cmr/m/n/10.95 )$,
  []
 
-[8]
-Overfull \hbox (31.39331pt too wide) in paragraph at lines 336--337
+[6]
+Overfull \hbox (69.30618pt too wide) in paragraph at lines 292--293
+[]\OT1/cmr/m/n/10.95 where $\OML/cmm/m/it/10.95 C \OMS/cmtt/m/n/10.95 2 f[]\OML/cmm/m/it/10.95 ; []; []\OMS/cmtt/m/n/10.95 g$\OT1/cmr/m/n/10.95 . The out-put is cached per as-set in \OT1/cmtt/m/n/10.95 models/\OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 asset\OMS/cmtt/m/n/10.95 g[]\OT1/cmtt/m/n/10.95 sentiment.csv
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 297.
+[7]
+Overfull \hbox (31.39331pt too wide) in paragraph at lines 312--313
  \OT1/cmr/bx/n/10.95 Base Model and Quan-ti-za-tion Strat-egy[] \OT1/cmr/m/n/10.95 All ex-per-i-ments uti-lize \OT1/cmtt/m/n/10.95 unsloth/Phi-4-mini-instruct
  []
 
-[9]
-Overfull \hbox (94.92206pt too wide) in paragraph at lines 373--374
+[8]
+Overfull \hbox (94.92206pt too wide) in paragraph at lines 349--350
 \OT1/cmr/m/n/10.95 ward com-pu-ta-tion are de-rived from a volatility-normalized mo-men-tum sig-nal: $[] = []\OML/cmm/m/it/10.95 =[]\OT1/cmr/m/n/10.95 (20)$.
  []
 
-[10] [11] [12]
-Underfull \hbox (badness 1577) in paragraph at lines 458--459
+[9] [10] [11]
+Underfull \hbox (badness 1577) in paragraph at lines 434--435
 \OT1/cmr/m/n/10 tive; higher is bet-ter; se-
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 458--459
+Underfull \hbox (badness 2103) in paragraph at lines 434--435
 \OT1/cmr/m/n/10 vere penalty for ex-ceed-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 []\OT1/cmr/m/n/10 Risk-adjusted prof-itabil-ity;
  []
 
 
-Underfull \hbox (badness 2744) in paragraph at lines 460--461
+Underfull \hbox (badness 2744) in paragraph at lines 436--437
 \OT1/cmr/m/n/10 higher in-di-cates sta-ble re-
  []
 
 
-Underfull \hbox (badness 5817) in paragraph at lines 464--465
+Underfull \hbox (badness 5817) in paragraph at lines 440--441
 []\OT1/cmr/m/n/10 Absolute prof-itabil-ity over
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--466
+Underfull \hbox (badness 10000) in paragraph at lines 442--442
 []\OT1/cmr/m/n/10 Proportion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--466
+Underfull \hbox (badness 10000) in paragraph at lines 442--442
 \OT1/cmr/m/n/10 BUY/HOLD/SELL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--466
+Underfull \hbox (badness 10000) in paragraph at lines 442--442
 \OT1/cmr/m/n/10 de-ci-sions aligned with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 []\OT1/cmr/m/n/10 Directional cor-rect-ness of
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 466--467
+Underfull \hbox (badness 6893) in paragraph at lines 442--443
 \OT1/cmr/m/n/10 model pre-dic-tions; higher
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
 []\OT1/cmr/m/n/10 Percentage of closed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 []\OT1/cmr/m/n/10 Trade suc-cess fre-quency
  []
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 468--469
+Underfull \hbox (badness 3679) in paragraph at lines 444--445
 \OT1/cmr/m/n/10 in-de-pen-dent of mag-ni-tude;
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 468--469
+Underfull \hbox (badness 5345) in paragraph at lines 444--445
 \OT1/cmr/m/n/10 higher in-di-cates con-sis-tent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 []\OT1/cmr/m/n/10 Net prof-itabil-ity; $\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 1.0
  []
 
 
-Underfull \hbox (badness 1163) in paragraph at lines 470--471
+Underfull \hbox (badness 1163) in paragraph at lines 446--447
 \OT1/cmr/m/n/10 prof-itable, $\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 1.0 net losses,
  []
 
 
-Underfull \hbox (badness 5893) in paragraph at lines 470--471
+Underfull \hbox (badness 5893) in paragraph at lines 446--447
 \OT1/cmr/m/n/10 Inf/undefined in-di-cates no
  []
 
-[13] [14]
-Overfull \hbox (51.20226pt too wide) in paragraph at lines 522--522
+[12] [13]
+Overfull \hbox (51.20226pt too wide) in paragraph at lines 499--499
 []\OT1/cmr/m/n/10.95 John Schul-man et al. \  Prox-i-mal pol-icy op-ti-miza-tion al-go-rithms". In: \OT1/cmr/m/it/10.95 arXiv preprint arXiv:1707.06347
  []
 
 
-Overfull \hbox (20.49913pt too wide) in paragraph at lines 522--522
+Overfull \hbox (20.49913pt too wide) in paragraph at lines 499--499
 []\OT1/cmr/m/n/10.95 TheFinAI. \OT1/cmr/m/it/10.95 daily[]news: Daily Fi-nan-cial News Dataset for Fin-M-MEval\OT1/cmr/m/n/10.95 . $\OT1/cmtt/m/n/10.95 https : / / huggingface .
  []
 
-[15] [16] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
+[14] [15] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37935 strings out of 467866
- 917868 string characters out of 5418809
- 2082260 words of memory out of 5000000
- 66232 multiletter control sequences out of 15000+600000
- 645931 words of font info for 107 fonts, out of 8000000 for 9000
+ 37944 strings out of 467866
+ 918002 string characters out of 5418809
+ 2083358 words of memory out of 5000000
+ 66242 multiletter control sequences out of 15000+600000
+ 645226 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,118p,1365b,1736s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (16 pages, 343179 bytes).
+ 99i,14n,118p,1365b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (15 pages, 325119 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
+ 134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
