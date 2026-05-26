@@ -19,7 +19,8 @@
 \usepackage{float}
 \usepackage[english]{babel}
 \usepackage{csquotes}
-\usepackage{biblatex}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{references.bib}
 \usepackage{authblk}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,22 +191,189 @@
     Both strategies are governed by a strict \textit{System Prompt} that encodes risk-management heuristics. For instance, the LLM is explicitly instructed to prefer SELL or HOLD if the portfolio exposure exceeds 80\%, to avoid BUY recommendations if cash is depleted, and to flag high volatility coupled with negative sentiment as extreme risk.
 
     \section{Model Optimization and Training Setup}
-    \textit{[Nota: Esta es su sección. Detallen el SFT Warm-up (1 época, 30 min) para enseñar el formato XML, la optimización Optuna TPE (3 trials, seed 42), y el entrenamiento GRPO (6 min). No olvidar explicar la Reward Function asimétrica $3\times3$ y cómo la aumentaron a -2.0 para el HOLD para romper el equilibrio de Nash.]}
+
+    \subsection{Problem Formulation and Main Objectives}
+
+    The primary objective of this study is to democratize the application of Group Relative Policy Optimization (GRPO) \cite{shao2024deepseekmath,deepseek2025deepseekr1} for financial trading decisions under severe hardware constraints. While recent state-of-the-art systems such as Trading-R1 \cite{xiao2025tradingr1} have demonstrated remarkable performance by scaling GRPO on massive GPU clusters (e.g., 8$\times$H200 nodes) with chain-of-thought (CoT) reasoning windows spanning 6,000 to 8,000 tokens, such infrastructure requirements place institutional-grade RL fine-tuning far beyond the reach of independent researchers and small laboratories. Conversely, alternative frameworks such as FLAG-TRADER \cite{xiong2025flagtrader} employ classical Proximal Policy Optimization (PPO) \cite{schulman2017ppo} with single-token outputs (Buy, Hold, or Sell), sacrificing interpretability and explicit reasoning capabilities entirely. Our work addresses this dichotomy by designing a training pipeline that preserves structured, interpretable reasoning while operating within a strict 12 GB VRAM budget, thereby bridging the gap between resource-intensive frontier research and accessible, reproducible financial machine learning.
+
+    A critical secondary objective involves resolving two well-documented failure modes of GRPO in constrained environments: the zero-variance collapse caused by aggressive length penalties on truncated responses, and the Nash equilibrium of inaction where the policy collapses to a trivial HOLD strategy. These phenomena, observed during preliminary autopsies of failed training runs, motivated a complete redesign of the reward architecture and action extraction logic to ensure stable gradient flow and meaningful exploration in low-computation regimes.
+
+    \subsection{Architecture and Training Configuration}
+
+    \subsubsection{Base Model and Quantization Strategy}
+
+    All experiments utilize \texttt{unsloth/Phi-4-mini-instruct} as the base language model, loaded in 4-bit NF4 quantization via the Unsloth optimization framework. This configuration reduces the model footprint to approximately 2.5 GB of VRAM, leaving sufficient memory for adapter gradients, optimizer states, and the group generation buffer required by GRPO. Low-Rank Adaptation (LoRA) \cite{hu2022lora} is applied to all linear projection layers (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}, \texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}) with a rank of $r=4$ and scaling parameter $\alpha=16$. Notably, the effective LoRA dropout is hardcoded to 0.0 in the training wrapper.
+    \subsubsection{Hybrid Two-Stage Training Pipeline}
+
+    Our approach adapts and downscales the SFT-plus-GRPO curriculum originally proposed by Trading-R1 \cite{xiao2025tradingr1}---which was designed for 141 GB server-grade deployments---to commodity hardware. The pipeline consists of two strictly sequential phases.
+
+    \textbf{Phase 1: SFT Warm-up.} Prior to any reinforcement learning, the model undergoes supervised fine-tuning (SFT) for exactly one epoch (approximately 30 minutes) over 1,082 training examples. The objective of this phase is not to learn trading strategy but to anchor the structural XML output format. Each training example is formatted using the \texttt{grpo\_cot\_v1} template, which requires the model to generate a response containing \texttt{<technicals>}, \texttt{<news>}, \texttt{<conclusion>} tags, and a final action token of the form \texttt{[[[ACTION]]]}. The SFT target completions are generated via a dedicated builder that produces ultra-concise ground-truth responses of approximately 60 to 80 characters. This brevity is essential because teaching the model to produce long outputs during SFT, only to truncate them during GRPO due to the 128-token generation limit, leads to catastrophic intra-group variance collapse. The SFT trainer is configured with \texttt{batch\_size=1}, gradient accumulation over 32 steps, a learning rate of $1.155\times10^{-5}$ (half the RL learning rate for stability), and \texttt{bf16} mixed precision with gradient checkpointing.
+
+    \textbf{Phase 2: GRPO Optimization.} Following the SFT phase, the base model is reloaded together with the SFT adapters, and GRPO training commences for one epoch (approximately 6 minutes) over the same training corpus. The GRPO configuration is detailed in Table~\ref{tab:grpo_config}. The group size is restricted to $G=4$ (the minimum viable for GRPO's relative advantage estimation), and the maximum completion length is capped at 128 tokens---a drastic compression compared to the thousands of tokens used in prior work. To stabilize learning with an effective batch size of 1, we employ gradient accumulation across 32 steps. The KL divergence coefficient is set to $\beta=0.051$, and the clipping threshold is $\epsilon=0.104$.
+
+    \begin{table}[htbp]
+    \centering
+    \caption{GRPO Training Hyperparameters}
+    \label{tab:grpo_config}
+    \begin{tabular}{ll}
+    \hline
+    \textbf{Parameter} & \textbf{Value} \\
+    \hline
+    Base Model & \texttt{Phi-4-mini-instruct} (4-bit NF4) \\
+    LoRA rank $r$ & 4 \\
+    LoRA $\alpha$ & 16 \\
+    LoRA dropout & 0.0 \\
+    GRPO group size $G$ & 4 \\
+    KL coefficient $\beta$ & 0.051 \\
+    Clip $\epsilon$ & 0.104 \\
+    Max completion length & 128 tokens \\
+    Temperature & 0.573 \\
+    Learning rate & $2.31\times10^{-5}$ \\
+    Per-device batch size & 1 \\
+    Gradient accumulation & 32 \\
+    Optimizer max grad norm & 0.5 \\
+    Epochs executed & 1 (SFT) + 1 (GRPO) \\
+    \hline
+    \end{tabular}
+    \end{table}
+
+    \subsubsection{Ground Truth Signal Generation}
+
+    The ground truth labels for supervised warm-up and reward computation are derived from a volatility-normalized momentum signal: $\text{signal} = \text{log\_return\_t1} / \text{rolling\_std}(20)$. The classification thresholds, optimized via Optuna TPE with 3 trials, partition the distribution into Buy (top 35.82\%), Sell (bottom 19.18\%), and Hold (remaining 45\%). The dataset is temporally filtered to the most recent 12 months (360 days), yielding 1,082 training rows and 896 validation rows spanning from 2024-02-07 to 2025-02-01. Only rows containing news are retained ($\texttt{has\_news}=1$), ensuring that each example presents a multimodal decision task combining technical indicators, sentiment, and market news.
+
+    \subsection{Optuna Search and Experimental Protocol}
+
+    The hyperparameter search was coordinated using Optuna with the TPE (Tree-structured Parzen Estimator) sampler and a fixed seed of 42 to ensure reproducibility across runs. Due to compute constraints, the initial experiments were executed in a fast mode with only 3 trials; each trial ran the full pipeline (dataset construction, SFT warm-up, and GRPO optimization) and dumped configuration metadata to a \texttt{metadata.json} file. This fast-mode configuration prioritized quick, reproducible validations to detect stability issues (e.g., collapse to HOLD) before committing larger computational budgets.
+
+    The search space included high-impact hyperparameters such as \texttt{learning\_rate}, \texttt{kl\_beta}, \texttt{clip\_epsilon}, \texttt{temperature}, \texttt{reward\_scale\_factor}, and the ground-truth thresholds used to label BUY/SELL decisions. Optuna suggested candidate configurations that were evaluated using the validation fitness metric (median Sharpe Ratio penalized by Maximum Drawdown above 20\%). While the automated search identified candidates with superior fitness (for example, a trial with fitness=1.974 and MDD=17.48\%), the final deployment decision favored a model selected manually based on absolute Cumulative Return (90.67\%) together with operational considerations.
+
+    This protocol proved effective for pipeline debugging and for calibrating the asymmetric reward function, but it also highlights the need to increase the number of trials and the computational budget in future runs to prioritize risk-adjusted metrics during automated model selection. Due to limited time, we were unable to run long-form trainings; therefore, all reported Optuna results correspond to fast-mode trials that executed the full pipeline in a shortened configuration.
+
+    \subsection{Reward Function Design and Engineering Contributions}
+
+    \subsubsection{Asymmetric Reward Matrix}
+
+    The core behavioral signal is provided by an asymmetric 3$\times$3 reward matrix that penalizes directional errors according to their financial severity, scaled by a factor of 1.5799. Table~\ref{tab:reward_matrix} presents the exact values employed in our experiments.
+
+    \begin{table}[htbp]
+    \centering
+    \caption{Asymmetric Reward Matrix (Values Before Scaling)}
+    \label{tab:reward_matrix}
+    \begin{tabular}{l|ccc}
+    \hline
+    \textbf{Pred. $\backslash$ True} & \textbf{BUY} & \textbf{HOLD} & \textbf{SELL} \\
+    \hline
+    BUY & +1.0 & $-1.0$ & $-2.25$ \\
+    HOLD & $\mathbf{-2.0}$ & +1.0 & $\mathbf{-2.0}$ \\
+    SELL & $-2.0$ & $-1.0$ & +1.0 \\
+    \hline
+    \end{tabular}
+    \end{table}
+
+    Our key adaptation over the asymmetric matrix proposed by Trading-R1 \cite{xiao2025tradingr1} lies in the calibration of the false-HOLD penalties. In the original formulation, the penalty for incorrectly predicting HOLD during a market rally or crash was set to $-1.0$ (or at most $-1.5$). Through empirical autopsy of failed training runs, we computed the expected reward of a trivial HOLD policy on our specific data distribution---encompassing volatile crypto assets such as BTC, ETH, and SOL---and found it to be $-0.0945$, which dominated the expected rewards of BUY ($-0.3856$) and SELL ($-1.1040$). This created a Nash equilibrium of inaction: the model learned that remaining passive incurred the least damage, collapsing to 100\% HOLD predictions. By intensifying the false-HOLD penalty to $-2.0$, we mathematically destroyed this equilibrium, equalizing the cost of inaction with that of catastrophic directional errors and thereby forcing the policy to explore meaningful trading decisions.
+
+    \subsubsection{Decision Placement Reward and Length Penalty}
+
+    Drawing on the Decision Placement Reward and Length Penalty concepts introduced by Trading-R1 \cite{xiao2025tradingr1}, we implemented a composite format reward and a progressive length penalty adapted to our 128-token generation ceiling. The format reward distinguishes three cases: (i) a complete response with properly closed action tags receives +0.5; (ii) a response containing a detectable action but truncated before closing receives +0.25; (iii) a severely truncated or malformed response receives $-0.5$; and (iv) a response with no recognizable action incurs the invalid-format penalty of $-1.5$ scaled by the reward factor (yielding approximately $-2.37$).
+
+    The length penalty operates progressively rather than abruptly. Given a soft target of 240 characters (approximately 60 tokens), the penalty is computed as $\max(0, \text{len(response)} - 240) \times 0.0025$. This design prevents the sudden truncation shocks that kill intra-group variance in GRPO when all four group members hit the hard token limit simultaneously.
+
+    \subsubsection{Truncated Token Rescue}
+
+    A fully original engineering contribution is the robust action extractor capable of rescuing partially generated tokens when the model exhausts its 128-token budget mid-action. For instance, a response terminating in \texttt{[[[BU} is heuristically resolved to BUY, while \texttt{[[[SEL} resolves to SELL. This mechanism is not merely a post-processing convenience; it is a critical MLOps technique to prevent zero-variance gradient death. In standard GRPO, if all group completions are truncated identically before emitting a valid action token, the relative advantage across the group becomes zero, and policy gradients vanish. By extracting semantic signal from incomplete patterns, we maintain non-zero variance and preserve learning signals throughout training on limited hardware.
+
+    \subsubsection{Complete Reward Formula}
+
+    The total reward for each generated completion is computed as:
+    \begin{equation}
+    R = (M \times 1.5799) + F - L,
+    \end{equation}
+    where $M$ is the matrix reward from Table~\ref{tab:reward_matrix}, $F$ is the format reward, and $L$ is the length penalty. This composite function balances directional accuracy, structural compliance, and generative conciseness within an ultra-short reasoning window.
 
     \section{Results and Validation}
-    \textit{[Nota: Documenten aquí el contraste entre el Fast Mode y la Validación Completa (896 filas). Hablen del modelo ganador (exp\_20260506\_085649\_254046) y cómo se seleccionó manualmente por su Cumulative Return (90.67\%) a pesar de tener un MDD alto, contrastándolo con el modelo de mejor Fitness (1.974). Usen la tabla a continuación como base para sus datos.]}
+
+    \subsection{Validation Protocol}
+
+    Validation is conducted under two distinct regimes to balance training throughput against statistical robustness. During training, a fast-mode evaluation assesses performance on the last temporal fold only, limited to 100 rows, providing rapid feedback for Optuna trial selection. After training completion, a full validation is executed over all 896 validation rows divided into three contiguous temporal folds: Fold 0 (2024-02-07 to 2024-06-05, 360 rows), Fold 1 (2024-06-06 to 2024-10-03, 294 rows), and Fold 2 (2024-10-04 to 2025-02-01, 242 rows). For each fold, actions are simulated with weights $w_t \in \{+1, 0, -1\}$ corresponding to BUY, HOLD, and SELL, and daily returns are computed as $r_t = w_t \times (P_t - P_{t-1}) / P_{t-1}$. From these returns, we derive Cumulative Return (CR), Sharpe Ratio (SR), Maximum Drawdown (MDD), Accuracy, Win Rate, and Profit Factor. The aggregate fitness score is defined as:
+    \begin{equation}
+    \text{fitness} = \text{median\_SR} - \max(0, \text{MDD\_worst} - 0.20) \times 10,
+    \end{equation}
+    which severely penalizes any drawdown exceeding the 20\% Hall of Fame threshold.
+
+    \paragraph{Validation assets}
+
+    The validation sets used in these experiments contained only YAHOO-sourced assets: \texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO} and \texttt{SOL\_YAHOO}. Fast-mode validation (used during training and Optuna trials) evaluated only the last temporal fold and a limited sample (100 rows) drawn from these YAHOO assets. Full validation likewise operates on the same YAHOO assets across the three temporal folds described above. Assets originating from the CLEF split (for example, \texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF} and \texttt{BMRN\_CLEF}) were reserved exclusively for the out-of-sample test set and were not included in validation runs.
+
+    \subsection{Training and Fast-Mode Results}
+
+    Within the fast-mode evaluation, the winning trial (Trial 0, \texttt{exp\_20260506\_085649\_254046}) achieved a fitness of 2.9488 with an MDD of merely 0.11\% over 100 rows. The action distribution at this stage was extremely conservative: 96\% HOLD, 4\% SELL, and 0\% BUY. While this distribution suggested the model had learned to avoid catastrophic errors, it also indicated that the anti-HOLD calibration had not yet fully activated exploratory BUY behavior within the restricted fast-mode window. The two subsequent Optuna trials (using Qwen2.5-3B and a different hyperparameter configuration for Phi-4-mini, respectively) collapsed to repetitive text or 100\% HOLD, yielding negative fitness values and confirming the brittleness of GRPO under hardware constraints without the stabilizing modifications described in the previous section.
+
+    \subsection{Full Validation Results}
+    The complete validation stage evaluated 9 candidate models on the full validation set (896 rows across three temporal folds). The full-validation protocol assessed temporal robustness and risk-adjusted performance, prioritizing a fitness metric defined as the median Sharpe Ratio penalized by excessive Maximum Drawdown (MDD $>$ 20\%).
+
+    \paragraph{Performance Metrics}
     
-    \begin{table}[H]
+    Each finalist's performance is evaluated across seven complementary dimensions. The following table provides a complete description of each metric used in Table~\ref{tab:validation_results}. The fitness metric serves as the primary optimization objective, while the remaining six metrics capture different aspects of trading efficacy: risk-adjusted profitability (SR), cumulative return (CR), capital preservation (MDD), directional accuracy (Acc.), trade success rate (WR), and cumulative profitability scaled by drawdown magnitude (PF).
+    
+    \begin{table}[htbp]
     \centering
-    \begin{tabular}{@{}lcccc@{}}
-    \toprule
-    \textbf{Model ID} & \textbf{Fitness} & \textbf{Cumulative Return} & \textbf{Sharpe Ratio} & \textbf{MDD} \\ \midrule
-    exp\_085649 (Selected) & 0.1069 & \textbf{90.67\%} & 2.9117 & 48.05\% \\
-    exp\_111504 (Best Fit) & \textbf{1.9740} & 19.34\% & 1.9740 & \textbf{17.48\%} \\
-    exp\_004508 (Best SR)  & -0.0759 & 89.76\% & \textbf{3.0408} & 51.17\% \\ \bottomrule
+    \small
+    \caption{Performance Metrics Reference}
+    \label{tab:metrics_reference}
+    \begin{tabular}{|l|p{4cm}|p{4.5cm}|}
+    \hline
+    \textbf{Metric} & \textbf{Definition} & \textbf{Interpretation} \\
+    \hline
+    Fitness & Median Sharpe Ratio with penalty multiplier $-2.0 \times \max(0, \text{MDD} - 0.20)$ for drawdowns exceeding 20\% & Primary optimization objective; higher is better; severe penalty for exceeding risk threshold \\
+    \hline
+    SR (Sharpe) & Excess return divided by portfolio volatility & Risk-adjusted profitability; higher indicates stable returns relative to fluctuations \\
+    \hline
+    MDD & Maximum cumulative loss from peak to trough (\%) & Key downside risk measure; values $>$20\% trigger fitness penalties; lower is safer \\
+    \hline
+    CR (Cumulative Return) & Total percentage gain or loss across the entire validation period (\%) & Absolute profitability over the full period; higher indicates greater total wealth accumulation; can be misleading without considering drawdown \\
+    \hline
+    Acc. (Accuracy) & Proportion of BUY/HOLD/SELL decisions aligned with realized price direction & Directional correctness of model predictions; higher indicates better signal quality \\
+    \hline
+    WR (Win Rate) & Percentage of closed trades generating profit & Trade success frequency independent of magnitude; higher indicates consistent small wins \\
+    \hline
+    PF (Profit Factor) & Cumulative gains divided by cumulative losses & Net profitability; $>$1.0 profitable, $<$1.0 net losses, Inf/undefined indicates no losses \\
+    \hline
     \end{tabular}
-    \caption{Full validation results comparing the selected model against other Optuna trials.}
     \end{table}
+
+    \begin{table}[htbp]
+    \centering
+    \small
+    \caption{Full Validation Results — 9 Finalists}
+    \label{tab:validation_results}
+    \begin{tabular}{lccccccc}
+    \hline
+    \textbf{Exp.} & \textbf{Fitness} & \textbf{SR} & \textbf{MDD} & \textbf{CR} & \textbf{Acc.} & \textbf{WR} & \textbf{PF} \\
+    \hline
+    \texttt{085649\_254046} & 0.1069 & 2.9117 & 48.05\% & \textbf{90.67\%} & 38.31\% & 54.83\% & 1.513 \\
+    \texttt{111504\_33de19} & \textbf{1.9740} & 1.9740 & 17.48\% & 19.34\% & 41.85\% & \textbf{58.14\%} & 1.687 \\
+    \texttt{113530\_8bc775}~(ep4) & 1.2134 & 1.2134 & \textbf{14.15\%} & 9.44\% & 40.96\% & 52.93\% & \textbf{1.697} \\
+    \texttt{004508\_27f172} & -0.0759 & \textbf{3.0408} & 51.17\% & 89.76\% & 38.87\% & 55.81\% & 1.568 \\
+    \texttt{115709\_051aed} & -0.4434 & 1.4039 & 38.47\% & 22.74\% & 38.99\% & 51.91\% & 1.249 \\
+    \texttt{014550\_f9ad37} & -0.8756 & 1.4105 & 42.86\% & 28.16\% & 40.23\% & 50.90\% & 1.225 \\
+    \texttt{113530\_8bc775}~(ep2) & -0.6082 & -0.1113 & 24.97\% & -1.12\% & 42.12\% & 51.23\% & 0.970 \\
+    \texttt{221904\_9bb326} & -2.5173 & -0.2100 & 43.07\% & -3.18\% & 43.64\% & 50.89\% & 0.928 \\
+    \texttt{204602\_88701e} & -1.4462 & -0.1954 & 32.51\% & -1.89\% & \textbf{43.72\%} & 48.85\% & 0.912 \\
+    \hline
+    \end{tabular}
+    \end{table}
+
+    The model \texttt{085649\_254046}, which serves the current inference endpoint, achieved a Cumulative Return of 90.67\%, the highest among all candidates, alongside a Sharpe Ratio of 2.9117 and an accuracy of 38.31\%. However, its Maximum Drawdown of 48.05\% far exceeds the 20\% safety threshold, resulting in a suppressed fitness score of 0.1069.
+
+    In sharp contrast, model \texttt{111504\_33de19} attained a fitness of 1.974---18.5 times higher---with an MDD of 17.48\%, comfortably within the Hall of Fame threshold. This model also exhibited a superior win rate (58.14\%) and accuracy (41.85\%), making it objectively superior under virtually all risk-adjusted criteria.
+
+    \subsection{Analysis and Model Selection Trade-off}
+
+    The discrepancy between the highest-fitness model and the deployed model illustrates a fundamental tension in financial agent design: the conflict between risk-adjusted efficiency and absolute profitability. Model \texttt{111504\_33de19} represents the prudent choice under classical portfolio theory, delivering a Sharpe Ratio of 1.974 with capital preservation (MDD$<$20\%). It embodies the risk-averse profile advocated by systems such as TradingGroup \cite{tian2025tradinggroup} and FINMEM \cite{yu2024finmem}, which emphasize dynamic risk management and survival across market regimes. Conversely, model \texttt{085649\_254046} sacrifices downside protection for asymmetric upside capture, yielding a 90.67\% cumulative return at the cost of a 48.05\% drawdown---a profile closer to high-conviction discretionary trading than to institutional risk constraints.
+
+    The final selection of \texttt{085649\_254046} was a manual, deliberate decision based on the competition's primary evaluation metric: Cumulative Return. While this choice acknowledges the model's vulnerability to severe capital erosion---as evidenced by its failure to pass the automatic Hall of Fame criteria---it also reflects the reality that in zero-sum or tournament-style evaluation environments, raw alpha generation often outweighs Sharpe-based efficiency. The existence of \texttt{111504\_33de19} demonstrates that our training pipeline is capable of producing both profiles, and that the selection criterion, not the learning algorithm, drives the ultimate risk-return posture of the deployed agent.
+
+    Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% for the deployed model was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
 
     \section{Conclusion and Future Work}
     In this Working Note, we presented a comprehensive RAG pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. By developing the \textit{finvert} module for precise sentiment extraction and a novel \textit{PromptBuilder} equipped with a tripartite temporal memory, we successfully bridged the gap between raw quantitative market data and qualitative LLM reasoning. 
@@ -217,4 +385,5 @@
     \section*{Acknowledgments}
     We extend our gratitude to the Artificial Intelligence Club (GAIA) at ESCOM-IPN for their continuous support and computational resources. 
 
+\printbibliography
 \end{document}
