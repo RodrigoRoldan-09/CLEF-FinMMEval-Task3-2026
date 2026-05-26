@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.25)  25 MAY 2026 04:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  26 MAY 2026 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/ThinkPad Carbon X1/OneDrive/Desktop/Club de IA/CLEF 2026/Working Notes/CLEF-FinMMEval-Task3-2026/main.tex"
-(c:/Users/ThinkPad Carbon X1/OneDrive/Desktop/Club de IA/CLEF 2026/Working Notes/CLEF-FinMMEval-Task3-2026/main.tex
+**c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex
+(c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
-(C:\Program Files\MiKTeX\tex/latex/base\article.cls
+L3 programming layer <2026-01-19>
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Program Files\MiKTeX\tex/latex/base\size11.clo
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
 File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -23,14 +23,14 @@ File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
- (C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count283
@@ -45,24 +45,24 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks18
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen157
 \Gin@req@width=\dimen158
-) (C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -70,21 +70,21 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen159
-)) (C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen160
-) (C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count286
@@ -134,7 +134,7 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks25
 \thm@bodyfont=\toks26
@@ -145,13 +145,13 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip55
 \thm@headsep=\skip56
 \dth@everypar=\toks30
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/mathtools\empheq.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\empheq.sty
 Package: empheq 2024/08/09 v2.17 Emphasizing equations
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/mathtools\mhsetup.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/mathtools\mathtools.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
- (C:\Program Files\MiKTeX\tex/latex/tools\calc.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count298
 \calc@Bcount=\count299
@@ -192,40 +192,40 @@ LaTeX Info: Redefining \addtolength on input line 87.
 \EQ_mathdisplay_box=\box56
 \EQ_tag_box=\box57
 \g_EQ_temprow_int=\count305
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/mdframed\mdframed.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty (C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2025-12-24 L3 programming layer (loader) 
- (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
 ))
 Package: xparse 2025-10-09 L3 Experimental document command parser
-) (C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count307
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/zref\zref-abspage.sty
-Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/zref\zref-base.sty
-Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2025-06-08 v2.36 Module base for zref (HO)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/auxhook\auxhook.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 767.
@@ -234,15 +234,15 @@ Package zref Info: New property: page on input line 769.
 )
 \c@abspage=\count308
 Package zref Info: New property: abspage on input line 67.
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/needspace\needspace.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
 Package: needspace 2025/03/13 v1.3e reserve vertical space
-) (C:\Program Files\MiKTeX\tex/latex/graphics\color.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
- (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx))
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
 \mdf@templength=\skip61
 \c@mdf@globalstyle@cnt=\count309
 \mdf@skipabove@length=\skip62
@@ -284,7 +284,7 @@ Package color Info: Driver file: pdftex.def on input line 149.
 \mdf@subsubtitlebelowskip@length=\skip98
 \mdf@subsubtitleinneraboveskip@length=\skip99
 \mdf@subsubtitleinnerbelowskip@length=\skip100
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
 \mdf@frametitlebox=\box58
@@ -330,7 +330,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@env@ii=\count313
 \c@mdf@zref@counter=\count314
 Package zref Info: New property: mdf@pagevalue on input line 895.
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen188
 \lightrulewidth=\dimen189
@@ -349,36 +349,36 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count317
 \@lastruleclass=\count318
 \@thisrulewidth=\dimen256
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
 Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count319
 \l__lipsum_a_int=\count320
 \l__lipsum_b_int=\count321
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/psfrag\psfrag.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/psfrag\psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count322
 \pfg@scount=\count323
 \pfg@temp=\write3
-) (C:\Program Files\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
- (C:\Program Files\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks31
 \pgfutil@tempdima=\dimen257
 \pgfutil@tempdimb=\dimen258
-) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box63
-) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Program Files\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks32
 \pgfkeys@temptoks=\toks33
- (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks34
 ))
 \pgf@x=\dimen259
@@ -401,28 +401,28 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 \t@pgf@tokb=\toks36
 \t@pgf@tokc=\toks37
 \pgf@sys@id@count=\count328
- (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-pdftex.def
- (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
-))) (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count329
 \pgfsyssoftpath@bigbuffer@items=\count330
-) (C:\Program Files\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)) (C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
 LaTeX Info: Redefining \color on input line 762.
- (C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -432,18 +432,18 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen269
 \pgfmath@count=\count331
 \pgfmath@box=\box64
 \pgfmath@toks=\toks38
 \pgfmath@stack@operand=\toks39
 \pgfmath@stack@operation=\toks40
-) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count332
-)) (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen270
 \pgf@picmaxx=\dimen271
@@ -459,75 +459,75 @@ File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@yy=\dimen281
 \pgf@zx=\dimen282
 \pgf@zy=\dimen283
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen284
 \pgf@path@lasty=\dimen285
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen286
 \pgf@shorten@start@additional=\dimen287
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box65
 \pgf@hbox=\box66
 \pgf@layerbox@main=\box67
 \pgf@picture@serial@count=\count333
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen288
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen289
 \pgf@pt@y=\dimen290
 \pgf@pt@temp=\dimen291
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen292
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen293
 \pgf@sys@shading@range@num=\count334
 \pgf@shadingcount=\count335
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box68
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box69
-) (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen294
 \pgf@nodesepend=\dimen295
-) (C:\Program Files\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
-)) (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Program Files\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Program Files\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Program Files\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen296
 \pgffor@skip=\dimen297
 \pgffor@stack=\toks41
 \pgffor@toks=\toks42
-)) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count336
 \pgfplotmarksize=\dimen298
@@ -548,35 +548,35 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikznumberofchildren=\count338
 \tikznumberofcurrentchild=\count339
 \tikz@fig@count=\count340
- (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count341
 \pgfmatrixcurrentcolumn=\count342
 \pgf@matrix@numberofcolumns=\count343
 )
 \tikz@expandcount=\count344
- (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
+))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
 \t@pgfplots@toka=\toks43
 \t@pgfplots@tokb=\toks44
 \t@pgfplots@tokc=\toks45
 \pgfplots@tmpa=\dimen307
 \c@pgfplots@coordindex=\count345
 \c@pgfplots@scanlineindex=\count346
- (C:\Program Files\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks46
 \t@pgf@tokb=\toks47
 \t@pgf@tokc=\toks48
-(C:\Program Files\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
 \c@pgfplotsarray@tmp=\count347
-) (C:\Program Files\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
 \c@pgfplotstable@counta=\count348
 \t@pgfplotstable@a=\toks49
-) (C:\Program Files\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
 \c@pgfplotslibrarysurf@no=\count349
- (C:\Program Files\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen308
 \pgfdecoratedremainingdistance=\dimen309
 \pgfdecoratedinputsegmentcompleteddistance=\dimen310
@@ -587,7 +587,7 @@ Package pgfplots: loading complementary utilities for your pgf version...
 \pgfdecorationsegmentlength=\dimen314
 )
 \tikz@lib@dec@box=\box74
-) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Program Files\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
 \pgfplots@numplots=\count351
 \pgfplots@xmin@reg=\dimen315
 \pgfplots@xmax@reg=\dimen316
@@ -595,11 +595,11 @@ Package pgfplots: loading complementary utilities for your pgf version...
 \pgfplots@ymax@reg=\dimen318
 \pgfplots@zmin@reg=\dimen319
 \pgfplots@zmax@reg=\dimen320
-) (C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (C:\Program Files\MiKTeX\tex/latex/tools\bm.sty
+))) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
 Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
@@ -608,41 +608,41 @@ Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
-) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count352
 \float@exts=\toks50
 \float@box=\box75
 \@float@everytoks=\toks51
 \@floatcapt=\box76
-) (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2026/01/26 v26.2 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count353
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2068.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2070.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2072.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2073.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2074.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2076.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2101.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
 \U@D=\dimen321
 \l@unhyphenated=\language79
- (C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count354
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
-(babel)             Reported on input line 4196.
+(babel)             Reported on input line 4206.
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Program Files\MiKTeX\tex/generic/babel/locale/en\babel-english.tex)
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex)
 Package babel Info: Importing font and identification data for english
-(babel)             from babel-en.ini. Reported on input line 4320.
- (C:\Program Files\MiKTeX\tex/latex/babel-english\english.ldf
+(babel)             from babel-en.ini. Reported on input line 4330.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -650,8 +650,8 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
-)) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/csquotes\csquotes.sty
-Package: csquotes 2026-05-19 v5.2p context-sensitive quotations (JAW)
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@reset=\count355
 \csq@gtype=\count356
 \csq@glevel=\count357
@@ -659,23 +659,23 @@ Package: csquotes 2026-05-19 v5.2p context-sensitive quotations (JAW)
 \csq@maxlvl=\count359
 \csq@tshold=\count360
 \csq@ltx@everypar=\toks52
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/csquotes\csquotes.def
-File: csquotes.def 2026-05-19 v5.2p csquotes generic definitions (JAW)
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/csquotes\csquotes.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
-)) (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/logreq\logreq.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count361
- (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/logreq\logreq.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (C:\Program Files\MiKTeX\tex/latex/url\url.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -738,7 +738,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count407
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -827,12 +827,12 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip149
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \c@textcitecount=\count476
 \c@textcitetotal=\count477
@@ -850,18 +850,18 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count485
 \c@bbx:relatedtotal=\count486
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
 File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -877,18 +877,18 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2025-12-24 L3 programming layer (loader) 
+(biblatex)             2026-01-19 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-)) (C:\Users\ThinkPad Carbon X1\AppData\Roaming\MiKTeX\tex/latex/preprint\authblk.sty
+)) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/preprint\authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip150
 \@affilsep=\skip151
@@ -899,28 +899,28 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@theorem=\count490
 \c@definition=\count491
 \c@problem=\count492
- (C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.colorbrewer.code.tex (C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarycolorbrewer.code.tex))
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.colorbrewer.code.tex (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarycolorbrewer.code.tex))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (c:\Users\ThinkPad Carbon X1\OneDrive\Desktop\Club de IA\CLEF 2026\Working Notes\CLEF-FinMMEval-Task3-2026\build\main.aux)
+ (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -956,7 +956,7 @@ LaTeX Font Info:    ... okay on input line 70.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count493
 \scratchdimen=\dimen322
@@ -969,10 +969,10 @@ LaTeX Font Info:    ... okay on input line 70.
 \MPnumerator=\count497
 \makeMPintoPDFobject=\count498
 \everyMPtoPDFconversion=\toks54
-) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \Hy@linkcounter=\count499
@@ -981,7 +981,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -991,50 +991,160 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (c:\Users\ThinkPad Carbon X1\OneDrive\Desktop\Club de IA\CLEF 2026\Working Notes\CLEF-FinMMEval-Task3-2026\build\main.bbl)
-Package biblatex Info: Reference section=0 on input line 70.
-Package biblatex Info: Reference segment=0 on input line 70.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.bbl)
+Package biblatex Info: Reference section=0 on input line 71.
+Package biblatex Info: Reference segment=0 on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
-{C:/Users/ThinkPad Carbon X1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+{C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5]
+Overfull \hbox (32.64095pt too wide) in paragraph at lines 241--242
+\OT1/cmr/m/n/10.95 Chronos-Bolt out-puts a prob-a-bilis-tic fore-cast ten-sor of shape $([] \OMS/cmsy/m/n/10.95 ^^B [] ^^B []\OT1/cmr/m/n/10.95 )$,
+ []
+
+[6] [7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 135.
+(mdframed)              on input line 306.
 
-Overfull \hbox (2.52112pt too wide) in paragraph at lines 147--148
+Overfull \hbox (2.52112pt too wide) in paragraph at lines 318--319
 \OT1/cmr/m/n/10.95 tive FIFO queue along-side the cur-rent mar-ket con-text to make the fi-nal BUY/HOLD/SELL
  []
 
-[3] [4] (c:\Users\ThinkPad Carbon X1\OneDrive\Desktop\Club de IA\CLEF 2026\Working Notes\CLEF-FinMMEval-Task3-2026\build\main.aux)
+[8]
+Overfull \hbox (31.39331pt too wide) in paragraph at lines 336--337
+ \OT1/cmr/bx/n/10.95 Base Model and Quan-ti-za-tion Strat-egy[] \OT1/cmr/m/n/10.95 All ex-per-i-ments uti-lize \OT1/cmtt/m/n/10.95 unsloth/Phi-4-mini-instruct
+ []
+
+[9]
+Overfull \hbox (94.92206pt too wide) in paragraph at lines 373--374
+\OT1/cmr/m/n/10.95 ward com-pu-ta-tion are de-rived from a volatility-normalized mo-men-tum sig-nal: $[] = []\OML/cmm/m/it/10.95 =[]\OT1/cmr/m/n/10.95 (20)$.
+ []
+
+[10] [11] [12]
+Underfull \hbox (badness 1577) in paragraph at lines 458--459
+\OT1/cmr/m/n/10 tive; higher is bet-ter; se-
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 458--459
+\OT1/cmr/m/n/10 vere penalty for ex-ceed-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
+[]\OT1/cmr/m/n/10 Risk-adjusted prof-itabil-ity;
+ []
+
+
+Underfull \hbox (badness 2744) in paragraph at lines 460--461
+\OT1/cmr/m/n/10 higher in-di-cates sta-ble re-
+ []
+
+
+Underfull \hbox (badness 5817) in paragraph at lines 464--465
+[]\OT1/cmr/m/n/10 Absolute prof-itabil-ity over
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+[]\OT1/cmr/m/n/10 Proportion of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+\OT1/cmr/m/n/10 BUY/HOLD/SELL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+\OT1/cmr/m/n/10 de-ci-sions aligned with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+[]\OT1/cmr/m/n/10 Directional cor-rect-ness of
+ []
+
+
+Underfull \hbox (badness 6893) in paragraph at lines 466--467
+\OT1/cmr/m/n/10 model pre-dic-tions; higher
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
+[]\OT1/cmr/m/n/10 Percentage of closed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
+[]\OT1/cmr/m/n/10 Trade suc-cess fre-quency
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 468--469
+\OT1/cmr/m/n/10 in-de-pen-dent of mag-ni-tude;
+ []
+
+
+Underfull \hbox (badness 5345) in paragraph at lines 468--469
+\OT1/cmr/m/n/10 higher in-di-cates con-sis-tent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+[]\OT1/cmr/m/n/10 Net prof-itabil-ity; $\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 1.0
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 470--471
+\OT1/cmr/m/n/10 prof-itable, $\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 1.0 net losses,
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 470--471
+\OT1/cmr/m/n/10 Inf/undefined in-di-cates no
+ []
+
+[13] [14]
+Overfull \hbox (51.20226pt too wide) in paragraph at lines 522--522
+[]\OT1/cmr/m/n/10.95 John Schul-man et al. \  Prox-i-mal pol-icy op-ti-miza-tion al-go-rithms". In: \OT1/cmr/m/it/10.95 arXiv preprint arXiv:1707.06347
+ []
+
+
+Overfull \hbox (20.49913pt too wide) in paragraph at lines 522--522
+[]\OT1/cmr/m/n/10.95 TheFinAI. \OT1/cmr/m/it/10.95 daily[]news: Daily Fi-nan-cial News Dataset for Fin-M-MEval\OT1/cmr/m/n/10.95 . $\OT1/cmtt/m/n/10.95 https : / / huggingface .
+ []
+
+[15] [16] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
+L3 programming layer <2026-01-19>
  ***********
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37612 strings out of 467871
- 903961 string characters out of 5428402
- 2073496 words of memory out of 5000000
- 65914 multiletter control sequences out of 15000+600000
- 640376 words of font info for 85 fonts, out of 8000000 for 9000
+ 37935 strings out of 467866
+ 917868 string characters out of 5418809
+ 2082260 words of memory out of 5000000
+ 66232 multiletter control sequences out of 15000+600000
+ 645931 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,9n,118p,1164b,1732s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ThinkPad Carbon X1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "c:\Users\ThinkPad Carbon X1\OneDrive\Desktop\Club de IA\CLEF 2026\Working Notes\CLEF-FinMMEval-Task3-2026\build\main.pdf" (4 pages, 218320 bytes).
+ 99i,14n,118p,1365b,1736s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (16 pages, 343179 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
+ 142 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
