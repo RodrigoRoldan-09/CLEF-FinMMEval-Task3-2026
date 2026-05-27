@@ -10,6 +10,12 @@ Aquí tienes una guía de estilo directa y estructurada para que puedas trabajar
 - Análisis de los resultados.
 - Perspectivas para trabajos futuros.
 
+Nos dicen lo del laboratorio:
+
+```
+You may prepare the system description, methodology, prompts/training setup, and experimental details now, and add final leaderboard results once they are released.
+```
+
 **Títulos, Autores y Metadatos**
 
 - **El título:** No debe contener saltos de línea. Además, todos los títulos deben mantener un estilo coherente (por ejemplo, o todos usan uso de mayúsculas enfatizadas o todos mantienen un estilo regular); no mezcles estilos.

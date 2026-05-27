@@ -33,6 +33,9 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Define keywords environment for article class
+\newenvironment{keywords}{\vspace{0.5em}\noindent\textbf{Keywords:} }{}%
+
 % Other Settings
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,7 +71,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Team ESCOM-IPN at CLEF 2026: Multimodal Financial Decision Making using LLMs, Chronos, and Auto-Reflective Prompt Routing}
+\title{Team Club GAIA - ESCOM at CLEF 2026: Multimodal Financial Decision Making via Compact GRPO Fine-Tuning of Quantized LLMs}
 \author[1]{Rodrigo}
 \author[1]{Jona}
 \author[1]{Baru}
@@ -81,40 +84,40 @@
     \maketitle
     
     \begin{abstract}
-    This Working Note describes the participation of the ESCOM-IPN team in Task 3 of the CLEF 2026 FinMMEval lab. We propose a structured multimodal pipeline to predict financial trading actions (BUY, HOLD, SELL) across diverse assets. Our system integrates daily news, numerical scalars, and temporal price sequences into a single coherent prompt for a quantized language model. We employ FinBERT for sentiment extraction and Chronos for directional forecasting, and we train the decision model via a compact two-stage pipeline combining supervised fine-tuning with Group Relative Policy Optimization (GRPO) under severe hardware constraints. The resulting agent achieves a cumulative return of 90.67\% on the validation set, and we provide a detailed forensic reconstruction of the training protocol, reward design, and model selection criteria.
+    This Working Note presents the participation of the Club GAIA--ESCOM team in Task~3 of the CLEF~2026 FinMMEval lab. We describe a multimodal pipeline that fuses textual news, temporal price sequences, and numerical scalars into a single coherent prompt for a quantized language model. The decision model, based on \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, is trained via a compact two-stage curriculum that combines supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO) under a strict 12\,GB VRAM budget. We detail the exact hyperparameters, the asymmetric reward matrix that breaks the Nash equilibrium of inaction, and the action-extraction mechanism that rescues truncated tokens. The resulting agent achieves a cumulative return of 90.67\% on the validation set, and we provide a complete forensic reconstruction of the training protocol so that independent researchers can reproduce the system on commodity hardware.
     \end{abstract}
 
-    \textbf{Keywords:} Financial Forecasting \sep Large Language Models \sep Sentiment Analysis \sep Prompt Engineering \sep Group Relative Policy Optimization \sep FinMMEval \sep CLEF 2026.
+    \begin{keywords}
+    Financial Forecasting \sep Large Language Models \sep Sentiment Analysis \sep Prompt Engineering \sep Group Relative Policy Optimization \sep FinMMEval \sep CLEF 2026
+    \end{keywords}
 
     \section{Introduction}
-    Financial decision-making requires the rapid synthesis of heterogeneous data sources. In the CLEF 2026 FinMMEval Lab (Task 3), participants are challenged to develop agents capable of processing numerical scalars, temporal price histories, and textual news to recommend trading actions (BUY, HOLD, SELL) for assets such as Bitcoin, Tesla, and Apple. 
+    Financial decision-making demands the rapid synthesis of heterogeneous signals---news sentiment, price trajectories, and technical indicators---into coherent trading actions. In the CLEF~2026 FinMMEval Lab (Task~3), participants are challenged to build agents that process exactly this multimodal mixture and output daily recommendations (BUY, HOLD, SELL) for assets ranging from cryptocurrencies to blue-chip equities.
 
-    While Large Language Models (LLMs) excel at natural language understanding, they traditionally struggle with raw numerical sequences and lack inherent contextual memory of past actions in simulated trading environments. To bridge this gap, our team developed a comprehensive multimodal pipeline. 
+    Large Language Models (LLMs) have shown impressive results in natural-language reasoning, yet their direct application to algorithmic trading is hindered by two obstacles. First, raw numerical time series lie outside the typical pre-training distribution of text-centric LLMs, so the model must be explicitly taught to interpret price patterns and volatility signals. Second, standard supervised fine-tuning can teach format compliance but cannot shape risk-sensitive behavior; reinforcement learning is required to align the model's outputs with financial reward signals such as Sharpe Ratio or Cumulative Return.
 
-    The core contribution of our work lies in a compact yet complete training pipeline that bridges raw multimodal data and structured LLM reasoning under strict hardware constraints. We detail the forensic reconstruction of the winning model---including the exact hyperparameters, reward function, and two-stage curriculum (supervised warm-up followed by GRPO)---so that the community can reproduce and extend our results on commodity GPUs.
+    Recent work has demonstrated the power of Group Relative Policy Optimization (GRPO) for financial reasoning, but existing systems rely on massive GPU clusters (e.g., 8$\times$H200 nodes) and generate thousands of tokens per decision, placing them far beyond the reach of most academic groups. Our work addresses this accessibility gap by designing a compact GRPO pipeline that operates within a 12\,GB VRAM budget. We use \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, feed it a structured multimodal prompt enriched with FinBERT sentiment and Chronos directional forecasts, and refine its outputs through a two-stage SFT-plus-GRPO curriculum.
+
+    The principal contribution of this Working Note is a complete forensic reconstruction of the training protocol that produced our winning model. We disclose every hyperparameter, the asymmetric reward matrix calibrated to break the Nash equilibrium of inaction, the token-rescue mechanism that prevents gradient collapse on truncated outputs, and the temporal-validation framework that guards against over-optimistic fast-mode metrics. By documenting these details, we enable independent researchers to reproduce institutional-grade RL fine-tuning on a single consumer GPU.
 
     \section{Related Work}
 
-    What mystery does the market conceal when algorithms attempt to unravel its pulse? Forged at the intersection of natural language processing and financial volatility, the state of the art reveals an ecosystem where semantics and chaos converge.
+    Financial sentiment extraction has matured significantly over the past decade. Early lexicon-based approaches have given way to deep pre-trained models such as FinBERT \cite{araci2019finbert} and the FinGPT family \cite{yang2023fingpt, zhang2023fingpt}, which capture subtle semantic cues in earnings reports, news headlines, and social media. These models demonstrate that domain-specific pre-training on financial corpora yields measurable gains over general-purpose language models when the task involves fine-grained sentiment classification or event detection.
 
-    Conceived to capture the heartbeat of the markets, recent literature exhibits a notable evolution in sentiment extraction. From subtle lexical oscillations to notable semantic deviations, foundational models such as FinBERT \cite{araci2019finbert} and the FinGPT family \cite{yang2023fingpt, zhang2023fingpt} have anticipated patterns that previously remained hidden in plain text.
+    The shift from unimodal text analysis to multimodal pipelines has been driven by the recognition that price dynamics, technical indicators, and textual signals are jointly informative. Recent benchmarks such as FinMultiTime \cite{xu2025finmultitime} and the daily repositories released through the FinMMEval initiative \cite{theFinAI2025} provide standardized environments in which researchers can evaluate how well models fuse heterogeneous inputs. Measuring the mutual dependence among these inputs remains a core theoretical challenge, and non-parametric estimators such as the $k$-nearest-neighbor approach to mutual information \cite{kraskov2004} continue to serve as robust baselines for feature relevance assessment.
 
-    Although it may seem straightforward, and despite the apparent linearity of numerical data, multimodal integration—surprisingly robust—demands rigorous evaluation frameworks. Driven by this necessity, the FinMultiTime dataset \cite{xu2025finmultitime} and the daily repositories of the FinMMEval arena \cite{theFinAI2025} unravel the convergence among news feeds, tabular data, and time series. Isolated in their own valley of complexity, classical theoretical approaches continue to illuminate the path; the estimation of mutual information \cite{kraskov2004} endures as an inescapable echo for measuring the dependence between these heterogeneous variables.
+    Beyond static prediction, the community has increasingly focused on autonomous trading agents that maintain internal memory and adapt to regime changes. Systems such as FINMEM \cite{finmem2024} and TradingAgents \cite{xiao2024tradingagents} structure hierarchical memories that allow an agent to reflect on past trades before committing to a new position. More recent multi-agent architectures, including TradingGroup \cite{tian2025tradinggroup} and P1GPT \cite{lu2025p1gpt}, extend this idea by letting specialized agents negotiate and debate individual decisions before a consensus action is emitted.
 
-    Structured under the paradigm of autonomous agents, modern trading systems have abandoned static decision-making to embrace dynamic workflows. With each test, with each adjustment, with each iteration, architectures like FINMEM \cite{finmem2024} and TradingAgents \cite{xiao2024tradingagents} structure hierarchical memories and cognitive profiles. Precision and chaos coexist within the same algorithm: recent systems—such as TradingGroup \cite{tian2025tradinggroup}, P1GPT \cite{lu2025p1gpt}, and frameworks evaluated in live environments \cite{qian2025whenagentstrade}—articulate multifaceted reflections where diverse agents negotiate, debate, and converge upon a single market action.
+    Training these agents at scale typically requires parameter-efficient fine-tuning and reinforcement-learning algorithms that can tolerate sparse, delayed rewards. Low-Rank Adaptation (LoRA) \cite{hu2022lora} reduces the memory footprint of full fine-tuning, while Proximal Policy Optimization (PPO) \cite{schulman2017ppo} has become the default workhorse for aligning language-model outputs with scalar reward signals. In the financial domain, Trading-R1 \cite{xiao2025tradingr1} and FLAG-TRADER \cite{xiong2025flagtrader} apply these techniques to trading decisions, and the success of reasoning-centric models such as DeepSeekMath \cite{shao2024deepseekmath} and DeepSeek-R1 \cite{deepseek2025deepseekr1} suggests that chain-of-thought reasoning can further improve decision quality in complex, high-stakes environments.
 
-    Subjected to the relentless demand of continuous adaptation, foundational models have turned to advanced optimization techniques. Low-rank adaptations (LoRA) \cite{hu2022lora} and proximal policy optimization (PPO) \cite{schulman2017ppo} have enabled systems like Trading-R1 \cite{xiao2025tradingr1} and FLAG-TRADER \cite{xiong2025flagtrader} to align their predictions with direct financial rewards. On this very frontier, pure reasoning engines—embodied in architectures like DeepSeekMath \cite{shao2024deepseekmath} and DeepSeek-R1 \cite{deepseek2025deepseekr1}—anticipate a future where complex inference dominates over mere classification.
-
-    Ultimately, the predictive machinery and the unpredictable heartbeat of the market converge. The tools and frameworks presented here do not merely analyze the past; they sculpt the intelligence required to unravel the pulse of events yet to come.
+    Our work sits at the intersection of these trends: we combine multimodal enrichment (FinBERT plus Chronos), structured chain-of-thought prompting, and compact GRPO fine-tuning under severe hardware constraints. Rather than proposing new architectural primitives, we demonstrate how careful reward engineering and a two-stage training curriculum can produce competitive trading agents on commodity GPUs, and we document every hyperparameter so that our results are fully reproducible.
 
     \section{Methodology}
 
     \subsection{System Architecture and Dataset Formulation}
-    The pipeline ingests raw price data, news text, and temporal sequences, enriches them with FinBERT sentiment and Chronos forecasts, and formats them into structured prompts for a quantized Phi-4-mini language model fine-tuned via GRPO.
-
-    The overall architecture transforms raw multimodal data into structured prompts for LLM inference. The pipeline operates as follows:
+    The pipeline ingests raw price data, news text, and temporal sequences, enriches them with FinBERT sentiment and Chronos forecasts, and formats them into structured prompts for a quantized Phi-4-mini language model fine-tuned via GRPO. The overall architecture transforms raw multimodal data into structured prompts for LLM inference through five sequential stages:
     \begin{enumerate}
-        \item \textbf{Data Ingestion:} Raw data from CLEF and Yahoo Finance is collected and unified, encompassing textual news, 10-K/10-Q filings, and technical scalars.
+        \item \textbf{Data Ingestion:} Raw data from Yahoo Finance and the CLEF daily\_news repository are collected and unified, encompassing textual news and reconstructed price scalars.
         \item \textbf{Temporal Encoding (Chronos):} Time-series data is processed to extract directional forecasts and confidence scores (see Section~\ref{sec:chronos}).
         \item \textbf{Sentiment Extraction (FinBERT):} Textual data is classified to extract sentiment probabilities and per-class distributions.
         \item \textbf{Prompt Orchestration:} The \textit{PromptBuilder} fuses all signals into a structured prompt for the decision model.
@@ -127,120 +130,42 @@
     \subsubsection{Data sources}
     \label{sec:datasources}
 
-    The primary source is the \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, publicly available through HuggingFace, comprising daily financial records for twelve assets over approximately 268 trading days, from August 1, 2025 to April 25, 2026. The covered assets are ten listed equities (TSLA, MSFT, AAPL, AMZN, GOOGL, META, NVDA, ADBE, BMRN, and MRNA) and two cryptocurrencies (BTC and ETH). Each daily record contains the closing price, a news summary of between 800 and 1\,500 words, SEC regulatory filings (forms 10-K and 10-Q) when available, a momentum label (bullish, neutral, or bearish), and the next-day price difference --- used exclusively as a reward signal during training and never exposed to the model as an input.
-
-    As a complementary source, historical prices from Yahoo Finance were used for a four-month warm-up period prior to the start of the dataset (April--July 2025). Their sole purpose was to ensure that indicators with long lookback windows --- the 60-day moving average regime signal and the 30-day rolling Sharpe ratio --- could be computed without producing missing values at the start of the main period. These data were not incorporated as training rows, as doing so would have created an imbalance across assets since only TSLA and BTC had extended historical data of this type.
-
-    Internally, the ingestion pipeline transforms the raw source into granular CSV files per asset (\texttt{\{asset\}\_texto.csv}, \texttt{\{asset\}\_escalares.csv}, and \texttt{\{asset\}\_temporal.csv}), which are then consumed by the \texttt{DatasetBuilder} to generate a unified Parquet file with SHA-256 hashing for cache invalidation.
+    The dataset is built from two complementary sources. The first is historical market data retrieved from Yahoo Finance for three cryptocurrency assets: Bitcoin (BTC), Ethereum (ETH), and Solana (SOL). These time series span several years and provide the closing prices, log-returns, and volatility estimates used during training and validation. The second source is the official \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, provided by the CLEF 2026 FinMMEval organizers, which contains daily news summaries and SEC regulatory filings (forms 10-K and 10-Q) for twelve assets. In our pipeline, the CLEF data are reserved exclusively for the out-of-sample test split and are never exposed to the model during training. Internally, the ingestion pipeline normalizes both sources into granular CSV files per asset (\texttt{\{asset\}\_texto.csv}, \texttt{\{asset\}\_escalares.csv}, and \texttt{\{asset\}\_temporal.csv}), which are then consumed by the \texttt{DatasetBuilder} to generate a unified Parquet file with SHA-256 hashing for cache invalidation.
 
     \subsubsection{Training subset used for the winning model}
     \label{sec:trainingsubset}
 
-    While the pipeline is capable of processing all twelve assets and their associated features, the winning model (\texttt{exp\_20260506\_085649\_254046}) was trained on a temporally filtered subset. The \texttt{DatasetBuilder} restricted the data to the most recent 12 months (360 days), yielding a contiguous window from 2024-02-07 to 2025-02-01, and retained only rows containing news ($\texttt{has\_news}=1$). This produced 1,082 training rows and 896 validation rows. The validation set contained exclusively YAHOO-sourced assets (\texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO}, and \texttt{SOL\_YAHOO}), while the out-of-sample CLEF assets (\texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF}, and \texttt{BMRN\_CLEF}) were reserved for the final test split and never seen during training.
+    The winning model (\texttt{exp\_20260506\_085649\_254046}) was trained on a temporally filtered subset of the Yahoo Finance data. The \texttt{DatasetBuilder} restricted the data to the most recent 12 months (360 days), yielding a contiguous window from 2024-02-07 to 2025-02-01, and retained only rows containing news ($\texttt{has\_news}=1$). This produced 1,082 training rows and 896 validation rows. The validation set contained exclusively YAHOO-sourced assets (\texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO}, and \texttt{SOL\_YAHOO}), while the out-of-sample CLEF assets (\texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF}, and \texttt{BMRN\_CLEF}) were reserved for the final test split and never seen during training. SEC filings, although present in the raw CLEF dataset, were not integrated into the prompt of the winning model due to time constraints.
 
-    \subsubsection{Feature engineering}
-    \label{sec:features}
+    \subsubsection{Enrichment and dataset columns}
+    \label{sec:enrichment}
 
-    A total of 43 candidate features were constructed across six categories. The common design criterion is the absence of temporal information leakage: every feature at time~$t$ uses only information available up to that point.
-
-    \paragraph{Returns and trend.}
-    Log returns are computed at one, three, and five days. The price position relative to its 10-, 20-, and 50-day moving averages is expressed as a percentage deviation. A binary market regime signal takes value $+1$ when the price exceeds the 60-day moving average (bullish regime) and $-1$ otherwise.
-
-    \paragraph{Volatility.}
-    Annualized realized volatility is computed over windows of 5, 10, 20, and 30 days. Two volatility ratios --- $\text{vol}_{5d}/\text{vol}_{20d}$ and $\text{vol}_{10d}/\text{vol}_{30d}$ --- detect the expansion or contraction of short-term volatility relative to longer baseline levels, a signal particularly relevant for cryptocurrencies. A binary volatility regime flag activates when the 10-day volatility exceeds the historical 70th percentile.
-
-    \paragraph{Technical oscillators and MACD.}
-    The RSI is computed at periods of 9 and 14 days and normalized to $[0, 1]$. Bollinger Bands contribute the percentage position of the price within the bands and the relative band width. MACD is decomposed into line, signal, and histogram components; the histogram is particularly useful for detecting imminent trend crossovers.
-
-    \paragraph{Agent internal state.}
-    The rolling Sharpe ratio at 30 and 10 days reflects the risk-adjusted performance of recent decisions. State confidence accumulates consecutive trading days without a significant price shock (return exceeding $3\sigma$), normalized to $[0, 1]$, following the FINMEM framework~\cite{finmem2024}.
-
-    \paragraph{Text-derived features.}
-    Sentiment analysis is performed with ProsusAI/FinBERT~\cite{araci2019finbert}, a model specialized in financial texts. Since news summaries frequently exceed the 512-token limit, each document is split into 450-token chunks. Scores are averaged across chunks with a weight of $1.5\times$ applied to the first, as the introductory paragraph tends to concentrate the dominant sentiment signal. For regulatory filings (10-K and 10-Q), the same chunked procedure is applied; since filings appear at most once per quarter, the computed score is propagated forward using last observation carried forward (LOCF), and the number of days since the last available filing --- normalized by 90 --- is included to model the temporal decay of filing relevance.
-
-    \subsubsection{Feature selection}
-    \label{sec:selection}
-
-    Selection was performed jointly across all twelve assets (approximately 3\,200 observations), providing more reliable mutual information estimates than per-asset analysis. The process consists of three sequential steps.
-
-    \textbf{(1) Spearman correlation filter.} Feature pairs with an absolute Spearman rank correlation coefficient exceeding 0.85 were identified. Spearman was preferred over Pearson because financial features exhibit asymmetric distributions and non-linear relationships. From each highly correlated pair, the feature with lower mutual information with respect to the target was discarded.
-
-    \textbf{(2) Mutual information filter.} Mutual information between each feature and the binary target --- next-day price direction --- was estimated using the $k$-nearest neighbors method with $k=5$~\cite{kraskov2004}. Features scoring below 0.005 were discarded.
-
-    \textbf{(3) Temporal stability.} A two-sample Kolmogorov-Smirnov test was applied between the feature distributions of the first and last temporal folds. Features with KS statistic exceeding 0.30 were flagged for review, as distributional drift in financial series may reflect genuine structural regime changes rather than data quality issues. The analysis was run independently for equities and cryptocurrencies.
-
-    \subsubsection{Final feature sets}
-    \label{sec:finalfeatures}
-
-    After selection, 16 features were retained for equities and 16 for cryptocurrencies. Tables~\ref{tab:features_equity} and~\ref{tab:features_crypto} detail the final sets. Both share a core of ten common features --- returns, news sentiment, encoded momentum, and basic metadata --- and differ in the technical signals with the highest predictive power for each asset class.
+    Rather than engineering an extensive panel of handcrafted technical indicators, the winning model relies on a lightweight enrichment layer that feeds directly into the prompt. For every row with available news, the \texttt{SentimentExtractor} passes the text through FinBERT to obtain a sentiment label, a confidence score, and the per-class probability distribution. Concurrently, the \texttt{PriceForecaster} queries Chronos on the historical price sequence to produce a directional forecast (up, down, or neutral) together with its confidence. These enriched signals, together with the raw momentum flag, the reconstructed closing price, and the next-day log-return (used exclusively as a reward signal), form the columns of the Parquet file consumed by the trainer. Table~\ref{tab:dataset_columns} lists the most relevant fields.
 
     \begin{table}[H]
     \centering
-    \begin{tabular}{llll}
+    \begin{tabular}{lll}
     \toprule
-    \textbf{Feature} & \textbf{Range} & \textbf{MI} & \textbf{Rationale} \\
+    \textbf{Column} & \textbf{Type} & \textbf{Description} \\
     \midrule
-    \texttt{asset\_type}           & $\{0, 1\}$       & ---    & Asset class identifier \\
-    \texttt{day\_of\_week}         & $[0, 6]$         & ---    & Calendar effects \\
-    \texttt{month}                 & $[1, 12]$        & ---    & Monthly seasonality \\
-    \texttt{has\_news}             & $\{0, 1\}$       & ---    & News availability \\
-    \texttt{has\_momentum}         & $\{0, 0.5, 1\}$  & ---    & Momentum data quality \\
-    \texttt{finbert\_news\_full}   & $[-1, 1]$        & ---    & Sentiment (full text) \\
-    \texttt{finbert\_news\_intro}  & $[-1, 1]$        & ---    & Sentiment (intro paragraph) \\
-    \texttt{momentum\_encoded}     & $\{-1, 0, 1\}$   & ---    & Momentum direction \\
-    \texttt{log\_return\_1d}       & $[-0.5, 0.5]$    & ---    & Base directional signal \\
-    \texttt{log\_return\_3d}       & $[-0.8, 0.8]$    & ---    & Short-term trend \\
-    \texttt{state\_confidence}     & $[0, 1]$         & Med.   & Context reliability \\
-    \texttt{volatility\_20d}       & $[0, 3]$         & Med.   & Asset risk level \\
-    \texttt{rsi\_9}                & $[0, 1]$         & High   & Overbought/oversold (fast) \\
-    \texttt{rsi\_14}               & $[0, 1]$         & High   & Overbought/oversold (standard) \\
-    \texttt{news\_volume\_proxy}   & $[0, 1]$         & Med.   & Market attention \\
-    \texttt{momentum\_strength}    & $[0, 5]$         & Med.   & Vol.-adjusted movement strength \\
+    \texttt{date} & str & Trading date (YYYY-MM-DD) \\
+    \texttt{asset} / \texttt{symbol} & str & Asset identifier \\
+    \texttt{source} & str & \texttt{yahoo} or \texttt{clef} \\
+    \texttt{price\_close} & float & Reconstructed closing price \\
+    \texttt{momentum} & int & Momentum signal ($-1,0,1$) \\
+    \texttt{news} & str & Concatenated news text \\
+    \texttt{sentiment\_label} & str & FinBERT class (positive/negative/neutral) \\
+    \texttt{sentiment\_score} & float & FinBERT confidence \\
+    \texttt{chronos\_direction} & str & Chronos forecast (up/down/neutral) \\
+    \texttt{chronos\_confidence} & float & Chronos confidence \\
+    \texttt{log\_return\_t1} & float & Next-day log-return (target) \\
+    \texttt{ground\_truth} & str & BUY / HOLD / SELL label \\
+    \texttt{split} & str & train / val / test \\
     \bottomrule
     \end{tabular}
-    \caption{Final selected features --- Equities.}
-    \label{tab:features_equity}
+    \caption{Key columns of the generated dataset consumed by the model.}
+    \label{tab:dataset_columns}
     \end{table}
-
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{llll}
-    \toprule
-    \textbf{Feature} & \textbf{Range} & \textbf{MI} & \textbf{Rationale} \\
-    \midrule
-    \texttt{asset\_type}           & $\{0, 1\}$       & ---    & Asset class identifier \\
-    \texttt{day\_of\_week}         & $[0, 6]$         & ---    & Calendar effects (incl. weekends) \\
-    \texttt{month}                 & $[1, 12]$        & ---    & Monthly seasonality \\
-    \texttt{has\_news}             & $\{0, 1\}$       & ---    & News availability \\
-    \texttt{has\_momentum}         & $\{0, 0.5, 1\}$  & ---    & Momentum data quality \\
-    \texttt{finbert\_news\_full}   & $[-1, 1]$        & ---    & Sentiment (full text) \\
-    \texttt{finbert\_news\_intro}  & $[-1, 1]$        & ---    & Sentiment (intro paragraph) \\
-    \texttt{momentum\_encoded}     & $\{-1, 0, 1\}$   & ---    & Momentum direction \\
-    \texttt{log\_return\_1d}       & $[-0.5, 0.5]$    & ---    & Base directional signal \\
-    \texttt{log\_return\_3d}       & $[-0.8, 0.8]$    & ---    & Short-term trend \\
-    \texttt{sr\_30d}               & $[-3, 3]$        & High   & Risk-adjusted recent performance \\
-    \texttt{price\_vs\_ma\_10}     & $[-30, 30]\%$    & High   & Short-term relative position \\
-    \texttt{rsi\_14}               & $[0, 1]$         & High   & Overbought/oversold \\
-    \texttt{vol\_ratio\_5\_20}     & $[0.3, 4.0]$     & Med.   & Volatility expansion \\
-    \texttt{state\_confidence}     & $[0, 1]$         & Med.   & Context reliability \\
-    \texttt{vol\_ratio\_10\_30}    & $[0.3, 4.0]$     & Med.   & Volatility regime \\
-    \bottomrule
-    \end{tabular}
-    \caption{Final selected features --- Cryptocurrencies.}
-    \label{tab:features_crypto}
-    \end{table}
-
-    \subsubsection{Text treatment}
-    \label{sec:text}
-
-    News summaries and regulatory filings are stored separately from the numerical features and passed directly to the LLM as natural language. This decision rests on three observations.
-
-    First, FinBERT sentiment scores obtained near-zero mutual information values in both asset classes. The dataset's texts are pre-processed summaries that frequently contain sentiment-neutralizing language --- phrases such as \textit{``overall market sentiment remains neutral''} cause FinBERT to underestimate the actual directional signal. Compressing 800--1\,500 words into a single scalar discards the causal and entity-specific information that gives the text its predictive value. Second, large language models are significantly more capable of extracting actionable signals from structured financial prose than scalar sentiment classifiers~\cite{zhang2023fingpt}. Third, keeping the text separate preserves flexibility with respect to the target model's context window.
-
-    FinBERT scores are nonetheless retained in the numerical feature set as supplementary signals, not as the primary sentiment input.
-
-    % References are in refs.bib — loaded via \addbibresource in preamble
-
     \subsection{Temporal Encoding: The Chronos Module}\label{sec:chronos}
     To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos} (\texttt{amazon/chronos-t5-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
 
@@ -264,9 +189,9 @@
         \Delta = \frac{\hat{p}_{t+1} - p_t}{p_t}
     \end{equation}
 
-    A symmetric threshold $\tau = 0.001$ ($\pm$0.1\%) governs the classification into three mutually exclusive categories:
+    A symmetric threshold $\tau = 0.001$ ($\pm$0.1\%) governs the classification into three mutually exclusive categories, as shown in Equation~\ref{eq:chronos_class}. This threshold was selected to filter out negligible price fluctuations below the level of market noise, ensuring that the \textsc{hold} class captures genuine price stability rather than prediction imprecision. Once inference is complete, the module computes both global and per-asset evaluation metrics; global performance is assessed via accuracy and macro-averaged F1, while per-asset metrics identify which temporal patterns are most amenable to the model's forecasting strategy. The complete predictions are persisted to \texttt{predictions.csv} and \texttt{metrics.csv}, serving as structured inputs to the downstream prompt builder.
 
-    \begin{equation}
+    \begin{equation}\label{eq:chronos_class}
         \text{class} =
         \begin{cases}
             1 & \text{if } \Delta > \tau \quad (\textsc{up}) \\
@@ -275,15 +200,8 @@
         \end{cases}
     \end{equation}
 
-    This threshold was selected to filter out negligible price fluctuations below the level of market noise, ensuring that the \textsc{hold} class captures genuine price stability rather than prediction imprecision.
-
-    \subsubsection{Evaluation and Output}
-    Upon completing inference over the full dataset, the module computes both global and per-asset evaluation metrics. Global performance is assessed via accuracy, macro-averaged F1, and weighted F1 scores, while per-asset metrics allow identification of assets whose temporal price patterns are more or less amenable to the model's forecasting strategy. The complete predictions and metrics are persisted to \texttt{predictions.csv} and \texttt{metrics.csv} respectively, serving as structured inputs to subsequent stages of the pipeline.
-
     \subsection{Multimodal Sentiment Extraction}
-    The sentiment enrichment is handled by a dedicated \texttt{SentimentExtractor} module that processes unstructured financial texts and quantifies them into actionable numerical probabilities.
-
-    For every row with available news ($\texttt{has\_news}=1$), the module passes the news text through \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora. To avoid competing with the GPU used for training, inference is executed on CPU (\texttt{device=-1}). The text is truncated to a maximum of 512 tokens, and the model outputs logits through a 3-class classification head. Applying a softmax function, we extract the probabilities for each class:
+    The sentiment enrichment is handled by a dedicated \texttt{SentimentExtractor} module that processes unstructured financial texts and quantifies them into actionable numerical probabilities. For every row with available news ($\texttt{has\_news}=1$), the module passes the text through \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora, and extracts a 3-class probability distribution through a softmax layer:
     
     \begin{equation}
         P(C_i | x) = \frac{e^{z_i}}{\sum_{j=1}^{3} e^{z_j}}
@@ -346,7 +264,7 @@
 
     \paragraph{Ground Truth Signal Generation}
 
-    The ground truth labels for supervised warm-up and reward computation are derived from a volatility-normalized momentum signal: $\text{signal} = \text{log\_return\_t1} / \text{rolling\_std}(20)$. The classification thresholds, optimized via Optuna TPE with 3 trials, partition the distribution into Buy (top 35.82\%), Sell (bottom 19.18\%), and Hold (remaining 45\%). The dataset is temporally filtered to the most recent 12 months (360 days), yielding 1,082 training rows and 896 validation rows spanning from 2024-02-07 to 2025-02-01. Only rows containing news are retained ($\texttt{has\_news}=1$), ensuring that each example presents a multimodal decision task combining technical indicators, sentiment, and market news.
+    The ground truth labels for supervised warm-up and reward computation are derived from a volatility-normalized momentum signal: $\text{signal} = \text{log\_return\_t1} / \text{rolling\_std}(20)$. The classification thresholds, optimized via Optuna TPE with 3 trials, partition the distribution into Buy (top 35.82\%), Sell (bottom 19.18\%), and Hold (remaining 45\%). The dataset construction and filtering criteria are described in Section~\ref{sec:trainingsubset}.
 
     \subsubsection{Optuna Search and Experimental Protocol}
 
@@ -401,11 +319,7 @@
 
     \subsubsection{Validation Protocol}
 
-    Validation is conducted under two distinct regimes to balance training throughput against statistical robustness. During training, a fast-mode evaluation assesses performance on the last temporal fold only, limited to 100 rows, providing rapid feedback for Optuna trial selection. After training completion, a full validation is executed over all 896 validation rows divided into three contiguous temporal folds: Fold 0 (2024-02-07 to 2024-06-05, 360 rows), Fold 1 (2024-06-06 to 2024-10-03, 294 rows), and Fold 2 (2024-10-04 to 2025-02-01, 242 rows). For each fold, actions are simulated with weights $w_t \in \{+1, 0, -1\}$ corresponding to BUY, HOLD, and SELL, and daily returns are computed as $r_t = w_t \times (P_t - P_{t-1}) / P_{t-1}$. From these returns, we derive Cumulative Return (CR), Sharpe Ratio (SR), Maximum Drawdown (MDD), Accuracy, Win Rate, and Profit Factor. The aggregate fitness score is defined as:
-    \begin{equation}
-    \text{fitness} = \text{median\_SR} - \max(0, \text{MDD\_worst} - 0.20) \times 10,
-    \end{equation}
-    which severely penalizes any drawdown exceeding the 20\% Hall of Fame threshold.
+    Validation is conducted under two distinct regimes. During training, a fast-mode evaluation assesses performance on the last temporal fold only, limited to 100 rows, providing rapid feedback for Optuna trial selection. After training completion, a full validation is executed over all 896 validation rows divided into the three contiguous temporal folds described in Section~\ref{sec:trainingsubset}. For each fold, actions are simulated with weights $w_t \in \{+1, 0, -1\}$ and daily returns are computed as $r_t = w_t \times (P_t - P_{t-1}) / P_{t-1}$. The aggregate fitness score and the definitions of all financial metrics are given in Table~\ref{tab:metrics_reference}.
 
     \paragraph{Validation assets}
 
@@ -451,7 +365,7 @@
     \begin{table}[htbp]
     \centering
     \small
-    \caption{Full Validation Results — 9 Finalists}
+    \caption{Full Validation Results --- Selected Finalists}
     \label{tab:validation_results}
     \begin{tabular}{lccccccc}
     \hline
@@ -470,22 +384,15 @@
     \end{tabular}
     \end{table}
 
-    The model \texttt{085649\_254046}, which serves the current inference endpoint, achieved a Cumulative Return of 90.67\%, the highest among all candidates, alongside a Sharpe Ratio of 2.9117 and an accuracy of 38.31\%. However, its Maximum Drawdown of 48.05\% far exceeds the 20\% safety threshold, resulting in a suppressed fitness score of 0.1069.
+    Table~\ref{tab:validation_results} reveals a sharp tension between risk-adjusted efficiency and absolute profitability. Model \texttt{111504\_33de19} attained the highest fitness (1.974) with an MDD of only 17.48\%, comfortably within the Hall of Fame threshold, and exhibited superior win rate (58.14\%) and accuracy (41.85\%). Under classical portfolio theory, this would be the preferred candidate. In contrast, our deployed model \texttt{085649\_254046} achieves the highest Cumulative Return (90.67\%) at the cost of a 48.05\% drawdown---a profile closer to high-conviction discretionary trading than to institutional risk constraints.
 
-    In sharp contrast, model \texttt{111504\_33de19} attained a fitness of 1.974---18.5 times higher---with an MDD of 17.48\%, comfortably within the Hall of Fame threshold. This model also exhibited a superior win rate (58.14\%) and accuracy (41.85\%), making it objectively superior under virtually all risk-adjusted criteria.
+    The final selection of \texttt{085649\_254046} was a manual, deliberate decision based on the competition's primary evaluation metric: Cumulative Return. The existence of \texttt{111504\_33de19} demonstrates that our training pipeline is capable of producing both risk-averse and high-return profiles, and that the selection criterion, not the learning algorithm, drives the ultimate risk-return posture of the deployed agent.
 
-    \subsubsection{Analysis and Model Selection Trade-off}
-
-    The discrepancy between the highest-fitness model and the deployed model illustrates a fundamental tension in financial agent design: the conflict between risk-adjusted efficiency and absolute profitability. Model \texttt{111504\_33de19} represents the prudent choice under classical portfolio theory, delivering a Sharpe Ratio of 1.974 with capital preservation (MDD$<$20\%). It embodies the risk-averse profile advocated by systems such as TradingGroup \cite{tian2025tradinggroup} and FINMEM \cite{finmem2024}, which emphasize dynamic risk management and survival across market regimes. Conversely, model \texttt{085649\_254046} sacrifices downside protection for asymmetric upside capture, yielding a 90.67\% cumulative return at the cost of a 48.05\% drawdown---a profile closer to high-conviction discretionary trading than to institutional risk constraints.
-
-    The final selection of \texttt{085649\_254046} was a manual, deliberate decision based on the competition's primary evaluation metric: Cumulative Return. While this choice acknowledges the model's vulnerability to severe capital erosion---as evidenced by its failure to pass the automatic Hall of Fame criteria---it also reflects the reality that in zero-sum or tournament-style evaluation environments, raw alpha generation often outweighs Sharpe-based efficiency. The existence of \texttt{111504\_33de19} demonstrates that our training pipeline is capable of producing both profiles, and that the selection criterion, not the learning algorithm, drives the ultimate risk-return posture of the deployed agent.
-
-    Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% for the deployed model was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
-
+    Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
     \section{Conclusion}
     In this Working Note, we presented a compact multimodal pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. Our system integrates FinBERT sentiment extraction, Chronos directional forecasting, and a structured prompt template into a single GRPO-trained agent that operates within a 12\,GB VRAM budget. The forensic reconstruction of the winning model---including the exact hyperparameters, asymmetric reward matrix, and two-stage SFT-plus-GRPO curriculum---constitutes the primary contribution of this note, as it enables independent researchers to reproduce institutional-grade RL fine-tuning on commodity hardware.
 
-    \textbf{Future work.} Several extensions of the current pipeline were designed but not integrated into the winning model due to time constraints. These include: (i) a broader feature-engineering layer with 43 candidate signals, Spearman filtering, and mutual-information selection; (ii) a tripartite temporal memory (rolling buffer, self-reflection, and top-$K$ retrieval) for the \textit{PromptBuilder}; (iii) a dual-LLM pipeline with semantic FIFO queuing, in which a lightweight summarizer compresses historical trading days before a heavier decision model renders the final action; (iv) walk-forward temporal validation to replace the current fixed train/val split; and (v) automated model selection driven by the risk-adjusted fitness metric rather than manual selection based on cumulative return.
+    \textbf{Future work.} Several extensions of the current pipeline were designed but not integrated into the winning model due to time constraints. The most immediate extension is a broader feature-engineering layer with 43 candidate signals, Spearman correlation filtering, and mutual-information selection, which would allow the model to exploit a richer set of technical indicators. Another direction is the integration of a tripartite temporal memory---combining a rolling buffer, self-reflection, and top-$K$ retrieval---into the \textit{PromptBuilder}, so that the agent can learn from its own trading history in real time. A third avenue involves a dual-LLM architecture with semantic FIFO queuing, in which a lightweight summarizer compresses historical trading days before a heavier reasoning model renders the final action. On the methodological side, walk-forward temporal validation should replace the current fixed train/val split to obtain unbiased estimates of out-of-sample performance. Finally, model selection should be automated and driven by the risk-adjusted fitness metric rather than by manual preference for cumulative return, ensuring that the deployed agent respects the drawdown constraints required by the Hall of Fame.
 
     \begin{acknowledgments}
     We extend our gratitude to the Artificial Intelligence Club (GAIA) at ESCOM-IPN for their continuous support and computational resources.
