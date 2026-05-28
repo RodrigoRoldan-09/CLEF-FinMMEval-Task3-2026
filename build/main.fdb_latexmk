@@ -1,19 +1,20 @@
 # Fdb version 4
-["biber build/main"] 0 "build/main.bcf" "build/main.bbl" "build/main" 1779985655.44304 0
-  "build/main.bcf" 0 -1 0 "pdflatex"
-  "references.bib" 1779985479 4819 77f70379d192fc3e89960d51d923cc59 ""
-  "refs.bib" 0 -1 0 ""
+["biber build/main"] 1779984133.63019 "build/main.bcf" "build/main.bbl" "build/main" 1779985153.01174 0
+  "build/main.bcf" 1779985152 109896 4fd30593124a01c8e1a3385a7cd7caad "pdflatex"
+  "refs.bib" 1779981898 6211 5ae75e820ddada81fb336cc78251f42c ""
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1779985648.00911 "c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex" "build/main.pdf" "main" 1779985655.44545 2
+["pdflatex"] 1779985145.85665 "c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex" "build/main.pdf" "main" 1779985153.01378 0
   "C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779518266 268224 9ea4bcb2136fd5f526f0188dd95f182d ""
   "C:/Users/Joni/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0600.pk" 1779981377 7284 528afc0cdfc7e19597287d0730680a08 ""
   "C:/Users/Joni/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1779981379 9292 5edcd5682ed16e3223bc3a219b4ba4cc ""
+  "C:/Users/Joni/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1771391698 12668 0d3736a243fc89b8f245980a5a4ac26d ""
   "C:/Users/Joni/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1771173126 13333378 edfb716843d53711e44ab96e84a52267 ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm0600.tfm" 993062506 1456 d21918d95ca20f07aa266303b9a0a14c ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm0800.tfm" 993062506 1444 e35ead393df86aae37b5564284d9aa05 ""
+  "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -272,11 +273,12 @@
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1750428951 2269 2de6c7a5fd634dfef00a960544463a38 ""
   "C:/Users/Joni/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1750428951 20785 198a9cb2e04238d92c320d0d9edbd76a ""
-  "build/main.aux" 1779985653 9562 aa6cae1b87c76adb21bddc4346fbd8ae "pdflatex"
-  "build/main.bbl" 1779985479 38210 36fde0b36634b149fd893fa7abd96206 "biber build/main"
-  "c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex" 1779985635 5274 4b0a5d752419edd62c3505478d1b27de ""
-  "lib/chapter1.tex" 1779985479 65611 97b17ca958e32f7a86cdc68779156864 ""
-  "main.tex" 1779985635 5274 4b0a5d752419edd62c3505478d1b27de ""
+  "build/main.aux" 1779985152 10906 4312799dd0174ce1ceb8edef60aaefbf "pdflatex"
+  "build/main.bbl" 1779984136 38150 22f966389245905af7c12101bc777789 "biber build/main"
+  "build/main.run.xml" 1779985152 2396 938f4cf68218d122bbffc682032d60b8 "pdflatex"
+  "c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex" 1779984985 5231 eca9d7966fcd0ec5043ed1b137551e6b ""
+  "lib/chapter1.tex" 1779985142 65611 97b17ca958e32f7a86cdc68779156864 ""
+  "main.tex" 1779984985 5231 eca9d7966fcd0ec5043ed1b137551e6b ""
   (generated)
   "build/main.aux"
   "build/main.bcf"

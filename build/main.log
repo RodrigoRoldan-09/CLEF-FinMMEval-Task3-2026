@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  28 MAY 2026 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  28 MAY 2026 10:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -920,20 +920,20 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1003,116 +1003,48 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.bbl
 
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                yu2024finmem
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
 
-c:/Users/Joni/Documents/Programas/CLEF-FinMMEval-Task3-2026/main.tex:74: Package biblatex Error: File 'main.bbl' not created by biblatex.
-
-See the biblatex package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 \begin{document}
-                     ^^M
-This file was apparently not created by biblatex. Rename it or
-move it to a location were TeX will not find it. If this error
-persists, consider redefining \blxauxsuffix.See the biblatex
-manual for details.
-
-Package biblatex Info: Reference section=0 on input line 74.
-Package biblatex Info: Reference segment=0 on input line 74.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
-(C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+)
+Package biblatex Info: Reference section=0 on input line 84.
+Package biblatex Info: Reference segment=0 on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (lib/chapter1.tex
-
-LaTeX Warning: Citation 'theFinAI2025' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation 'yang2023fingpt' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation 'zhang2023fingpt' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'araci2019finbert' on page 1 undefined on input line 6.
-
-
-LaTeX Warning: Citation 'ansari2024chronos' on page 1 undefined on input line 6.
-
-[1
+) (lib/chapter1.tex [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
 {C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-LaTeX Warning: Citation 'xu2025finmultitime' on page 2 undefined on input line 14.
-
-
-LaTeX Warning: Citation 'qian2025whenagentstrade' on page 2 undefined on input line 14.
-
-
 LaTeX Warning: Citation 'yu2024finmem' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'xiao2024tradingagents' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'tian2025tradinggroup' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'lu2025p1gpt' on page 2 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'hu2022lora' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'schulman2017ppo' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'xiong2025flagtrader' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'shao2024deepseekmath' on page 2 undefined on input line 18.
-
-
-LaTeX Warning: Citation 'deepseek2025deepseekr1' on page 2 undefined on input line 18.
 
 
 Overfull \hbox (21.65135pt too wide) in paragraph at lines 18--19
 []\OT1/cmr/m/n/10.95 Training these agents at scale typ-i-cally re-quires parameter-efficient fine-tuning and reinforcement-
  []
 
-
-Overfull \hbox (20.76764pt too wide) in paragraph at lines 18--19
-\OT1/cmr/m/n/10.95 out-puts with scalar re-ward sig-nals. In the fi-nan-cial do-main, FLAG-TRADER []
- []
-
 [2]
-
-LaTeX Warning: Reference `sec:chronos' on page 3 undefined on input line 26.
-
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 30.
 LaTeX Font Info:    No file OMScmtt.fd. on input line 30.
+
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 30.
 
 [3]
-
-LaTeX Warning: Reference `tab:datasets_used' on page 4 undefined on input line 44.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []\OT1/cmr/m/n/10 Yahoo Fi-
  []
@@ -1147,27 +1079,12 @@ Overfull \hbox (13.7845pt too wide) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10.95 ETH[]YAHOO\OT1/cmr/m/n/10.95 , and \OT1/cmtt/m/n/10.95 SOL[]YAHOO\OT1/cmr/m/n/10.95 ), while the out-of-sample CLEF as-sets (\OT1/cmtt/m/n/10.95 BTC[]CLEF\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 ETH[]CLEF\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 TSLA[]CLEF\OT1/cmr/m/n/10.95 ,
  []
 
-[4]
-
-LaTeX Warning: Reference `tab:dataset_columns' on page 5 undefined on input line 73.
-
-[5]
-
-LaTeX Warning: Citation 'ansari2024chronos' on page 6 undefined on input line 110.
-
-
+[4] [5]
 Overfull \hbox (8.45966pt too wide) in paragraph at lines 120--121
 \OT1/cmr/m/n/10.95 Chronos out-puts a prob-a-bilis-tic fore-cast ten-sor of shape $([] \OMS/cmtt/m/n/10.95 ^^B [] ^^B []\OT1/cmr/m/n/10.95 )$,
  []
 
-
-LaTeX Warning: Reference `eq:chronos_class' on page 6 undefined on input line 132.
-
 [6]
-
-LaTeX Warning: Citation 'araci2019finbert' on page 7 undefined on input line 144.
-
-
 Overfull \hbox (69.30618pt too wide) in paragraph at lines 150--151
 []\OT1/cmr/m/n/10.95 where $\OML/cmm/m/it/10.95 C \OMS/cmtt/m/n/10.95 2 f[]\OML/cmm/m/it/10.95 ; []; []\OMS/cmtt/m/n/10.95 g$\OT1/cmr/m/n/10.95 . The out-put is cached per as-set in \OT1/cmtt/m/n/10.95 models/\OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 asset\OMS/cmtt/m/n/10.95 g[]\OT1/cmtt/m/n/10.95 sentiment.csv
  []
@@ -1175,82 +1092,16 @@ Overfull \hbox (69.30618pt too wide) in paragraph at lines 150--151
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 155.
 [7]
-
-LaTeX Warning: Citation 'shao2024deepseekmath' on page 8 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'deepseek2025deepseekr1' on page 8 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 8 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'xiong2025flagtrader' on page 8 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'schulman2017ppo' on page 8 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'hu2022lora' on page 8 undefined on input line 172.
-
-
 Overfull \hbox (31.39331pt too wide) in paragraph at lines 172--173
  \OT1/cmr/bx/n/10.95 Base Model and Quan-ti-za-tion Strat-egy[] \OT1/cmr/m/n/10.95 All ex-per-i-ments uti-lize \OT1/cmtt/m/n/10.95 unsloth/Phi-4-mini-instruct
  []
 
 [8]
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 9 undefined on input line 181.
-
-
-LaTeX Warning: Reference `tab:grpo_config' on page 9 undefined on input line 187.
-
-[9]
-
-LaTeX Warning: Reference `sec:trainingsubset' on page 10 undefined on input line 217.
-
-
 Overfull \hbox (94.92206pt too wide) in paragraph at lines 217--218
 \OT1/cmr/m/n/10.95 ward com-pu-ta-tion are de-rived from a volatility-normalized mo-men-tum sig-nal: $[] = []\OML/cmm/m/it/10.95 =[]\OT1/cmr/m/n/10.95 (20)$.
  []
 
-
-LaTeX Warning: Reference `tab:seed_config' on page 10 undefined on input line 225.
-
-[10]
-
-LaTeX Warning: Reference `tab:optuna_trials' on page 11 undefined on input line 245.
-
-
-LaTeX Warning: Reference `tab:reward_matrix' on page 11 undefined on input line 273.
-
-[11]
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 12 undefined on input line 290.
-
-
-Overfull \hbox (5.59065pt too wide) in paragraph at lines 290--291
-[]\OT1/cmr/m/n/10.95 Our key adap-ta-tion over the asym-met-ric ma-trix pro-posed by Trading-R1 []
- []
-
-
-LaTeX Warning: Citation 'xiao2025tradingr1' on page 12 undefined on input line 294.
-
-
-LaTeX Warning: Reference `tab:reward_matrix' on page 12 undefined on input line 308.
-
-[12]
-
-LaTeX Warning: Reference `sec:trainingsubset' on page 13 undefined on input line 323.
-
-
-LaTeX Warning: Reference `tab:metrics_reference' on page 13 undefined on input line 323.
-
-[13]
-
-LaTeX Warning: Reference `tab:validation_results' on page 14 undefined on input line 338.
-
-
+[9] [10] [11] [12] [13]
 Underfull \hbox (badness 1577) in paragraph at lines 349--350
 \OT1/cmr/m/n/10 tive; higher is bet-ter; se-
  []
@@ -1335,44 +1186,17 @@ Underfull \hbox (badness 5893) in paragraph at lines 361--362
 \OT1/cmr/m/n/10 Inf/undefined in-di-cates no
  []
 
-
-LaTeX Warning: Reference `tab:validation_results' on page 14 undefined on input line 388.
-
-[14] [15] [16]
-
-lib/chapter1.tex:426: LaTeX Error: Environment acknowledgments undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.426     \begin{acknowledgments}
-                                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+[14] [15] [16])
+Overfull \hbox (20.4919pt too wide) in paragraph at lines 98--98
+[]\OT1/cmr/m/n/10.95 TheFinAI, \OT1/cmr/m/it/10.95 daily[]news: Daily Fi-nan-cial News Dataset for Fin-M-MEval\OT1/cmr/m/n/10.95 , $\OT1/cmtt/m/n/10.95 https : / / huggingface .
+ []
 
 
-lib/chapter1.tex:428: LaTeX Error: \begin{document} ended by \end{acknowledgments}.
+Overfull \hbox (29.69589pt too wide) in paragraph at lines 98--98
+\OT1/cmr/m/n/10.95 struc-tion Tun-ing of General-Purpose Large Lan-guage Mod-els," \OT1/cmr/m/it/10.95 arXiv preprint arXiv:2306.12659\OT1/cmr/m/n/10.95 ,
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.428     \end{acknowledgments}
-                               
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[17])
-
-LaTeX Warning: Empty bibliography on input line 85.
-
-
-LaTeX Warning: Empty bibliography on input line 92.
-
-[18] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
+[17] [18] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1381,33 +1205,22 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37945 strings out of 467866
- 916560 string characters out of 5418809
- 2082998 words of memory out of 5000000
- 66221 multiletter control sequences out of 15000+600000
- 648195 words of font info for 116 fonts, out of 8000000 for 9000
+ 38036 strings out of 467866
+ 920056 string characters out of 5418809
+ 2083654 words of memory out of 5000000
+ 66309 multiletter control sequences out of 15000+600000
+ 648536 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,118p,1823b,1768s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0600.pk> <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (18 pages, 400938 bytes).
+ 99i,14n,118p,1823b,1762s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0600.pk> <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (18 pages, 407491 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 174 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
