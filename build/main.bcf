@@ -2371,10 +2371,9 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex" glob="false">refs.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-<<<<<<< Updated upstream
-=======
     <bcf:citekey order="1" intorder="1">theFinAI2025</bcf:citekey>
     <bcf:citekey order="2" intorder="1">yang2023fingpt</bcf:citekey>
     <bcf:citekey order="2" intorder="2">zhang2023fingpt</bcf:citekey>
@@ -2404,7 +2403,6 @@
     <bcf:citekey order="25" intorder="1">xiao2025tradingr1</bcf:citekey>
     <bcf:citekey order="26" intorder="1">xiao2025tradingr1</bcf:citekey>
     <bcf:citekey order="27" intorder="1">xiao2025tradingr1</bcf:citekey>
->>>>>>> Stashed changes
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
@@ -2416,8 +2414,6 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
-<<<<<<< Updated upstream
-=======
   <bcf:datalist section="0"
                 name="none/global//global/global/global"
                 type="entry"
@@ -2428,5 +2424,4 @@
                 labelalphanametemplatename="global"
                 namehashtemplatename="global">
   </bcf:datalist>
->>>>>>> Stashed changes
 </bcf:controlfile>
