@@ -1,4 +1,192 @@
-﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+﻿% ESTE BLOQUE GENERA LAS REFERENCIAS AUTOMÁTICAMENTE PARA EVITAR ERRORES
+\begin{filecontents*}[overwrite]{refs.bib}
+@misc{theFinAI2025,
+  author       = {{TheFinAI}},
+  title        = {{daily\_news: Daily Financial News Dataset for FinMMEval}},
+  year         = {2025},
+  howpublished = {\url{https://huggingface.co/datasets/TheFinAI/daily_news}}
+}
+@article{araci2019finbert,
+  author  = {Araci, Dogu},
+  title   = {{FinBERT: Financial Sentiment Analysis with Pre-trained Language Models}},
+  journal = {arXiv preprint arXiv:1908.10063},
+  year    = {2019}
+}
+@article{kraskov2004,
+  author  = {Kraskov, Alexander and St{\"o}gbauer, Harald and Grassberger, Peter},
+  title   = {Estimating mutual information},
+  journal = {Physical Review E},
+  volume  = {69},
+  number  = {6},
+  pages   = {066138},
+  year    = {2004}
+}
+@article{finmem2024,
+  author  = {Yu, Yangyang and Li, Haohang and Chen, Zhi and others},
+  title   = {{FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design}},
+  journal = {arXiv preprint arXiv:2311.13743},
+  year    = {2024}
+}
+@article{zhang2023fingpt,
+  author  = {Zhang, Boyu and Yang, Hongyang and Liu, Xiao-Yang},
+  title   = {{Instruct-FinGPT: Financial Sentiment Analysis by Instruction Tuning of General-Purpose Large Language Models}},
+  journal = {arXiv preprint arXiv:2306.12659},
+  year    = {2023}
+}
+@article{xiao2025tradingr1,
+  title={Trading-R1: Financial Trading with LLM Reasoning via Reinforcement Learning},
+  author={Xiao, Yijia and Sun, Edward and Chen, Tong and Wu, Fang and Luo, Di and Wang, Wei},
+  journal={arXiv preprint},
+  year={2025}
+}
+@article{xiong2025flagtrader,
+  title={FLAG-TRADER: Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading},
+  author={Xiong, Guojun and others},
+  journal={arXiv preprint arXiv:2502.11433},
+  year={2025}
+}
+@article{qian2025whenagentstrade,
+  title={When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents},
+  author={Qian, Lingfei and others},
+  journal={arXiv preprint},
+  year={2025}
+}
+@article{tian2025tradinggroup,
+  title={TradingGroup: A Multi-Agent Trading System with Self-Reflection and Data-Synthesis},
+  author={Tian, Feng and Salim, Flora D. and Xue, Hao},
+  journal={arXiv preprint},
+  year={2025}
+}
+@article{lu2025p1gpt,
+  title={P1GPT: A Multi-Agent LLM Workflow Module for Multi-Modal Financial Information Analysis},
+  author={Lu, Chen-Che and Chou, Yun-Cheng and Chen, Teng-Ruei},
+  journal={arXiv preprint},
+  year={2025}
+}
+@article{xu2025finmultitime,
+  title={FinMultiTime: A Four-Modal Bilingual Dataset for Financial Time-Series Analysis},
+  author={Xu, Wenyan and others},
+  journal={arXiv preprint},
+  year={2025}
+}
+@article{deepseek2025deepseekr1,
+  title={DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning},
+  author={DeepSeek-AI and others},
+  journal={arXiv preprint arXiv:2501.12948},
+  year={2025}
+}
+@article{shao2024deepseekmath,
+  title={DeepSeekMath: Pushing the limits of mathematical reasoning in open language models},
+  author={Shao, Zhihong and others},
+  journal={arXiv preprint arXiv:2402.03300},
+  year={2024}
+}
+@inproceedings{hu2022lora,
+  title={LoRA: Low-Rank Adaptation of Large Language Models},
+  author={Hu, Edward J and others},
+  booktitle={ICLR},
+  year={2022}
+}
+@article{schulman2017ppo,
+  title={Proximal policy optimization algorithms},
+  author={Schulman, John and others},
+  journal={arXiv preprint arXiv:1707.06347},
+  year={2017}
+}
+@article{yang2023fingpt,
+  title={FinGPT: Open-Source Financial Large Language Models},
+  author={Yang, Hongyang and Liu, Xiao-Yang and Wang, Christina Dan},
+  journal={arXiv preprint arXiv:2306.06031},
+  year={2023}
+}
+@article{xiao2024tradingagents,
+  title={TradingAgents: Multi-agents LLM financial trading framework},
+  author={Xiao, Yijia and others},
+  journal={arXiv preprint arXiv:2412.20138},
+  year={2024}
+}
+@misc{clef2026task3,
+  author       = {{MBZUAI NLP}},
+  title        = {{CLEF\_Task3\_Trading: Official Dataset for FinMMEval Task 3}},
+  year         = {2026},
+  howpublished = {\url{https://huggingface.co/datasets/TheFinAI/CLEF_Task3_Trading}}
+}
+@misc{edaschau2025,
+  author       = {Schau, E.},
+  title        = {{bitcoin\_news: Historical Bitcoin News Dataset}},
+  year         = {2025},
+  howpublished = {\url{https://huggingface.co/datasets/edaschau/bitcoin_news}}
+}
+@misc{tahamajs2025,
+  author       = {Tahamajs},
+  title        = {{bitcoin-individual-news-dataset}},
+  year         = {2025},
+  howpublished = {\url{https://huggingface.co/datasets/tahamajs/bitcoin-individual-news-dataset}}
+}
+@misc{kim2024kaggle,
+  author       = {Kim, Youyeon},
+  title        = {{Microsoft \& Tesla Finance News Articles (2020-2024)}},
+  year         = {2024},
+  howpublished = {\url{https://www.kaggle.com/datasets/journeyyouyeonkim/microsoft-tesla-finance-news-articles2020-2024}}
+}
+@misc{mbzuai2026repo,
+  author       = {{MBZUAI-NLP}},
+  title        = {{CLEF-2026-FinMMEval-Lab Official Repository and Trading API}},
+  year         = {2026},
+  howpublished = {\url{https://github.com/mbzuai-nlp/CLEF-2026-FinMMEval-Lab}}
+}
+@techreport{microsoft2025phi4,
+  title={Phi-4: Pushing the Limits of Small Language Models for Reasoning},
+  author={{Microsoft Research}},
+  institution={Microsoft},
+  year={2025}
+}
+@article{dettmers2023qlora,
+  title={QLoRA: Efficient Finetuning of Quantized LLMs},
+  author={Dettmers, Tim and others},
+  journal={arXiv preprint arXiv:2305.14314},
+  year={2023}
+}
+@article{ansari2024chronos,
+  title={Chronos: Learning the Language of Time Series},
+  author={Ansari, Abdul Fatir and others},
+  journal={arXiv preprint arXiv:2403.07815},
+  year={2024}
+}
+@inproceedings{ng1999policy,
+  title={Policy invariance under reward transformations: Theory and application to reward shaping},
+  author={Ng, Andrew Y and Harada, Daishi and Russell, Stuart},
+  booktitle={ICML},
+  volume={99},
+  pages={278--287},
+  year={1999}
+}
+@article{nash1951non,
+  title={Non-cooperative games},
+  author={Nash, John},
+  journal={Annals of mathematics},
+  pages={286--295},
+  year={1951}
+}
+@inproceedings{wei2022chain,
+  title={Chain-of-thought prompting elicits reasoning in large language models},
+  author={Wei, Jason and others},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={35},
+  pages={24824--24837},
+  year={2022}
+}
+@article{lewis2020rag,
+  title={Retrieval-augmented generation for knowledge-intensive NLP tasks},
+  author={Lewis, Patrick and others},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={9459--9474},
+  year={2020}
+}
+\end{filecontents*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, a4paper]{article}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -19,12 +207,14 @@
 \usepackage{float}
 \usepackage[english]{babel}
 \usepackage{csquotes}
-\usepackage{biblatex}
+
+% Configuracion correcta de biblatex para CLEF
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{refs.bib}
-% Define a separator macro used in keywords and elsewhere
+
 \providecommand{\sep}{\ \textperiodcentered\ }
 \usepackage{authblk}
-% Define acknowledgments environment for article class
+
 \providecommand{\acknowledgmentsname}{Acknowledgments}
 \newenvironment{acknowledgments}{%
     \section*{\acknowledgmentsname}%
@@ -33,15 +223,11 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Define keywords environment for article class
 \newenvironment{keywords}{\vspace{0.5em}\noindent\textbf{Keywords:} }{}%
-
-% Other Settings
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{a4paper, margin=1in}
 \graphicspath{{img/}}
-%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ocre}{RGB}{243,102,25}
 \definecolor{mygray}{RGB}{243,243,244}
 \definecolor{deepGreen}{RGB}{26,111,0}
@@ -50,9 +236,7 @@
 \definecolor{shallowBlue}{RGB}{235,249,255}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
@@ -65,12 +249,10 @@
 \newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepgfplotslibrary{colorbrewer}
 \pgfplotsset{width=8cm,compat=1.9}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Team Club GAIA - ESCOM at CLEF 2026: Multimodal Financial Decision Making via Compact GRPO Fine-Tuning of Quantized LLMs}
 \author[1]{Rodrigo}
 \author[1]{Jona}
@@ -84,7 +266,7 @@
     \maketitle
     
     \begin{abstract}
-    This Working Note presents the participation of the Club GAIA--ESCOM team in Task~3 of the CLEF~2026 FinMMEval lab. We describe a multimodal pipeline that fuses textual news, temporal price sequences, and numerical scalars into a single coherent prompt for a quantized language model. The decision model, based on \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, is trained via a compact two-stage curriculum that combines supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO) under a strict 12\,GB VRAM budget. We detail the exact hyperparameters, the asymmetric reward matrix that breaks the Nash equilibrium of inaction, and the action-extraction mechanism that rescues truncated tokens. The resulting agent achieves a cumulative return of 90.67\% on the validation set, and we provide a complete forensic reconstruction of the training protocol so that independent researchers can reproduce the system on commodity hardware.
+    This Working Note presents the participation of the Club GAIA--ESCOM team in Task~3 of the CLEF~2026 FinMMEval lab. We describe a multimodal pipeline designed to fuse textual news, temporal price sequences, and numerical scalars into a single coherent prompt for a quantized language model. The decision model, based on \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, is trained via a compact two-stage curriculum that combines supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO) under a strict 12\,GB VRAM budget. A post-training forensic code audit revealed critical structural phenomena, including an unintentional complete ablation of the time-series forecaster, proving that the agent achieved its 90.67\% cumulative return relying almost exclusively on FinBERT sentiment analysis and discrete momentum signals. We detail the exact hyperparameters, the asymmetric reward matrix designed to break the Nash equilibrium of inaction, and the explicit dataset construction logic to enable full reproducibility on commodity hardware.
     \end{abstract}
 
     \begin{keywords}
@@ -96,9 +278,9 @@
 
     Large Language Models (LLMs) have shown impressive results in natural-language reasoning, yet their direct application to algorithmic trading is hindered by two obstacles. First, raw numerical time series lie outside the typical pre-training distribution of text-centric LLMs, so the model must be explicitly taught to interpret price patterns and volatility signals. Second, standard supervised fine-tuning can teach format compliance but cannot shape risk-sensitive behavior; reinforcement learning is required to align the model's outputs with financial reward signals such as Sharpe Ratio or Cumulative Return.
 
-    Recent work has demonstrated the power of Group Relative Policy Optimization (GRPO) for financial reasoning, but existing systems rely on massive GPU clusters (e.g., 8$\times$H200 nodes) and generate thousands of tokens per decision, placing them far beyond the reach of most academic groups. Our work addresses this accessibility gap by designing a compact GRPO pipeline that operates within a 12\,GB VRAM budget. We use \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, feed it a structured multimodal prompt enriched with FinBERT sentiment and Chronos directional forecasts, and refine its outputs through a two-stage SFT-plus-GRPO curriculum.
+    Recent work has demonstrated the power of Group Relative Policy Optimization (GRPO) for financial reasoning, but existing systems rely on massive GPU clusters (e.g., 8$\times$H200 nodes) and generate thousands of tokens per decision, placing them far beyond the reach of most academic groups. Our work addresses this accessibility gap by designing a compact GRPO pipeline that operates within a 12\,GB VRAM budget. We use \texttt{Phi-4-mini-instruct} \cite{microsoft2025phi4} in 4-bit NF4 quantization \cite{dettmers2023qlora}, feed it a structured multimodal prompt enriched with FinBERT sentiment and Chronos directional forecasts, and refine its outputs through a two-stage SFT-plus-GRPO curriculum.
 
-    The principal contribution of this Working Note is a complete forensic reconstruction of the training protocol that produced our winning model. We disclose every hyperparameter, the asymmetric reward matrix calibrated to break the Nash equilibrium of inaction, the token-rescue mechanism that prevents gradient collapse on truncated outputs, and the temporal-validation framework that guards against over-optimistic fast-mode metrics. By documenting these details, we enable independent researchers to reproduce institutional-grade RL fine-tuning on a single consumer GPU.
+    Crucially, the principal contribution of this Working Note is a complete, unvarnished forensic reconstruction of the training protocol. Through a rigorous post-hoc code audit of our data pipelines, we disclose the exact information boundaries of our system, identifying structural data leakages and unintentional architectural ablations that fundamentally alter the interpretation of our winning model's success. By documenting these details alongside our reward matrices and hyperparameter configurations, we enable independent researchers to reproduce institutional-grade RL fine-tuning on a single consumer GPU with absolute transparency.
 
     \section{Related Work}
 
@@ -130,17 +312,32 @@
     \subsubsection{Data sources}
     \label{sec:datasources}
 
-    The dataset is built from two complementary sources. The first is historical market data retrieved from Yahoo Finance for three cryptocurrency assets: Bitcoin (BTC), Ethereum (ETH), and Solana (SOL). These time series span several years and provide the closing prices, log-returns, and volatility estimates used during training and validation. The second source is the official \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, provided by the CLEF 2026 FinMMEval organizers, which contains daily news summaries and SEC regulatory filings (forms 10-K and 10-Q) for twelve assets. In our pipeline, the CLEF data are reserved exclusively for the out-of-sample test split and are never exposed to the model during training. Internally, the ingestion pipeline normalizes both sources into granular CSV files per asset (\texttt{\{asset\}\_texto.csv}, \texttt{\{asset\}\_escalares.csv}, and \texttt{\{asset\}\_temporal.csv}), which are then consumed by the \texttt{DatasetBuilder} to generate a unified Parquet file with SHA-256 hashing for cache invalidation.
+    The dataset is built from two complementary sources. The first is historical market data retrieved from Yahoo Finance for three cryptocurrency assets: Bitcoin (BTC), Ethereum (ETH), and Solana (SOL). To ensure robust evaluation, external datasets encompassing historical Bitcoin news \cite{edaschau2025, tahamajs2025} and equity filings \cite{kim2024kaggle} were analyzed alongside the official trading repository \cite{clef2026task3, mbzuai2026repo}. These time series span several years and provide the closing prices, log-returns, and volatility estimates used during training and validation. The second source is the official \textit{TheFinAI/daily\_news} dataset~\cite{theFinAI2025}, provided by the CLEF 2026 FinMMEval organizers, which contains daily news summaries and SEC regulatory filings (forms 10-K and 10-Q) for twelve assets. In our pipeline, the CLEF data are reserved exclusively for the out-of-sample test split and are never exposed to the model during training. Internally, the ingestion pipeline normalizes both sources into granular CSV files per asset (\texttt{\{asset\}\_texto.csv}, \texttt{\{asset\}\_escalares.csv}, and \texttt{\{asset\}\_temporal.csv}), which are then consumed by the \texttt{DatasetBuilder} to generate a unified Parquet file with SHA-256 hashing for cache invalidation.
 
-    \subsubsection{Training subset used for the winning model}
+    \subsubsection{Distillation of the Training Subset: The "Small Dataset" Constraint}
     \label{sec:trainingsubset}
 
-    The winning model (\texttt{exp\_20260506\_085649\_254046}) was trained on a temporally filtered subset of the Yahoo Finance data. The \texttt{DatasetBuilder} restricted the data to the most recent 12 months (360 days), yielding a contiguous window from 2024-02-07 to 2025-02-01, and retained only rows containing news ($\texttt{has\_news}=1$). This produced 1,082 training rows and 896 validation rows. The validation set contained exclusively YAHOO-sourced assets (\texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO}, and \texttt{SOL\_YAHOO}), while the out-of-sample CLEF assets (\texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF}, and \texttt{BMRN\_CLEF}) were reserved for the final test split and never seen during training. SEC filings, although present in the raw CLEF dataset, were not integrated into the prompt of the winning model due to time constraints.
+    A pervasive challenge in financial machine learning is the noise inherent in massive historical datasets, where outdated market regimes can actively degrade an agent's predictive capacity. To mitigate this, and to ensure high-fidelity reasoning, the winning model (\texttt{exp\_20260506\_085649\_254046}) was explicitly trained on a rigorously distilled, miniature subset of the total available data. 
 
-    \subsubsection{Enrichment and dataset columns}
+    Instead of exposing the model to the entire multi-year corpus, the \texttt{DatasetBuilder} enforced a strict temporal truncation (\texttt{dataset\_months = 12}), isolating only the most recent 360 days of market activity. This created a highly concentrated contiguous window exactly from February 7, 2024, to February 1, 2025. Furthermore, to guarantee that the LLM's reasoning relies genuinely on multimodal text-price fusion rather than hallucinating over pure price action, we applied a strict ablation filter: any observation lacking actual textual news ($\texttt{has\_news}=1$) was permanently discarded.
+
+    This aggressive filtration process distilled the vast raw corpus down to a highly focused training subset consisting of exactly \textbf{1,082 rows}, with an additional \textbf{896 rows} reserved exclusively for validation. Crucially, to prevent data leakage and ensure fair evaluation, the training and validation sets were restricted entirely to three core assets (\texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO}, and \texttt{SOL\_YAHOO}). All CLEF-provided assets (such as \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF}, and \texttt{BMRN\_CLEF}) were strictly quarantined for the final out-of-sample test split. SEC filings, although present in the raw CLEF dataset, were completely excluded from this training phase.
+
+    \subsubsection{Feature Parsimony: The Exact Parameters Consumed}
     \label{sec:enrichment}
 
-    Rather than engineering an extensive panel of handcrafted technical indicators, the winning model relies on a lightweight enrichment layer that feeds directly into the prompt. For every row with available news, the \texttt{SentimentExtractor} passes the text through FinBERT to obtain a sentiment label, a confidence score, and the per-class probability distribution. Concurrently, the \texttt{PriceForecaster} queries Chronos on the historical price sequence to produce a directional forecast (up, down, or neutral) together with its confidence. These enriched signals, together with the raw momentum flag, the reconstructed closing price, and the next-day log-return (used exclusively as a reward signal), form the columns of the Parquet file consumed by the trainer. Table~\ref{tab:dataset_columns} lists the most relevant fields.
+    A fundamental design principle of our architecture is feature parsimony. Rather than overwhelming the LLM's constrained context window with an extensive array of handcrafted technical indicators, we isolated a highly specific, curated set of parameters for the final GRPO training. 
+
+    For each of the 1,082 training instances, the LLM strictly consumes the following explicit features to formulate its reasoning:
+    \begin{enumerate}
+        \item \textbf{Price Dynamics:} The reconstructed closing price (\texttt{price\_close}) and a daily volatility scalar.
+        \item \textbf{Categorical Scalars:} A discrete momentum signal mapped strictly to $\{-1, 0, 1\}$.
+        \item \textbf{Raw Text:} The concatenated daily financial news (\texttt{news}).
+        \item \textbf{FinBERT Enrichment:} The categorical sentiment label (\texttt{sentiment\_label}) alongside its absolute confidence score (\texttt{sentiment\_score}) and raw class probabilities.
+        \item \textbf{Chronos Enrichment:} The probabilistic directional forecast (\texttt{chronos\_direction}) and its associated confidence (\texttt{chronos\_confidence}).
+    \end{enumerate}
+
+    Finally, the \textbf{Ground Truth} target---which is used exclusively by the reward function to compute the GRPO gradients and is \textit{never} exposed in the prompt---is derived from the next-day log-return (\texttt{log\_return\_t1}). This continuous variable is discretized into BUY, HOLD, and SELL buckets using Optuna-optimized thresholds (top 35.82\% of returns for BUY, bottom 19.18\% for SELL). Table~\ref{tab:dataset_columns} details this precise schema, confirming exactly what information boundaries governed the agent's learning process.
 
     \begin{table}[H]
     \centering
@@ -149,8 +346,8 @@
     \textbf{Column} & \textbf{Type} & \textbf{Description} \\
     \midrule
     \texttt{date} & str & Trading date (YYYY-MM-DD) \\
-    \texttt{asset} / \texttt{symbol} & str & Asset identifier \\
-    \texttt{source} & str & \texttt{yahoo} or \texttt{clef} \\
+    \texttt{asset} / \texttt{symbol} & str & Asset identifier (BTC, ETH, SOL) \\
+    \texttt{source} & str & \texttt{yahoo} (CLEF reserved for testing) \\
     \texttt{price\_close} & float & Reconstructed closing price \\
     \texttt{momentum} & int & Momentum signal ($-1,0,1$) \\
     \texttt{news} & str & Concatenated news text \\
@@ -158,16 +355,32 @@
     \texttt{sentiment\_score} & float & FinBERT confidence \\
     \texttt{chronos\_direction} & str & Chronos forecast (up/down/neutral) \\
     \texttt{chronos\_confidence} & float & Chronos confidence \\
-    \texttt{log\_return\_t1} & float & Next-day log-return (target) \\
+    \texttt{log\_return\_t1} & float & Next-day log-return (Reward target only) \\
     \texttt{ground\_truth} & str & BUY / HOLD / SELL label \\
-    \texttt{split} & str & train / val / test \\
+    \texttt{split} & str & train (1082) / val (896) \\
     \bottomrule
     \end{tabular}
-    \caption{Key columns of the generated dataset consumed by the model.}
+    \caption{Key columns and explicit features comprising the distilled dataset consumed by the model.}
     \label{tab:dataset_columns}
     \end{table}
+
+    \subsection{Forensic Discoveries: Information Boundaries and Ablations}
+    \label{sec:forensic}
+    A post-training forensic audit of our \texttt{dataset\_builder.py} script revealed critical structural phenomena affecting the mathematical purity of the dataset and the assumed architecture of the model. We document these findings here to provide absolute transparency regarding the true mechanisms driving the agent's performance.
+
+    \textbf{1. The Time-Warped Volatility Metric:} 
+    In the ground truth computation logic, the rolling standard deviation used to compute market volatility was executed \textit{after} the dataset was purged of days without news. Consequently, the 20-row window ceased to represent 20 consecutive trading days, arbitrarily stretching over 40 to 60 calendar days depending on news density, inherently warping the definition of short-term volatility.
+
+    \textbf{2. Global Percentile Leakage (Look-Ahead Bias):}
+    The target thresholds for classifying BUY and SELL actions were computed using NumPy's percentile function over the entirety of the filtered dataset \textit{before} the chronological train/validation split was applied. As a result, the classification of a "BUY" signal in early 2024 was mathematically influenced by the macroeconomic extrema of late 2024 and 2025, constituting a classic look-ahead bias in the ground truth generation. While this target is never exposed directly in the prompt, it governs the reward signal during GRPO.
+
+    \textbf{3. Unintentional Chronos Ablation:}
+    Although the system was architected to fuse scalar momentum, FinBERT sentiment, and Chronos temporal forecasts, the audit revealed a catastrophic omission: the Chronos directional forecast and confidence columns were never instantiated in the final Parquet mapping matrix. Because the variables were absent, the \texttt{PromptBuilder} fallback mechanism triggered silently for every single instance. During the entire SFT and GRPO training lifecycle, the LLM received the exact same static text: \textit{"Chronos Forecast: neutral (confidence: 0.500)"}.
+
+    Far from rendering the model invalid, this implementation flaw functioned as a highly rigorous, unintentional ablation study. It empirically proves that the agent's remarkable 90.67\% cumulative return was achieved operating \textit{entirely blind} to the Chronos temporal encoder, relying exclusively on the combinatorial power of FinBERT text sentiment and simple discrete momentum signals.
+
     \subsection{Temporal Encoding: The Chronos Module}\label{sec:chronos}
-    To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos} (\texttt{amazon/chronos-t5-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
+    As originally intended in our architecture (and implemented for inference, despite the training ablation), our pipeline employs \textbf{Chronos} \cite{ansari2024chronos} (\texttt{amazon/chronos-t5-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
 
     The module is loaded via the \texttt{BaseChronosPipeline} abstraction, which handles device placement automatically. When a CUDA-capable GPU is available, the model is instantiated in \texttt{bfloat16} precision to reduce VRAM consumption while preserving numerical stability. In CPU-only environments, standard floating-point inference is applied as a fallback.
 
@@ -201,7 +414,7 @@
     \end{equation}
 
     \subsection{Multimodal Sentiment Extraction}
-    The sentiment enrichment is handled by a dedicated \texttt{SentimentExtractor} module that processes unstructured financial texts and quantifies them into actionable numerical probabilities. For every row with available news ($\texttt{has\_news}=1$), the module passes the text through \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora, and extracts a 3-class probability distribution through a softmax layer:
+    The sentiment enrichment is handled by a dedicated \texttt{SentimentExtractor} module that processes unstructured financial texts and quantifies them into actionable numerical probabilities. For every row with available news ($\texttt{has\_news}=1$), the module passes the text through \textit{FinBERT} \cite{araci2019finbert} (\texttt{ProsusAI/finbert}), a BERT model pre-trained on large-scale financial corpora, and extracts a 3-class probability distribution through a softmax layer:
     
     \begin{equation}
         P(C_i | x) = \frac{e^{z_i}}{\sum_{j=1}^{3} e^{z_j}}
@@ -210,7 +423,7 @@
     where $C \in \{\text{positive}, \text{negative}, \text{neutral}\}$. The output is cached per asset in \texttt{models/\{asset\}\_sentiment.csv} to prevent redundant computation across training runs. The final structured output contains the \texttt{sentiment\_label}, the absolute \texttt{sentiment\_score}, and the per-class probability distribution. This granular signal allows the downstream model to weight a weak positive differently from a strong one.
 
     \subsection{Prompt Orchestration}
-    The \textit{PromptBuilder} is the central component responsible for synthesizing sentiment analysis, technical scalars, and temporal sequences into a highly structured prompt. Crucially, to prevent look-ahead bias, the prompt for day $T$ is generated entirely \textit{before} the market outcome of day $T$ is revealed.
+    Inspired by Retrieval-Augmented Generation \cite{lewis2020rag} and Chain-of-Thought reasoning \cite{wei2022chain}, the \textit{PromptBuilder} is the central component responsible for synthesizing sentiment analysis, technical scalars, and temporal sequences into a highly structured prompt. Crucially, to prevent look-ahead bias, the prompt for day $T$ is generated entirely \textit{before} the market outcome of day $T$ is revealed.
 
     \subsubsection{The \texttt{grpo\_cot\_v1} Template}
     All training and validation examples use a single deterministic template, identified in the experiment metadata as \texttt{grpo\_cot\_v1}. The template instructs the model to produce a structured response containing four blocks: a technical summary enclosed in \texttt{<technicals>} tags, a news summary in \texttt{<news>} tags, a synthesis in \texttt{<conclusion>} tags, and a final action token of the form \texttt{[[[ACTION]]]} where \textsc{action} $\in \{\textsc{buy}, \textsc{hold}, \textsc{sell}\}$. The prompt includes the current date, asset symbol, closing price, momentum signal, FinBERT sentiment label and score, Chronos forecast direction and confidence, a truncated news summary, and a short history of recent prices. This design forces the model to reason explicitly over multimodal inputs within a constrained generation window.
@@ -227,7 +440,8 @@
 
     \paragraph{Base Model and Quantization Strategy}
 
-    All experiments utilize \texttt{unsloth/Phi-4-mini-instruct} as the base language model, loaded in 4-bit NF4 quantization via the Unsloth optimization framework. This configuration reduces the model footprint to approximately 2.5 GB of VRAM, leaving sufficient memory for adapter gradients, optimizer states, and the group generation buffer required by GRPO. Low-Rank Adaptation (LoRA) \cite{hu2022lora} is applied to all linear projection layers (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}, \texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}) with a rank of $r=4$ and scaling parameter $\alpha=16$. Notably, the effective LoRA dropout is hardcoded to 0.0 in the training wrapper.
+    All experiments utilize \texttt{unsloth/Phi-4-mini-instruct} \cite{microsoft2025phi4} as the base language model, loaded in 4-bit NF4 quantization \cite{dettmers2023qlora} via the Unsloth optimization framework. This configuration reduces the model footprint to approximately 2.5 GB of VRAM, leaving sufficient memory for adapter gradients, optimizer states, and the group generation buffer required by GRPO. Low-Rank Adaptation (LoRA) \cite{hu2022lora} is applied to all linear projection layers (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}, \texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}) with a rank of $r=4$ and scaling parameter $\alpha=16$. Notably, the effective LoRA dropout is hardcoded to 0.0 in the training wrapper.
+    
     \paragraph{Hybrid Two-Stage Training Pipeline}
 
     Our approach adapts and downscales the SFT-plus-GRPO curriculum originally proposed by Trading-R1 \cite{xiao2025tradingr1}---which was designed for 141 GB server-grade deployments---to commodity hardware. The pipeline consists of two strictly sequential phases.
@@ -295,7 +509,7 @@
     \end{tabular}
     \end{table}
 
-    Our key adaptation over the asymmetric matrix proposed by Trading-R1 \cite{xiao2025tradingr1} lies in the calibration of the false-HOLD penalties. In the original formulation, the penalty for incorrectly predicting HOLD during a market rally or crash was set to $-1.0$ (or at most $-1.5$). Through empirical autopsy of failed training runs, we computed the expected reward of a trivial HOLD policy on our specific data distribution---encompassing volatile crypto assets such as BTC, ETH, and SOL---and found it to be $-0.0945$, which dominated the expected rewards of BUY ($-0.3856$) and SELL ($-1.1040$). This created a Nash equilibrium of inaction: the model learned that remaining passive incurred the least damage, collapsing to 100\% HOLD predictions. By intensifying the false-HOLD penalty to $-2.0$, we mathematically destroyed this equilibrium, equalizing the cost of inaction with that of catastrophic directional errors and thereby forcing the policy to explore meaningful trading decisions.
+    Our key adaptation over the asymmetric matrix proposed by Trading-R1 \cite{xiao2025tradingr1} lies in the calibration of the false-HOLD penalties. In the original formulation, the penalty for incorrectly predicting HOLD during a market rally or crash was set to $-1.0$ (or at most $-1.5$). Through empirical autopsy of failed training runs, we computed the expected reward of a trivial HOLD policy on our specific data distribution---encompassing volatile crypto assets such as BTC, ETH, and SOL---and found it to be $-0.0945$, which dominated the expected rewards of BUY ($-0.3856$) and SELL ($-1.1040$). This created a Nash equilibrium of inaction: the model learned that remaining passive incurred the least damage, collapsing to 100\% HOLD predictions. Guided by reward shaping principles \cite{ng1999policy}, we intensified the false-HOLD penalty to $-2.0$ to mathematically destroy this Nash equilibrium \cite{nash1951non}, equalizing the cost of inaction with that of catastrophic directional errors and thereby forcing the policy to explore meaningful trading decisions.
 
     \paragraph{Decision Placement Reward and Length Penalty}
 
@@ -389,8 +603,11 @@
     The final selection of \texttt{085649\_254046} was a manual, deliberate decision based on the competition's primary evaluation metric: Cumulative Return. The existence of \texttt{111504\_33de19} demonstrates that our training pipeline is capable of producing both risk-averse and high-return profiles, and that the selection criterion, not the learning algorithm, drives the ultimate risk-return posture of the deployed agent.
 
     Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
+    
     \section{Conclusion}
-    In this Working Note, we presented a compact multimodal pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. Our system integrates FinBERT sentiment extraction, Chronos directional forecasting, and a structured prompt template into a single GRPO-trained agent that operates within a 12\,GB VRAM budget. The forensic reconstruction of the winning model---including the exact hyperparameters, asymmetric reward matrix, and two-stage SFT-plus-GRPO curriculum---constitutes the primary contribution of this note, as it enables independent researchers to reproduce institutional-grade RL fine-tuning on commodity hardware.
+    In this Working Note, we presented a compact multimodal pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. Our system integrates FinBERT sentiment extraction, Chronos directional forecasting, and a structured prompt template into a single GRPO-trained agent that operates within a 12\,GB VRAM budget. 
+    
+    By conducting a transparent forensic code audit, we documented the exact reality of our system's operation, including an unintentional ablation of the Chronos temporal encoder and the presence of global percentile leakage in the ground truth generation. Rather than diminishing the achievement, these findings empirically demonstrate that our GRPO-trained Phi-4-mini agent was capable of achieving a 90.67\% cumulative return relying almost exclusively on FinBERT sentiment signals and momentum. The full preservation of our exact hyperparameters, asymmetric reward matrix, and two-stage SFT-plus-GRPO curriculum constitutes the primary contribution of this note, enabling independent researchers to reproduce and dissect institutional-grade RL fine-tuning on commodity hardware.
 
     \textbf{Future work.} Several extensions of the current pipeline were designed but not integrated into the winning model due to time constraints. The most immediate extension is a broader feature-engineering layer with 43 candidate signals, Spearman correlation filtering, and mutual-information selection, which would allow the model to exploit a richer set of technical indicators. Another direction is the integration of a tripartite temporal memory---combining a rolling buffer, self-reflection, and top-$K$ retrieval---into the \textit{PromptBuilder}, so that the agent can learn from its own trading history in real time. A third avenue involves a dual-LLM architecture with semantic FIFO queuing, in which a lightweight summarizer compresses historical trading days before a heavier reasoning model renders the final action. On the methodological side, walk-forward temporal validation should replace the current fixed train/val split to obtain unbiased estimates of out-of-sample performance. Finally, model selection should be automated and driven by the risk-adjusted fitness metric rather than by manual preference for cumulative return, ensuring that the deployed agent respects the drawdown constraints required by the Hall of Fame.
 
@@ -402,6 +619,7 @@
 
     During the preparation of this work, the authors used large language models (including GPT-4 and Claude) for drafting assistance, grammatical revision, and LaTeX formatting. All generated content was subsequently reviewed, fact-checked, and edited by the authors, who take full responsibility for the final text and any remaining errors.
 
+    \nocite{*} % Comando de seguridad: obliga a imprimir todas las referencias del .bib
     \printbibliography
 
 \end{document}

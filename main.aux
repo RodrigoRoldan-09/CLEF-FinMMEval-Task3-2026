@@ -2,7 +2,11 @@
 \providecommand\zref@newlabel[2]{}
 \providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }
 \@nameuse{bbl@beforestart}
-\abx@aux@refcontext{nty/global//global/global/global}
+\abx@aux@refcontext{none/global//global/global/global}
+\abx@aux@cite{0}{microsoft2025phi4}
+\abx@aux@segm{0}{0}{microsoft2025phi4}
+\abx@aux@cite{0}{dettmers2023qlora}
+\abx@aux@segm{0}{0}{dettmers2023qlora}
 \babel@aux{english}{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
 \abx@aux@cite{0}{araci2019finbert}
@@ -38,6 +42,16 @@
 \abx@aux@cite{0}{deepseek2025deepseekr1}
 \abx@aux@segm{0}{0}{deepseek2025deepseekr1}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
+\abx@aux@cite{0}{edaschau2025}
+\abx@aux@segm{0}{0}{edaschau2025}
+\abx@aux@cite{0}{tahamajs2025}
+\abx@aux@segm{0}{0}{tahamajs2025}
+\abx@aux@cite{0}{kim2024kaggle}
+\abx@aux@segm{0}{0}{kim2024kaggle}
+\abx@aux@cite{0}{clef2026task3}
+\abx@aux@segm{0}{0}{clef2026task3}
+\abx@aux@cite{0}{mbzuai2026repo}
+\abx@aux@segm{0}{0}{mbzuai2026repo}
 \abx@aux@cite{0}{theFinAI2025}
 \abx@aux@segm{0}{0}{theFinAI2025}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{3}{}\protected@file@percent }
@@ -46,19 +60,27 @@
 \newlabel{sec:dataset}{{3.2}{3}{}{subsection.3.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Data sources}{3}{}\protected@file@percent }
 \newlabel{sec:datasources}{{3.2.1}{3}{}{subsubsection.3.2.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Training subset used for the winning model}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Distillation of the Training Subset: The "Small Dataset" Constraint}{3}{}\protected@file@percent }
 \newlabel{sec:trainingsubset}{{3.2.2}{3}{}{subsubsection.3.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Enrichment and dataset columns}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Feature Parsimony: The Exact Parameters Consumed}{4}{}\protected@file@percent }
 \newlabel{sec:enrichment}{{3.2.3}{4}{}{subsubsection.3.2.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Key columns of the generated dataset consumed by the model.}}{4}{}\protected@file@percent }
-\newlabel{tab:dataset_columns}{{1}{4}{}{table.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Temporal Encoding: The Chronos Module}{4}{}\protected@file@percent }
-\newlabel{sec:chronos}{{3.3}{4}{}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Input Formulation and Batch Processing}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Forecast Extraction and Direction Classification}{5}{}\protected@file@percent }
-\newlabel{eq:chronos_class}{{3}{5}{}{equation.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Multimodal Sentiment Extraction}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Prompt Orchestration}{5}{}\protected@file@percent }
+\abx@aux@cite{0}{ansari2024chronos}
+\abx@aux@segm{0}{0}{ansari2024chronos}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Key columns and explicit features comprising the distilled dataset consumed by the model.}}{5}{}\protected@file@percent }
+\newlabel{tab:dataset_columns}{{1}{5}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Forensic Discoveries: Information Boundaries and Ablations}{5}{}\protected@file@percent }
+\newlabel{sec:forensic}{{3.3}{5}{}{subsection.3.3}{}}
+\abx@aux@cite{0}{araci2019finbert}
+\abx@aux@segm{0}{0}{araci2019finbert}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Temporal Encoding: The Chronos Module}{6}{}\protected@file@percent }
+\newlabel{sec:chronos}{{3.4}{6}{}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Input Formulation and Batch Processing}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Forecast Extraction and Direction Classification}{6}{}\protected@file@percent }
+\newlabel{eq:chronos_class}{{3}{6}{}{equation.3}{}}
+\abx@aux@cite{0}{lewis2020rag}
+\abx@aux@segm{0}{0}{lewis2020rag}
+\abx@aux@cite{0}{wei2022chain}
+\abx@aux@segm{0}{0}{wei2022chain}
 \abx@aux@cite{0}{shao2024deepseekmath}
 \abx@aux@segm{0}{0}{shao2024deepseekmath}
 \abx@aux@cite{0}{deepseek2025deepseekr1}
@@ -69,58 +91,82 @@
 \abx@aux@segm{0}{0}{xiong2025flagtrader}
 \abx@aux@cite{0}{schulman2017ppo}
 \abx@aux@segm{0}{0}{schulman2017ppo}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Multimodal Sentiment Extraction}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Prompt Orchestration}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1}The \texttt  {grpo\_cot\_v1} Template}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Model Optimization and Training Setup}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.1}Problem Formulation and Main Objectives}{7}{}\protected@file@percent }
+\abx@aux@cite{0}{microsoft2025phi4}
+\abx@aux@segm{0}{0}{microsoft2025phi4}
+\abx@aux@cite{0}{dettmers2023qlora}
+\abx@aux@segm{0}{0}{dettmers2023qlora}
 \abx@aux@cite{0}{hu2022lora}
 \abx@aux@segm{0}{0}{hu2022lora}
 \abx@aux@cite{0}{xiao2025tradingr1}
 \abx@aux@segm{0}{0}{xiao2025tradingr1}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}The \texttt  {grpo\_cot\_v1} Template}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Model Optimization and Training Setup}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1}Problem Formulation and Main Objectives}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.2}Architecture and Training Configuration}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Base Model and Quantization Strategy}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Hybrid Two-Stage Training Pipeline}{6}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces GRPO Training Hyperparameters}}{7}{}\protected@file@percent }
-\newlabel{tab:grpo_config}{{2}{7}{}{table.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Ground Truth Signal Generation}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.3}Optuna Search and Experimental Protocol}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2}Architecture and Training Configuration}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Base Model and Quantization Strategy}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hybrid Two-Stage Training Pipeline}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ground Truth Signal Generation}{8}{}\protected@file@percent }
 \abx@aux@cite{0}{xiao2025tradingr1}
 \abx@aux@segm{0}{0}{xiao2025tradingr1}
+\abx@aux@cite{0}{ng1999policy}
+\abx@aux@segm{0}{0}{ng1999policy}
+\abx@aux@cite{0}{nash1951non}
+\abx@aux@segm{0}{0}{nash1951non}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces GRPO Training Hyperparameters}}{9}{}\protected@file@percent }
+\newlabel{tab:grpo_config}{{2}{9}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.3}Optuna Search and Experimental Protocol}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.4}Reward Function Design and Engineering Contributions}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Asymmetric Reward Matrix}{9}{}\protected@file@percent }
 \abx@aux@cite{0}{xiao2025tradingr1}
 \abx@aux@segm{0}{0}{xiao2025tradingr1}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.4}Reward Function Design and Engineering Contributions}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Asymmetric Reward Matrix}{8}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Asymmetric Reward Matrix (Values Before Scaling)}}{8}{}\protected@file@percent }
-\newlabel{tab:reward_matrix}{{3}{8}{}{table.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Decision Placement Reward and Length Penalty}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Truncated Token Rescue}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Complete Reward Formula}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Results and Validation}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.1}Validation Protocol}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Validation assets}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2}Training and Fast-Mode Results}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.3}Full Validation Results}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Performance Metrics}{10}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance Metrics Reference}}{10}{}\protected@file@percent }
-\newlabel{tab:metrics_reference}{{4}{10}{}{table.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Full Validation Results --- Selected Finalists}}{11}{}\protected@file@percent }
-\newlabel{tab:validation_results}{{5}{11}{}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Declaration on Generative AI}{12}{}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{CF4A2154EFCE67106F3BF4D81E865774}
-\abx@aux@defaultrefcontext{0}{araci2019finbert}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{deepseek2025deepseekr1}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{hu2022lora}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{kraskov2004}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{lu2025p1gpt}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{schulman2017ppo}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{shao2024deepseekmath}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{theFinAI2025}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{tian2025tradinggroup}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{xiao2025tradingr1}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{xiao2024tradingagents}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{xiong2025flagtrader}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{xu2025finmultitime}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{yang2023fingpt}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{finmem2024}{nty/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{zhang2023fingpt}{nty/global//global/global/global}
-\gdef \@abspage@last{12}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Asymmetric Reward Matrix (Values Before Scaling)}}{10}{}\protected@file@percent }
+\newlabel{tab:reward_matrix}{{3}{10}{}{table.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Decision Placement Reward and Length Penalty}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Truncated Token Rescue}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Complete Reward Formula}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Results and Validation}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.1}Validation Protocol}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Validation assets}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.2}Training and Fast-Mode Results}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.8.3}Full Validation Results}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Performance Metrics}{11}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Performance Metrics Reference}}{12}{}\protected@file@percent }
+\newlabel{tab:metrics_reference}{{4}{12}{}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Full Validation Results --- Selected Finalists}}{12}{}\protected@file@percent }
+\newlabel{tab:validation_results}{{5}{12}{}{table.5}{}}
+\abx@aux@nociteall
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Declaration on Generative AI}{13}{}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{A4EBF0D334CA3BD4BEDEF65EDB3CA256}
+\abx@aux@defaultrefcontext{0}{microsoft2025phi4}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{dettmers2023qlora}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{araci2019finbert}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{yang2023fingpt}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{zhang2023fingpt}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xu2025finmultitime}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{theFinAI2025}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{kraskov2004}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{finmem2024}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xiao2024tradingagents}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{tian2025tradinggroup}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{lu2025p1gpt}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{hu2022lora}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{schulman2017ppo}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xiao2025tradingr1}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xiong2025flagtrader}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{shao2024deepseekmath}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{deepseek2025deepseekr1}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{edaschau2025}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{tahamajs2025}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{kim2024kaggle}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{clef2026task3}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{mbzuai2026repo}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{ansari2024chronos}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{lewis2020rag}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{wei2022chain}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{ng1999policy}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{nash1951non}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{qian2025whenagentstrade}{none/global//global/global/global}
+\gdef \@abspage@last{15}
