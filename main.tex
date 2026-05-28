@@ -19,8 +19,16 @@
 \usepackage{float}
 \usepackage[english]{babel}
 \usepackage{csquotes}
+<<<<<<< Updated upstream
 \usepackage[backend=biber,style=authoryear]{biblatex}
 \addbibresource{references.bib}
+=======
+\usepackage[style=ieee]{biblatex}
+\addbibresource{refs.bib}
+% Define a separator macro used in keywords and elsewhere
+\providecommand{\sep}{\ \textperiodcentered\ }
+\newcommand{\TODO}[1]{\textbf{\color{red}[TODO: #1]}}
+>>>>>>> Stashed changes
 \usepackage{authblk}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -59,24 +67,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<<<<<<< Updated upstream
 \title{Team ESCOM-IPN at CLEF 2026: Multimodal Financial Decision Making using LLMs, Chronos, and Auto-Reflective Prompt Routing}
 \author[1]{Rodrigo}
 \author[1]{Jona}
 \author[1]{Baru}
 \author[1]{David}
+=======
+\title{Team Club GAIA - ESCOM at CLEF 2026: Multimodal Financial Decision Making via Compact GRPO Fine-Tuning of Quantized LLMs}
+\author[1]{Rodrigo \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
+\author[1]{Jona \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
+\author[1]{Baru \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
+\author[1]{David \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
+>>>>>>> Stashed changes
 \affil[1]{Escuela Superior de Cómputo (ESCOM) - Instituto Politécnico Nacional (IPN), Mexico City, Mexico}
 \date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
     \maketitle
-    
+
     \begin{abstract}
+<<<<<<< Updated upstream
     This Working Note describes the participation of the ESCOM-IPN team in Task 3 of the CLEF 2026 FinMMEval lab. We propose a highly structured, multimodal retrieval-augmented generation (RAG) pipeline to predict financial trading actions (BUY, HOLD, SELL) across diverse assets. Our system integrates unstructured news and SEC filings with numerical scalars and temporal price sequences. We introduce a novel dual-strategy \textit{PromptBuilder} featuring a tripartite temporal memory (rolling buffer, self-reflection, and top-K retrieval), allowing Large Language Models (LLMs) to reason over current market contexts while continuously learning from empirical trading results. Furthermore, we implement \textit{finvert}, a highly optimized FinBERT-based module for robust market sentiment extraction. Our methodology demonstrates how programmatic prompt engineering, heuristic risk management, and chronological FIFO queuing of semantic summaries can significantly enhance LLM reasoning in simulated financial environments.
+=======
+    In this work we describe a multimodal pipeline that fuses textual news, temporal price sequences, and numerical scalars into a single coherent prompt for a quantized language model. The decision model, based on \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, is trained via a compact two-stage curriculum that combines supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO) under a strict 12\,GB VRAM budget. We detail the exact hyperparameters, the asymmetric reward matrix that breaks the Nash equilibrium of inaction, and the action-extraction mechanism that rescues truncated tokens. The resulting agent achieves a cumulative return of 90.67\% on our validation set, and we provide a complete forensic reconstruction of the training protocol so that independent researchers can reproduce the system on commodity hardware.
+>>>>>>> Stashed changes
     \end{abstract}
 
     \textbf{Keywords:} Financial Forecasting, Large Language Models, Sentiment Analysis, Prompt Engineering, Temporal Memory, FinMMEval, CLEF 2026.
 
+<<<<<<< Updated upstream
     \section{Introduction}
     Financial decision-making requires the rapid synthesis of heterogeneous data sources. In the CLEF 2026 FinMMEval Lab (Task 3), participants are challenged to develop agents capable of processing numerical scalars, temporal price histories, and textual news to recommend trading actions (BUY, HOLD, SELL) for assets such as Bitcoin, Tesla, and Apple. 
 
@@ -379,6 +400,11 @@
     In this Working Note, we presented a comprehensive RAG pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. By developing the \textit{finvert} module for precise sentiment extraction and a novel \textit{PromptBuilder} equipped with a tripartite temporal memory, we successfully bridged the gap between raw quantitative market data and qualitative LLM reasoning. 
 
     Our dual-strategy prompt orchestration demonstrated that providing an LLM with a structured, self-reflective memory of its past actions significantly enhances its ability to manage risk and make context-aware trading decisions. 
+=======
+    \input{lib/chapter1}
+    
+    \printbibliography
+>>>>>>> Stashed changes
 
     Future work will focus on \textit{[agregar sus puntos sobre mejorar el split temporal (Walk-forward validation), balancear el dataset entre equity/crypto, y automatizar la selección por fitness en lugar de selección manual por CR.]}.
 

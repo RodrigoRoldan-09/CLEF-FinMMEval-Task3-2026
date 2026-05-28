@@ -1,0 +1,58 @@
+# FinMMEval2026 — Laboratorio GRPO
+# Versiones exactas verificadas con pixi: Mayo 2026
+# Hardware de referencia: RTX 3080 Ti (11.6GB VRAM), CUDA 12.6, Python 3.11
+#
+# NOTA IMPORTANTE: pixi.toml es la fuente de verdad de dependencias.
+# Este archivo se mantiene como referencia para quienes usen pip/venv,
+# pero el entorno activo se resuelve via `pixi install`.
+#
+# INSTALACIÓN RECOMENDADA (Pixi):
+#   pixi install
+#   pixi run check-env
+#
+# INSTALACIÓN ALTERNATIVA (pip):
+#   1. pip install torch==2.11.0+cu126 --index-url https://download.pytorch.org/whl/cu126
+#   2. pip install unsloth==2026.3.11
+#   3. pip install -r requirements.txt
+
+# === Core ML (resueltas por Unsloth / pixi lock) ===
+torch==2.11.0+cu126
+transformers==4.57.6
+datasets==4.3.0
+huggingface_hub==0.36.2
+
+# === GRPO Training ===
+unsloth==2026.3.11
+trl==0.24.0
+peft==0.19.1
+accelerate==1.13.0
+bitsandbytes==0.49.2
+xformers==0.0.35
+
+# === HPO ===
+optuna==4.8.0
+
+# === Endpoint Task 3 ===
+fastapi==0.136.1
+uvicorn[standard]==0.46.0
+python-dotenv==1.2.2
+httpx==0.28.1
+
+# === Datos ===
+pandas==3.0.2
+numpy==2.4.4
+pyarrow==24.0.0
+polars==1.40.1
+yfinance==1.3.0
+
+# === Enrichment ===
+chronos-forecasting==2.2.2
+
+# === Visualización ===
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# === Testing / Utilidades ===
+pydantic==2.13.3
+pytest==9.0.3
+scikit-learn==1.8.0
