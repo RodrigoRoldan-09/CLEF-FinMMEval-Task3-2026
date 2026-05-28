@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 % $ biblatex auxiliary file $
 % $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
@@ -21,10 +19,10 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{theFinAI2025}{misc}{}{}
+    \entry{theFinAI2025}{article}{}{}
       \name{author}{1}{}{%
         {{hash=76f08ae6a123bf850faefcff15314bc7}{%
-           family={{TheFinAI}},
+           family={TheFinAI},
            familyi={T\bibinitperiod}}}%
       }
       \strng{namehash}{76f08ae6a123bf850faefcff15314bc7}
@@ -39,10 +37,15 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://huggingface.co/datasets/TheFinAI/daily_news}}
-      \field{note}{Accessed: 2025}
-      \field{title}{{daily\_news: Daily Financial News Dataset for FinMMEval}}
+      \field{journaltitle}{Hugging Face Repository}
+      \field{title}{daily\_news: Daily Financial News Dataset for Fin-MMEval}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://huggingface.co/datasets/TheFinAI/daily_news
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/datasets/TheFinAI/daily_news
+      \endverb
     \endentry
     \entry{yang2023fingpt}{article}{}{}
       \name{author}{3}{}{%
@@ -108,15 +111,9 @@
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:2306.12659}
-      \field{title}{{Instruct-FinGPT: Financial Sentiment Analysis by Instruction Tuning of General-Purpose Large Language Models}}
+      \field{journaltitle}{arXiv preprint arXiv:2307.10485}
+      \field{title}{FinGPT: Democratizing Internet-Scale Financial Data for Financial Large Language Models}
       \field{year}{2023}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2306.12659
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2306.12659
-      \endverb
     \endentry
     \entry{xiao2025tradingr1}{article}{}{}
       \name{author}{6}{}{%
@@ -190,14 +187,8 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1908.10063}
-      \field{title}{{FinBERT: Financial Sentiment Analysis with Pre-trained Language Models}}
+      \field{title}{FinBERT: Financial Sentiment Analysis with Pre-trained Language Models}
       \field{year}{2019}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1908.10063
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1908.10063
-      \endverb
     \endentry
     \entry{ansari2024chronos}{article}{}{}
       \name{author}{18}{}{%
@@ -486,6 +477,73 @@
       \field{journaltitle}{arXiv preprint}
       \field{title}{When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents}
       \field{year}{2025}
+    \endentry
+    \entry{yu2024finmem}{inproceedings}{}{}
+      \name{author}{9}{}{%
+        {{hash=d773cda88ae4dc9fa6b8e60a9162a244}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c1d3472476b822cc19924d9d58c258d6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Haohang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5c069394326941cace3c2b60358b9423}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c2e01b1a65fcae214687aeb8f87eed00}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Yuechen},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2af761d9bef859ea29248418adce0dd7}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=43fd66ca88e5ad050f71d47ff49ba8b9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Denghui},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6e0407cf2820edaaaeebbc9f383e0490}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Rong},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9a26dfbb13f1d2ac5e5f0094b7633695}{%
+           family={Suchow},
+           familyi={S\bibinitperiod},
+           given={Jordan\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=080f3484267edb18216493cd869ee5a6}{%
+           family={Khashanah},
+           familyi={K\bibinitperiod},
+           given={Khaldoun},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{fullhash}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{fullhashraw}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{bibnamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authorbibnamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authornamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authorfullhash}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{authorfullhashraw}{c2b070c43afecfab796fe943cf0572ff}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AAAI Symposium Series}
+      \field{title}{FINMEM: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design}
+      \field{volume}{3}
+      \field{year}{2024}
+      \field{pages}{595\bibrangedash 597}
+      \range{pages}{3}
     \endentry
     \entry{xiao2024tradingagents}{article}{}{}
       \name{author}{4}{}{%
@@ -914,8 +972,6 @@
       \field{year}{2025}
     \endentry
   \enddatalist
-  \missing{yu2024finmem}
 \endrefsection
 \endinput
 
->>>>>>> Stashed changes

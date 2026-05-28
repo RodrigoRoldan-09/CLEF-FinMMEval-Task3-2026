@@ -19,16 +19,11 @@
 \usepackage{float}
 \usepackage[english]{babel}
 \usepackage{csquotes}
-<<<<<<< Updated upstream
-\usepackage[backend=biber,style=authoryear]{biblatex}
-\addbibresource{references.bib}
-=======
 \usepackage[style=ieee]{biblatex}
-\addbibresource{refs.bib}
+\addbibresource{references.bib}
 % Define a separator macro used in keywords and elsewhere
 \providecommand{\sep}{\ \textperiodcentered\ }
 \newcommand{\TODO}[1]{\textbf{\color{red}[TODO: #1]}}
->>>>>>> Stashed changes
 \usepackage{authblk}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -67,19 +62,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-<<<<<<< Updated upstream
-\title{Team ESCOM-IPN at CLEF 2026: Multimodal Financial Decision Making using LLMs, Chronos, and Auto-Reflective Prompt Routing}
-\author[1]{Rodrigo}
-\author[1]{Jona}
-\author[1]{Baru}
-\author[1]{David}
-=======
 \title{Team Club GAIA - ESCOM at CLEF 2026: Multimodal Financial Decision Making via Compact GRPO Fine-Tuning of Quantized LLMs}
 \author[1]{Rodrigo \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
 \author[1]{Jona \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
 \author[1]{Baru \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
 \author[1]{David \TODO{LASTNAME}\thanks{\TODO{EMAIL}}}
->>>>>>> Stashed changes
 \affil[1]{Escuela Superior de Cómputo (ESCOM) - Instituto Politécnico Nacional (IPN), Mexico City, Mexico}
 \date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,328 +75,13 @@
     \maketitle
 
     \begin{abstract}
-<<<<<<< Updated upstream
-    This Working Note describes the participation of the ESCOM-IPN team in Task 3 of the CLEF 2026 FinMMEval lab. We propose a highly structured, multimodal retrieval-augmented generation (RAG) pipeline to predict financial trading actions (BUY, HOLD, SELL) across diverse assets. Our system integrates unstructured news and SEC filings with numerical scalars and temporal price sequences. We introduce a novel dual-strategy \textit{PromptBuilder} featuring a tripartite temporal memory (rolling buffer, self-reflection, and top-K retrieval), allowing Large Language Models (LLMs) to reason over current market contexts while continuously learning from empirical trading results. Furthermore, we implement \textit{finvert}, a highly optimized FinBERT-based module for robust market sentiment extraction. Our methodology demonstrates how programmatic prompt engineering, heuristic risk management, and chronological FIFO queuing of semantic summaries can significantly enhance LLM reasoning in simulated financial environments.
-=======
     In this work we describe a multimodal pipeline that fuses textual news, temporal price sequences, and numerical scalars into a single coherent prompt for a quantized language model. The decision model, based on \texttt{Phi-4-mini-instruct} in 4-bit NF4 quantization, is trained via a compact two-stage curriculum that combines supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO) under a strict 12\,GB VRAM budget. We detail the exact hyperparameters, the asymmetric reward matrix that breaks the Nash equilibrium of inaction, and the action-extraction mechanism that rescues truncated tokens. The resulting agent achieves a cumulative return of 90.67\% on our validation set, and we provide a complete forensic reconstruction of the training protocol so that independent researchers can reproduce the system on commodity hardware.
->>>>>>> Stashed changes
     \end{abstract}
 
     \textbf{Keywords:} Financial Forecasting, Large Language Models, Sentiment Analysis, Prompt Engineering, Temporal Memory, FinMMEval, CLEF 2026.
 
-<<<<<<< Updated upstream
-    \section{Introduction}
-    Financial decision-making requires the rapid synthesis of heterogeneous data sources. In the CLEF 2026 FinMMEval Lab (Task 3), participants are challenged to develop agents capable of processing numerical scalars, temporal price histories, and textual news to recommend trading actions (BUY, HOLD, SELL) for assets such as Bitcoin, Tesla, and Apple. 
-
-    While Large Language Models (LLMs) excel at natural language understanding, they traditionally struggle with raw numerical sequences and lack inherent contextual memory of past actions in simulated trading environments. To bridge this gap, our team developed a comprehensive multimodal pipeline. 
-
-    The core contribution of our work lies in the intelligent orchestration of data prior to LLM inference. Specifically, we detail two critical components designed by our team: (1) \textbf{finvert}, an automated and resource-optimized sentiment extraction module leveraging FinBERT, and (2) the \textbf{PromptBuilder}, a sophisticated prompt engineering engine equipped with a tripartite temporal memory. By providing the LLM not just with current data, but with a rolling history of its past decisions and their resulting financial rewards, we simulate a realistic trading agent that adapts to market dynamics and mitigates risk through self-reflection.
-
-    \section{System Architecture and Dataset Formulation}
-    \textit{[Notau: Expandir esta sección. Describir script'generate\_all.py', cómo se construyó 'finmmeval\_raw.csv' mezclando HuggingFace y Yahoo Finance, y los detalles de Chronos Encoder.]}
-
-    The overall architecture transforms raw multimodal data into structured prompts for LLM inference. The pipeline operates as follows:
-    \begin{enumerate}
-        \item \textbf{Data Ingestion:} Raw data from CLEF and Yahoo Finance is collected and unified, encompassing textual news, 10-K/10-Q filings, and technical scalars.
-        \item \textbf{Temporal Encoding (Chronos):} Time-series data is processed to extract temporal embeddings. \textit{[David: Add Chronos details here]}.
-        \item \textbf{Sentiment Extraction (finvert):} Textual data is classified to extract sentiment probabilities.
-        \item \textbf{Prompt Orchestration:} The \textit{PromptBuilder} fuses all signals alongside the agent's trading memory.
-        \item \textbf{LLM Decision Making:} The final prompt is submitted to the decision LLM to output a structured JSON containing the action and rationale.
-    \end{enumerate}
-
-    \section{Temporal Encoding: The Chronos-Bolt Module}
-    To capture the predictive signal embedded in historical price trajectories, our pipeline employs \textbf{Chronos-Bolt} (\texttt{amazon/chronos-bolt-small}), a transformer-based probabilistic forecasting model pre-trained on large collections of real-world time series. Unlike traditional statistical approaches, Chronos-Bolt learns a distribution over future values, enabling the extraction of uncertainty-aware forecasts directly from raw numerical sequences.
-
-    The module is loaded via the \texttt{BaseChronosPipeline} abstraction, which handles device placement automatically. When a CUDA-capable GPU is available, the model is instantiated in \texttt{bfloat16} precision to reduce VRAM consumption while preserving numerical stability. In CPU-only environments, standard floating-point inference is applied as a fallback.
-
-    \subsection{Input Formulation and Batch Processing}
-    Each asset's historical prices are stored per-day as a serialized list in the \texttt{prices\_sequence} column of the dataset. Prior to inference, each entry is deserialized into a typed list of floats, forming the context window fed to the model.
-
-    To maximize GPU throughput, sequences are grouped into batches of 16 and converted to PyTorch tensors. For each batch, the model is queried with \texttt{prediction\_length=1}, restricting the forecast horizon to a single future time step — the next trading day. This deliberate constraint enforces that the model can only reason over observed history, preserving temporal isolation and avoiding any form of look-ahead bias.
-
-    \subsection{Forecast Extraction and Direction Classification}
-    Chronos-Bolt outputs a probabilistic forecast tensor of shape $(\text{batch} \times \text{num\_samples} \times \text{prediction\_length})$, where the \texttt{num\_samples} dimension represents draws from the learned predictive distribution. To obtain a single point estimate per sequence, we compute the \textbf{median} across the sample dimension:
-
-    \begin{equation}
-        \hat{p}_{t+1} = \mathrm{median}_{s} \; F_s(x_{1:t})
-    \end{equation}
-
-    where $F_s$ denotes the $s$-th sample of the forecast distribution conditioned on the observed price history $x_{1:t}$. The resulting scalar $\hat{p}_{t+1}$ is then converted into a discrete directional class by computing the relative price change with respect to the last observed price $p_t$:
-
-    \begin{equation}
-        \Delta = \frac{\hat{p}_{t+1} - p_t}{p_t}
-    \end{equation}
-
-    A symmetric threshold $\tau = 0.001$ ($\pm$0.1\%) governs the classification into three mutually exclusive categories:
-
-    \begin{equation}
-        \text{class} =
-        \begin{cases}
-            1 & \text{if } \Delta > \tau \quad (\textsc{up}) \\
-            2 & \text{if } \Delta < -\tau \quad (\textsc{down}) \\
-            0 & \text{otherwise} \quad (\textsc{hold})
-        \end{cases}
-    \end{equation}
-
-    This threshold was selected to filter out negligible price fluctuations below the level of market noise, ensuring that the \textsc{hold} class captures genuine price stability rather than prediction imprecision.
-
-    \subsection{Evaluation and Output}
-    Upon completing inference over the full dataset, the module computes both global and per-asset evaluation metrics. Global performance is assessed via accuracy, macro-averaged F1, and weighted F1 scores, while per-asset metrics allow identification of assets whose temporal price patterns are more or less amenable to the model's forecasting strategy. The complete predictions and metrics are persisted to \texttt{predictions.csv} and \texttt{metrics.csv} respectively, serving as structured inputs to subsequent stages of the pipeline.
-
-    \section{Multimodal Sentiment Extraction: The \textit{finvert} Module}
-    The \textit{finvert} module acts as the market sentiment sensor of our architecture. Its primary objective is to process unstructured financial texts and quantify them into actionable numerical probabilities.
-
-    \subsection{Auto-Discovery and Text Combination}
-    Financial sentiment is rarely derived from a single source. Our system aggregates three primary textual streams per day in a strict priority hierarchy: daily news, annual reports (10-K), and quarterly reports (10-Q). 
-    
-    To optimize computational resources, the module implements an auto-discovery and filtering mechanism (\texttt{has\_real\_text}). Datasets lacking actual textual data (e.g., pure price-action assets from Yahoo Finance flagged as \texttt{[NO\_TEXT]}) are automatically bypassed. These rows are deterministically assigned a \textit{neutral} label with a 1.0 confidence score without invoking the GPU, vastly improving pipeline efficiency and preventing unnecessary VRAM allocation.
-
-    \subsection{FinBERT Inference and Batch Processing}
-    For valid textual entries, we utilize \textit{FinBERT} (ProsusAI/finbert), a BERT model pre-trained on large-scale financial corpora. Texts are processed in batches of 32 to maximize GPU throughput. 
-
-    The module tokenizes the combined daily text (truncated to a maximum length of 512 tokens) and outputs logits through a 3-class classification head. Applying a softmax function, we extract the probabilities for each class:
-    
-    \begin{equation}
-        P(C_i | x) = \frac{e^{z_i}}{\sum_{j=1}^{3} e^{z_j}}
-    \end{equation}
-    
-    where $C \in \{\text{positive}, \text{negative}, \text{neutral}\}$. The output is stored in a structured format containing the \texttt{sentiment\_label}, the absolute \texttt{sentiment\_score}, and the exact probability distribution. This granular output prevents the downstream LLM from interpreting a weak positive signal with the same weight as a strong one.
-
-    \section{Dynamic Prompt Routing and Temporal Memory}
-    The \textit{PromptBuilder} is the central nervous system of our pipeline, encompassing over 600 lines of orchestration logic. Its responsibility is to synthesize sentiment analysis, technical scalars, portfolio status, and temporal sequences into a highly structured prompt. 
-    
-    Crucially, to simulate a realistic trading environment and prevent look-ahead bias, we enforce \textbf{strict temporal isolation}: the prompt for day $T$ is generated entirely \textit{before} the portfolio memory is updated with the market outcomes of day $T$.
-
-    \subsection{Tripartite Memory Architecture}
-    At any time step $t$, the state of the market is captured by a \texttt{SensorOutputs} object. Meanwhile, the system maintains a \texttt{MemoryContext} of \texttt{DayRecord} objects. Inspired by recent advancements in LLM trading agents (such as FLAG-TRADER and FINMEM), we implemented three types of memory:
-    \begin{itemize}
-        \item \textbf{Rolling Buffer:} A sequential tracker of recent actions and rewards.
-        \item \textbf{Self-Reflection:} Analysis of past errors and successes.
-        \item \textbf{Top-K Retrieval:} Extraction of the most relevant historical trades.
-    \end{itemize}
-
-    \subsection{Strategy V1: Programmatic Auto-Reflection}
-    Strategy V1 is a deterministic, highly efficient prompt routing mechanism requiring no auxiliary API calls. It programmatically translates numerical scalars (e.g., RSI, portfolio exposure) and categorical data into natural language. 
-
-    The primary innovation in V1 is the \textbf{Auto-Reflection Summary}. The module identifies the most successful and most detrimental trades within a historical window. The generated prompt presents the LLM with an ASCII-formatted rolling history table and a specific reflection block:
-    
-    \begin{mdframed}[linewidth=1pt,backgroundcolor=mygray,linecolor=deepBlue]
-    \textit{"CASOS EXITOSOS RECIENTES: 2024-01-15: Accion=BUY, Reward=+0.0234... \\
-    CASOS NEGATIVOS RECIENTES: 2024-01-17: Accion=SELL, Reward=-0.0120..."}
-    \end{mdframed}
-    
-    This structural constraint forces the LLM to ground its current decision by learning from empirical past mistakes, effectively mimicking human reinforcement learning.
-
-    \subsection{Strategy V2: Dual-LLM Pipeline and Semantic FIFO Queuing}
-    To further enhance reasoning, Strategy V2 employs a chained dual-LLM architecture, operating as follows:
-    \begin{enumerate}
-        \item \textbf{LLM-1 (Summarizer):} A lightweight model (e.g., GPT-4o-mini or Llama-3.2-3B) reads the raw data of past days and translates the events into a rich, narrative summary. To ensure deterministic testing during development, we also implemented a \texttt{StubClient} factory pattern.
-        \item \textbf{FIFO Queuing \& Caching:} These narrative summaries are pushed into a chronological First-In-First-Out (FIFO) queue. To heavily optimize API costs and reduce latency, outputs from LLM-1 are cached directly in the \texttt{DayRecord.llm\_summary} attribute.
-        \item \textbf{LLM-2 (Decision):} A heavier reasoning model (e.g., GPT-4o) receives the entire narrative FIFO queue alongside the current market context to make the final BUY/HOLD/SELL decision.
-    \end{enumerate}
-
-    \subsection{Heuristic Risk Management via System Prompts}
-    Both strategies are governed by a strict \textit{System Prompt} that encodes risk-management heuristics. For instance, the LLM is explicitly instructed to prefer SELL or HOLD if the portfolio exposure exceeds 80\%, to avoid BUY recommendations if cash is depleted, and to flag high volatility coupled with negative sentiment as extreme risk.
-
-    \section{Model Optimization and Training Setup}
-
-    \subsection{Problem Formulation and Main Objectives}
-
-    The primary objective of this study is to democratize the application of Group Relative Policy Optimization (GRPO) \cite{shao2024deepseekmath,deepseek2025deepseekr1} for financial trading decisions under severe hardware constraints. While recent state-of-the-art systems such as Trading-R1 \cite{xiao2025tradingr1} have demonstrated remarkable performance by scaling GRPO on massive GPU clusters (e.g., 8$\times$H200 nodes) with chain-of-thought (CoT) reasoning windows spanning 6,000 to 8,000 tokens, such infrastructure requirements place institutional-grade RL fine-tuning far beyond the reach of independent researchers and small laboratories. Conversely, alternative frameworks such as FLAG-TRADER \cite{xiong2025flagtrader} employ classical Proximal Policy Optimization (PPO) \cite{schulman2017ppo} with single-token outputs (Buy, Hold, or Sell), sacrificing interpretability and explicit reasoning capabilities entirely. Our work addresses this dichotomy by designing a training pipeline that preserves structured, interpretable reasoning while operating within a strict 12 GB VRAM budget, thereby bridging the gap between resource-intensive frontier research and accessible, reproducible financial machine learning.
-
-    A critical secondary objective involves resolving two well-documented failure modes of GRPO in constrained environments: the zero-variance collapse caused by aggressive length penalties on truncated responses, and the Nash equilibrium of inaction where the policy collapses to a trivial HOLD strategy. These phenomena, observed during preliminary autopsies of failed training runs, motivated a complete redesign of the reward architecture and action extraction logic to ensure stable gradient flow and meaningful exploration in low-computation regimes.
-
-    \subsection{Architecture and Training Configuration}
-
-    \subsubsection{Base Model and Quantization Strategy}
-
-    All experiments utilize \texttt{unsloth/Phi-4-mini-instruct} as the base language model, loaded in 4-bit NF4 quantization via the Unsloth optimization framework. This configuration reduces the model footprint to approximately 2.5 GB of VRAM, leaving sufficient memory for adapter gradients, optimizer states, and the group generation buffer required by GRPO. Low-Rank Adaptation (LoRA) \cite{hu2022lora} is applied to all linear projection layers (\texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}, \texttt{gate\_proj}, \texttt{up\_proj}, \texttt{down\_proj}) with a rank of $r=4$ and scaling parameter $\alpha=16$. Notably, the effective LoRA dropout is hardcoded to 0.0 in the training wrapper.
-    \subsubsection{Hybrid Two-Stage Training Pipeline}
-
-    Our approach adapts and downscales the SFT-plus-GRPO curriculum originally proposed by Trading-R1 \cite{xiao2025tradingr1}---which was designed for 141 GB server-grade deployments---to commodity hardware. The pipeline consists of two strictly sequential phases.
-
-    \textbf{Phase 1: SFT Warm-up.} Prior to any reinforcement learning, the model undergoes supervised fine-tuning (SFT) for exactly one epoch (approximately 30 minutes) over 1,082 training examples. The objective of this phase is not to learn trading strategy but to anchor the structural XML output format. Each training example is formatted using the \texttt{grpo\_cot\_v1} template, which requires the model to generate a response containing \texttt{<technicals>}, \texttt{<news>}, \texttt{<conclusion>} tags, and a final action token of the form \texttt{[[[ACTION]]]}. The SFT target completions are generated via a dedicated builder that produces ultra-concise ground-truth responses of approximately 60 to 80 characters. This brevity is essential because teaching the model to produce long outputs during SFT, only to truncate them during GRPO due to the 128-token generation limit, leads to catastrophic intra-group variance collapse. The SFT trainer is configured with \texttt{batch\_size=1}, gradient accumulation over 32 steps, a learning rate of $1.155\times10^{-5}$ (half the RL learning rate for stability), and \texttt{bf16} mixed precision with gradient checkpointing.
-
-    \textbf{Phase 2: GRPO Optimization.} Following the SFT phase, the base model is reloaded together with the SFT adapters, and GRPO training commences for one epoch (approximately 6 minutes) over the same training corpus. The GRPO configuration is detailed in Table~\ref{tab:grpo_config}. The group size is restricted to $G=4$ (the minimum viable for GRPO's relative advantage estimation), and the maximum completion length is capped at 128 tokens---a drastic compression compared to the thousands of tokens used in prior work. To stabilize learning with an effective batch size of 1, we employ gradient accumulation across 32 steps. The KL divergence coefficient is set to $\beta=0.051$, and the clipping threshold is $\epsilon=0.104$.
-
-    \begin{table}[htbp]
-    \centering
-    \caption{GRPO Training Hyperparameters}
-    \label{tab:grpo_config}
-    \begin{tabular}{ll}
-    \hline
-    \textbf{Parameter} & \textbf{Value} \\
-    \hline
-    Base Model & \texttt{Phi-4-mini-instruct} (4-bit NF4) \\
-    LoRA rank $r$ & 4 \\
-    LoRA $\alpha$ & 16 \\
-    LoRA dropout & 0.0 \\
-    GRPO group size $G$ & 4 \\
-    KL coefficient $\beta$ & 0.051 \\
-    Clip $\epsilon$ & 0.104 \\
-    Max completion length & 128 tokens \\
-    Temperature & 0.573 \\
-    Learning rate & $2.31\times10^{-5}$ \\
-    Per-device batch size & 1 \\
-    Gradient accumulation & 32 \\
-    Optimizer max grad norm & 0.5 \\
-    Epochs executed & 1 (SFT) + 1 (GRPO) \\
-    \hline
-    \end{tabular}
-    \end{table}
-
-    \subsubsection{Ground Truth Signal Generation}
-
-    The ground truth labels for supervised warm-up and reward computation are derived from a volatility-normalized momentum signal: $\text{signal} = \text{log\_return\_t1} / \text{rolling\_std}(20)$. The classification thresholds, optimized via Optuna TPE with 3 trials, partition the distribution into Buy (top 35.82\%), Sell (bottom 19.18\%), and Hold (remaining 45\%). The dataset is temporally filtered to the most recent 12 months (360 days), yielding 1,082 training rows and 896 validation rows spanning from 2024-02-07 to 2025-02-01. Only rows containing news are retained ($\texttt{has\_news}=1$), ensuring that each example presents a multimodal decision task combining technical indicators, sentiment, and market news.
-
-    \subsection{Optuna Search and Experimental Protocol}
-
-    The hyperparameter search was coordinated using Optuna with the TPE (Tree-structured Parzen Estimator) sampler and a fixed seed of 42 to ensure reproducibility across runs. Due to compute constraints, the initial experiments were executed in a fast mode with only 3 trials; each trial ran the full pipeline (dataset construction, SFT warm-up, and GRPO optimization) and dumped configuration metadata to a \texttt{metadata.json} file. This fast-mode configuration prioritized quick, reproducible validations to detect stability issues (e.g., collapse to HOLD) before committing larger computational budgets.
-
-    The search space included high-impact hyperparameters such as \texttt{learning\_rate}, \texttt{kl\_beta}, \texttt{clip\_epsilon}, \texttt{temperature}, \texttt{reward\_scale\_factor}, and the ground-truth thresholds used to label BUY/SELL decisions. Optuna suggested candidate configurations that were evaluated using the validation fitness metric (median Sharpe Ratio penalized by Maximum Drawdown above 20\%). While the automated search identified candidates with superior fitness (for example, a trial with fitness=1.974 and MDD=17.48\%), the final deployment decision favored a model selected manually based on absolute Cumulative Return (90.67\%) together with operational considerations.
-
-    This protocol proved effective for pipeline debugging and for calibrating the asymmetric reward function, but it also highlights the need to increase the number of trials and the computational budget in future runs to prioritize risk-adjusted metrics during automated model selection. Due to limited time, we were unable to run long-form trainings; therefore, all reported Optuna results correspond to fast-mode trials that executed the full pipeline in a shortened configuration.
-
-    \subsection{Reward Function Design and Engineering Contributions}
-
-    \subsubsection{Asymmetric Reward Matrix}
-
-    The core behavioral signal is provided by an asymmetric 3$\times$3 reward matrix that penalizes directional errors according to their financial severity, scaled by a factor of 1.5799. Table~\ref{tab:reward_matrix} presents the exact values employed in our experiments.
-
-    \begin{table}[htbp]
-    \centering
-    \caption{Asymmetric Reward Matrix (Values Before Scaling)}
-    \label{tab:reward_matrix}
-    \begin{tabular}{l|ccc}
-    \hline
-    \textbf{Pred. $\backslash$ True} & \textbf{BUY} & \textbf{HOLD} & \textbf{SELL} \\
-    \hline
-    BUY & +1.0 & $-1.0$ & $-2.25$ \\
-    HOLD & $\mathbf{-2.0}$ & +1.0 & $\mathbf{-2.0}$ \\
-    SELL & $-2.0$ & $-1.0$ & +1.0 \\
-    \hline
-    \end{tabular}
-    \end{table}
-
-    Our key adaptation over the asymmetric matrix proposed by Trading-R1 \cite{xiao2025tradingr1} lies in the calibration of the false-HOLD penalties. In the original formulation, the penalty for incorrectly predicting HOLD during a market rally or crash was set to $-1.0$ (or at most $-1.5$). Through empirical autopsy of failed training runs, we computed the expected reward of a trivial HOLD policy on our specific data distribution---encompassing volatile crypto assets such as BTC, ETH, and SOL---and found it to be $-0.0945$, which dominated the expected rewards of BUY ($-0.3856$) and SELL ($-1.1040$). This created a Nash equilibrium of inaction: the model learned that remaining passive incurred the least damage, collapsing to 100\% HOLD predictions. By intensifying the false-HOLD penalty to $-2.0$, we mathematically destroyed this equilibrium, equalizing the cost of inaction with that of catastrophic directional errors and thereby forcing the policy to explore meaningful trading decisions.
-
-    \subsubsection{Decision Placement Reward and Length Penalty}
-
-    Drawing on the Decision Placement Reward and Length Penalty concepts introduced by Trading-R1 \cite{xiao2025tradingr1}, we implemented a composite format reward and a progressive length penalty adapted to our 128-token generation ceiling. The format reward distinguishes three cases: (i) a complete response with properly closed action tags receives +0.5; (ii) a response containing a detectable action but truncated before closing receives +0.25; (iii) a severely truncated or malformed response receives $-0.5$; and (iv) a response with no recognizable action incurs the invalid-format penalty of $-1.5$ scaled by the reward factor (yielding approximately $-2.37$).
-
-    The length penalty operates progressively rather than abruptly. Given a soft target of 240 characters (approximately 60 tokens), the penalty is computed as $\max(0, \text{len(response)} - 240) \times 0.0025$. This design prevents the sudden truncation shocks that kill intra-group variance in GRPO when all four group members hit the hard token limit simultaneously.
-
-    \subsubsection{Truncated Token Rescue}
-
-    A fully original engineering contribution is the robust action extractor capable of rescuing partially generated tokens when the model exhausts its 128-token budget mid-action. For instance, a response terminating in \texttt{[[[BU} is heuristically resolved to BUY, while \texttt{[[[SEL} resolves to SELL. This mechanism is not merely a post-processing convenience; it is a critical MLOps technique to prevent zero-variance gradient death. In standard GRPO, if all group completions are truncated identically before emitting a valid action token, the relative advantage across the group becomes zero, and policy gradients vanish. By extracting semantic signal from incomplete patterns, we maintain non-zero variance and preserve learning signals throughout training on limited hardware.
-
-    \subsubsection{Complete Reward Formula}
-
-    The total reward for each generated completion is computed as:
-    \begin{equation}
-    R = (M \times 1.5799) + F - L,
-    \end{equation}
-    where $M$ is the matrix reward from Table~\ref{tab:reward_matrix}, $F$ is the format reward, and $L$ is the length penalty. This composite function balances directional accuracy, structural compliance, and generative conciseness within an ultra-short reasoning window.
-
-    \section{Results and Validation}
-
-    \subsection{Validation Protocol}
-
-    Validation is conducted under two distinct regimes to balance training throughput against statistical robustness. During training, a fast-mode evaluation assesses performance on the last temporal fold only, limited to 100 rows, providing rapid feedback for Optuna trial selection. After training completion, a full validation is executed over all 896 validation rows divided into three contiguous temporal folds: Fold 0 (2024-02-07 to 2024-06-05, 360 rows), Fold 1 (2024-06-06 to 2024-10-03, 294 rows), and Fold 2 (2024-10-04 to 2025-02-01, 242 rows). For each fold, actions are simulated with weights $w_t \in \{+1, 0, -1\}$ corresponding to BUY, HOLD, and SELL, and daily returns are computed as $r_t = w_t \times (P_t - P_{t-1}) / P_{t-1}$. From these returns, we derive Cumulative Return (CR), Sharpe Ratio (SR), Maximum Drawdown (MDD), Accuracy, Win Rate, and Profit Factor. The aggregate fitness score is defined as:
-    \begin{equation}
-    \text{fitness} = \text{median\_SR} - \max(0, \text{MDD\_worst} - 0.20) \times 10,
-    \end{equation}
-    which severely penalizes any drawdown exceeding the 20\% Hall of Fame threshold.
-
-    \paragraph{Validation assets}
-
-    The validation sets used in these experiments contained only YAHOO-sourced assets: \texttt{BTC\_YAHOO}, \texttt{ETH\_YAHOO} and \texttt{SOL\_YAHOO}. Fast-mode validation (used during training and Optuna trials) evaluated only the last temporal fold and a limited sample (100 rows) drawn from these YAHOO assets. Full validation likewise operates on the same YAHOO assets across the three temporal folds described above. Assets originating from the CLEF split (for example, \texttt{BTC\_CLEF}, \texttt{ETH\_CLEF}, \texttt{TSLA\_CLEF}, \texttt{MSFT\_CLEF} and \texttt{BMRN\_CLEF}) were reserved exclusively for the out-of-sample test set and were not included in validation runs.
-
-    \subsection{Training and Fast-Mode Results}
-
-    Within the fast-mode evaluation, the winning trial (Trial 0, \texttt{exp\_20260506\_085649\_254046}) achieved a fitness of 2.9488 with an MDD of merely 0.11\% over 100 rows. The action distribution at this stage was extremely conservative: 96\% HOLD, 4\% SELL, and 0\% BUY. While this distribution suggested the model had learned to avoid catastrophic errors, it also indicated that the anti-HOLD calibration had not yet fully activated exploratory BUY behavior within the restricted fast-mode window. The two subsequent Optuna trials (using Qwen2.5-3B and a different hyperparameter configuration for Phi-4-mini, respectively) collapsed to repetitive text or 100\% HOLD, yielding negative fitness values and confirming the brittleness of GRPO under hardware constraints without the stabilizing modifications described in the previous section.
-
-    \subsection{Full Validation Results}
-    The complete validation stage evaluated 9 candidate models on the full validation set (896 rows across three temporal folds). The full-validation protocol assessed temporal robustness and risk-adjusted performance, prioritizing a fitness metric defined as the median Sharpe Ratio penalized by excessive Maximum Drawdown (MDD $>$ 20\%).
-
-    \paragraph{Performance Metrics}
-    
-    Each finalist's performance is evaluated across seven complementary dimensions. The following table provides a complete description of each metric used in Table~\ref{tab:validation_results}. The fitness metric serves as the primary optimization objective, while the remaining six metrics capture different aspects of trading efficacy: risk-adjusted profitability (SR), cumulative return (CR), capital preservation (MDD), directional accuracy (Acc.), trade success rate (WR), and cumulative profitability scaled by drawdown magnitude (PF).
-    
-    \begin{table}[htbp]
-    \centering
-    \small
-    \caption{Performance Metrics Reference}
-    \label{tab:metrics_reference}
-    \begin{tabular}{|l|p{4cm}|p{4.5cm}|}
-    \hline
-    \textbf{Metric} & \textbf{Definition} & \textbf{Interpretation} \\
-    \hline
-    Fitness & Median Sharpe Ratio with penalty multiplier $-2.0 \times \max(0, \text{MDD} - 0.20)$ for drawdowns exceeding 20\% & Primary optimization objective; higher is better; severe penalty for exceeding risk threshold \\
-    \hline
-    SR (Sharpe) & Excess return divided by portfolio volatility & Risk-adjusted profitability; higher indicates stable returns relative to fluctuations \\
-    \hline
-    MDD & Maximum cumulative loss from peak to trough (\%) & Key downside risk measure; values $>$20\% trigger fitness penalties; lower is safer \\
-    \hline
-    CR (Cumulative Return) & Total percentage gain or loss across the entire validation period (\%) & Absolute profitability over the full period; higher indicates greater total wealth accumulation; can be misleading without considering drawdown \\
-    \hline
-    Acc. (Accuracy) & Proportion of BUY/HOLD/SELL decisions aligned with realized price direction & Directional correctness of model predictions; higher indicates better signal quality \\
-    \hline
-    WR (Win Rate) & Percentage of closed trades generating profit & Trade success frequency independent of magnitude; higher indicates consistent small wins \\
-    \hline
-    PF (Profit Factor) & Cumulative gains divided by cumulative losses & Net profitability; $>$1.0 profitable, $<$1.0 net losses, Inf/undefined indicates no losses \\
-    \hline
-    \end{tabular}
-    \end{table}
-
-    \begin{table}[htbp]
-    \centering
-    \small
-    \caption{Full Validation Results — 9 Finalists}
-    \label{tab:validation_results}
-    \begin{tabular}{lccccccc}
-    \hline
-    \textbf{Exp.} & \textbf{Fitness} & \textbf{SR} & \textbf{MDD} & \textbf{CR} & \textbf{Acc.} & \textbf{WR} & \textbf{PF} \\
-    \hline
-    \texttt{085649\_254046} & 0.1069 & 2.9117 & 48.05\% & \textbf{90.67\%} & 38.31\% & 54.83\% & 1.513 \\
-    \texttt{111504\_33de19} & \textbf{1.9740} & 1.9740 & 17.48\% & 19.34\% & 41.85\% & \textbf{58.14\%} & 1.687 \\
-    \texttt{113530\_8bc775}~(ep4) & 1.2134 & 1.2134 & \textbf{14.15\%} & 9.44\% & 40.96\% & 52.93\% & \textbf{1.697} \\
-    \texttt{004508\_27f172} & -0.0759 & \textbf{3.0408} & 51.17\% & 89.76\% & 38.87\% & 55.81\% & 1.568 \\
-    \texttt{115709\_051aed} & -0.4434 & 1.4039 & 38.47\% & 22.74\% & 38.99\% & 51.91\% & 1.249 \\
-    \texttt{014550\_f9ad37} & -0.8756 & 1.4105 & 42.86\% & 28.16\% & 40.23\% & 50.90\% & 1.225 \\
-    \texttt{113530\_8bc775}~(ep2) & -0.6082 & -0.1113 & 24.97\% & -1.12\% & 42.12\% & 51.23\% & 0.970 \\
-    \texttt{221904\_9bb326} & -2.5173 & -0.2100 & 43.07\% & -3.18\% & 43.64\% & 50.89\% & 0.928 \\
-    \texttt{204602\_88701e} & -1.4462 & -0.1954 & 32.51\% & -1.89\% & \textbf{43.72\%} & 48.85\% & 0.912 \\
-    \hline
-    \end{tabular}
-    \end{table}
-
-    The model \texttt{085649\_254046}, which serves the current inference endpoint, achieved a Cumulative Return of 90.67\%, the highest among all candidates, alongside a Sharpe Ratio of 2.9117 and an accuracy of 38.31\%. However, its Maximum Drawdown of 48.05\% far exceeds the 20\% safety threshold, resulting in a suppressed fitness score of 0.1069.
-
-    In sharp contrast, model \texttt{111504\_33de19} attained a fitness of 1.974---18.5 times higher---with an MDD of 17.48\%, comfortably within the Hall of Fame threshold. This model also exhibited a superior win rate (58.14\%) and accuracy (41.85\%), making it objectively superior under virtually all risk-adjusted criteria.
-
-    \subsection{Analysis and Model Selection Trade-off}
-
-    The discrepancy between the highest-fitness model and the deployed model illustrates a fundamental tension in financial agent design: the conflict between risk-adjusted efficiency and absolute profitability. Model \texttt{111504\_33de19} represents the prudent choice under classical portfolio theory, delivering a Sharpe Ratio of 1.974 with capital preservation (MDD$<$20\%). It embodies the risk-averse profile advocated by systems such as TradingGroup \cite{tian2025tradinggroup} and FINMEM \cite{yu2024finmem}, which emphasize dynamic risk management and survival across market regimes. Conversely, model \texttt{085649\_254046} sacrifices downside protection for asymmetric upside capture, yielding a 90.67\% cumulative return at the cost of a 48.05\% drawdown---a profile closer to high-conviction discretionary trading than to institutional risk constraints.
-
-    The final selection of \texttt{085649\_254046} was a manual, deliberate decision based on the competition's primary evaluation metric: Cumulative Return. While this choice acknowledges the model's vulnerability to severe capital erosion---as evidenced by its failure to pass the automatic Hall of Fame criteria---it also reflects the reality that in zero-sum or tournament-style evaluation environments, raw alpha generation often outweighs Sharpe-based efficiency. The existence of \texttt{111504\_33de19} demonstrates that our training pipeline is capable of producing both profiles, and that the selection criterion, not the learning algorithm, drives the ultimate risk-return posture of the deployed agent.
-
-    Furthermore, the validation results expose the dangers of relying solely on fast-mode metrics. The fast-mode MDD of 0.11\% for the deployed model was catastrophically optimistic compared to the full-validation MDD of 48.05\%, confirming that evaluation over a single truncated fold produces an illusion of robustness. This finding reinforces the necessity of multi-fold temporal validation in financial machine learning, where data non-stationarity and regime shifts can render point-in-time metrics misleading.
-
-    \section{Conclusion and Future Work}
-    In this Working Note, we presented a comprehensive RAG pipeline for financial decision-making in the CLEF 2026 FinMMEval Lab. By developing the \textit{finvert} module for precise sentiment extraction and a novel \textit{PromptBuilder} equipped with a tripartite temporal memory, we successfully bridged the gap between raw quantitative market data and qualitative LLM reasoning. 
-
-    Our dual-strategy prompt orchestration demonstrated that providing an LLM with a structured, self-reflective memory of its past actions significantly enhances its ability to manage risk and make context-aware trading decisions. 
-=======
     \input{lib/chapter1}
     
-    \printbibliography
->>>>>>> Stashed changes
-
-    Future work will focus on \textit{[agregar sus puntos sobre mejorar el split temporal (Walk-forward validation), balancear el dataset entre equity/crypto, y automatizar la selección por fitness en lugar de selección manual por CR.]}.
-
-    \section*{Acknowledgments}
-    We extend our gratitude to the Artificial Intelligence Club (GAIA) at ESCOM-IPN for their continuous support and computational resources. 
 
 \printbibliography
 \end{document}

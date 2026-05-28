@@ -1,0 +1,921 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{theFinAI2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=76f08ae6a123bf850faefcff15314bc7}{%
+           family={TheFinAI},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{fullhash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{fullhashraw}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{bibnamehash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{authorbibnamehash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{authornamehash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{authorfullhash}{76f08ae6a123bf850faefcff15314bc7}
+      \strng{authorfullhashraw}{76f08ae6a123bf850faefcff15314bc7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Hugging Face Repository}
+      \field{title}{daily\_news: Daily Financial News Dataset for Fin-MMEval}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://huggingface.co/datasets/TheFinAI/daily_news
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/datasets/TheFinAI/daily_news
+      \endverb
+    \endentry
+    \entry{yang2023fingpt}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1d4af778526f9fb5e51a585367371ae6}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Hongyang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=62de333ae9544c8109bebdd547b05a93}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xiao-Yang},
+           giveni={X\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=1985126cecdf9b014698b3023fd5ad28}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Christina\bibnamedelima Dan},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{556ce49f0de6b7e7f9ddff0bd3e80daf}
+      \strng{fullhash}{a90d05738058f310816b2355feff5ce8}
+      \strng{fullhashraw}{a90d05738058f310816b2355feff5ce8}
+      \strng{bibnamehash}{a90d05738058f310816b2355feff5ce8}
+      \strng{authorbibnamehash}{a90d05738058f310816b2355feff5ce8}
+      \strng{authornamehash}{556ce49f0de6b7e7f9ddff0bd3e80daf}
+      \strng{authorfullhash}{a90d05738058f310816b2355feff5ce8}
+      \strng{authorfullhashraw}{a90d05738058f310816b2355feff5ce8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2306.06031}
+      \field{title}{FinGPT: Open-Source Financial Large Language Models}
+      \field{year}{2023}
+    \endentry
+    \entry{xiao2025tradingr1}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=1dc85b32b142a3c2d3c0ee96e4338fb7}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yijia},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=23cb076a301e056a5661833c4d40f4b1}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=84e53870b10b90866b8483be8fe5a60e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ad46257c63194a437fd68061d437aa1f}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Fang},
+           giveni={F\bibinitperiod}}}%
+        {{hash=5e3531d9238a57e68af8286bb22fc43e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f27ec46ccd272a021fd78bdac92dd490}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d1738a030449b923df2300902acc66b}
+      \strng{fullhash}{3a48a3cd2251647b51f72557194dd761}
+      \strng{fullhashraw}{3a48a3cd2251647b51f72557194dd761}
+      \strng{bibnamehash}{3a48a3cd2251647b51f72557194dd761}
+      \strng{authorbibnamehash}{3a48a3cd2251647b51f72557194dd761}
+      \strng{authornamehash}{4d1738a030449b923df2300902acc66b}
+      \strng{authorfullhash}{3a48a3cd2251647b51f72557194dd761}
+      \strng{authorfullhashraw}{3a48a3cd2251647b51f72557194dd761}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{note}{Tauric Research}
+      \field{title}{Trading-R1: Financial Trading with LLM Reasoning via Reinforcement Learning}
+      \field{year}{2025}
+    \endentry
+    \entry{ansari2024chronos}{article}{}{}
+      \name{author}{18}{}{%
+        {{hash=41c1df44b5f36b0d60799a18f13c8345}{%
+           family={Ansari},
+           familyi={A\bibinitperiod},
+           given={Abdul\bibnamedelima Fatir},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=83fc4e25ebfa5fbdb577e9666d000bab}{%
+           family={Stella},
+           familyi={S\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=453c44acc624f19e83afc64fc3f2c7d5}{%
+           family={Turkmen},
+           familyi={T\bibinitperiod},
+           given={Caner},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e29804fa90fc95b4f5ac7f0cdae3ad75}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiyuan},
+           giveni={X\bibinitperiod}}}%
+        {{hash=2ed72f6f0ac89030f49a5a25a629ad49}{%
+           family={Mercado},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b2fa30baa7440b5771ad403f32d4d4a2}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Huibin},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c695e4e0319891565c3a85e483d80f31}{%
+           family={Shchur},
+           familyi={S\bibinitperiod},
+           given={Oleksandr},
+           giveni={O\bibinitperiod}}}%
+        {{hash=a3edf426c05893fe420aba2808f54985}{%
+           family={Rangapuram},
+           familyi={R\bibinitperiod},
+           given={Syama\bibnamedelima Sundar},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=67e3827314e9151bce7058b0c76f69a0}{%
+           family={Pineda\bibnamedelima Arango},
+           familyi={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2af2a26e64fa346203a9fb016a9f04f9}{%
+           family={Kapoor},
+           familyi={K\bibinitperiod},
+           given={Shubham},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a4cb0817196346e47494c15b6f02f9fb}{%
+           family={Zschiegner},
+           familyi={Z\bibinitperiod},
+           given={Jasper},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6851b298e705d87a9d644d809ab44cc2}{%
+           family={Maddix},
+           familyi={M\bibinitperiod},
+           given={Danielle\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c8cf19241225247d6d07dbf8a516b8ed}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=6428c5852da0dfbdd50e39418c9571bf}{%
+           family={Mahoney},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=de356d9ce5a80fb1c54f81b13e4ab4b5}{%
+           family={Torkkola},
+           familyi={T\bibinitperiod},
+           given={Kari},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f58290185dfd014024f7abaf3fc0d0f2}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Andrew\bibnamedelima Gordon},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=788936496107a6d83806631aa1d699c0}{%
+           family={Bohlke-Schneider},
+           familyi={B\bibinithyphendelim S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=89db2c9625912ed093b11ce29034e468}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bernie},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
+      \strng{fullhash}{473f25affb90db6e670b5a99f6a755f4}
+      \strng{fullhashraw}{473f25affb90db6e670b5a99f6a755f4}
+      \strng{bibnamehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
+      \strng{authorbibnamehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
+      \strng{authornamehash}{3b3f6d1c99c023b1a9d6ab544472af0c}
+      \strng{authorfullhash}{473f25affb90db6e670b5a99f6a755f4}
+      \strng{authorfullhashraw}{473f25affb90db6e670b5a99f6a755f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transactions on Machine Learning Research}
+      \field{title}{Chronos: Learning the Language of Time Series}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=T08M3P4W1T
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=T08M3P4W1T
+      \endverb
+    \endentry
+    \entry{xu2025finmultitime}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=44851222614b4e9f81d1c7331aae7ce3}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Wenyan},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8594067d5d20eab43a3167c7c19f9515}{%
+           family={Xiang},
+           familyi={X\bibinitperiod},
+           given={Dawei},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4ea6157adaa214ea9a0734bb53dd8492}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=8ddb6939d52ed948ce6bc832b1a9a039}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xiyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=56c69e49ca039b2cae98ec760f7515f5}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Yanxiang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f470fb8cd7170a8b441bd8dfb5dbd38f}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Shu},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0bf1b08466636bf5ead9445ddbec1524}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0fd89a7fb20b3d99368ee682085e4436}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=fc73722340aea168698217dc20a7bcd2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jiaheng},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{187f7d43fe7359dadcf270a549f6b31d}
+      \strng{fullhash}{9f49e95f3a79c51a9cae347c1f1c988f}
+      \strng{fullhashraw}{9f49e95f3a79c51a9cae347c1f1c988f}
+      \strng{bibnamehash}{187f7d43fe7359dadcf270a549f6b31d}
+      \strng{authorbibnamehash}{187f7d43fe7359dadcf270a549f6b31d}
+      \strng{authornamehash}{187f7d43fe7359dadcf270a549f6b31d}
+      \strng{authorfullhash}{9f49e95f3a79c51a9cae347c1f1c988f}
+      \strng{authorfullhashraw}{9f49e95f3a79c51a9cae347c1f1c988f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{title}{FinMultiTime: A Four-Modal Bilingual Dataset for Financial Time-Series Analysis}
+      \field{year}{2025}
+    \endentry
+    \entry{qian2025whenagentstrade}{article}{}{}
+      \name{author}{18}{}{%
+        {{hash=1aa20b46254ab5c1878ff62880c68a9b}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Lingfei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0a1c7e99ccc42c29dabb2c9792b7c1e0}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xueqing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=5c786d9afb3cf178271120f1fd926d21}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=41641d8f67ad8c59503d3f8032a85ddd}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Vincent\bibnamedelima Jim},
+           giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1d134753657f8f962056ba1d2007e0c6}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Huan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7246d27c9fd9a874245ede3cb8cfc00d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zehan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=832805e2b32e2f45bb810c3482d11e63}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Hanley},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4e9c0e53a7ba98e6372206f30fbb49fb}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6a7ee5b446e65f89ad4054a5f5f13aaa}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Yueru},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c1d3472476b822cc19924d9d58c258d6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Haohang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4e86535695e6100e6d0f491301cbcf87}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yupeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d773cda88ae4dc9fa6b8e60a9162a244}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bf8adc049497017b604e2a782a576d42}{%
+           family={Lopez-Lira},
+           familyi={L\bibinithyphendelim L\bibinitperiod},
+           given={Alejandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5c1e16e3967db9ab77ecdbb59a576801}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=249bb150525fcf94fd8a35571a611e24}{%
+           family={Nie},
+           familyi={N\bibinitperiod},
+           given={Jian-Yun},
+           giveni={J\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=f86517db61ac1855f0db800789a2bb46}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Guojun},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c799210ddd2e3ba89470e43c253a83b1}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jimin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3780b2d12b907a7196c92d8269005aba}{%
+           family={Ananiadou},
+           familyi={A\bibinitperiod},
+           given={Sophia},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{527e6599a96cad449f8166ce13e99a0c}
+      \strng{fullhash}{2177afb78f86c6040ff4fa28fc9f3442}
+      \strng{fullhashraw}{2177afb78f86c6040ff4fa28fc9f3442}
+      \strng{bibnamehash}{527e6599a96cad449f8166ce13e99a0c}
+      \strng{authorbibnamehash}{527e6599a96cad449f8166ce13e99a0c}
+      \strng{authornamehash}{527e6599a96cad449f8166ce13e99a0c}
+      \strng{authorfullhash}{2177afb78f86c6040ff4fa28fc9f3442}
+      \strng{authorfullhashraw}{2177afb78f86c6040ff4fa28fc9f3442}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{title}{When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents}
+      \field{year}{2025}
+    \endentry
+    \entry{yu2024finmem}{inproceedings}{}{}
+      \name{author}{9}{}{%
+        {{hash=d773cda88ae4dc9fa6b8e60a9162a244}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c1d3472476b822cc19924d9d58c258d6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Haohang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5c069394326941cace3c2b60358b9423}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c2e01b1a65fcae214687aeb8f87eed00}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Yuechen},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2af761d9bef859ea29248418adce0dd7}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=43fd66ca88e5ad050f71d47ff49ba8b9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Denghui},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6e0407cf2820edaaaeebbc9f383e0490}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Rong},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9a26dfbb13f1d2ac5e5f0094b7633695}{%
+           family={Suchow},
+           familyi={S\bibinitperiod},
+           given={Jordan\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=080f3484267edb18216493cd869ee5a6}{%
+           family={Khashanah},
+           familyi={K\bibinitperiod},
+           given={Khaldoun},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{fullhash}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{fullhashraw}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{bibnamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authorbibnamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authornamehash}{ca229f424e44a70e73c923b3a6063ad2}
+      \strng{authorfullhash}{c2b070c43afecfab796fe943cf0572ff}
+      \strng{authorfullhashraw}{c2b070c43afecfab796fe943cf0572ff}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AAAI Symposium Series}
+      \field{title}{FINMEM: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design}
+      \field{volume}{3}
+      \field{year}{2024}
+      \field{pages}{595\bibrangedash 597}
+      \range{pages}{3}
+    \endentry
+    \entry{xiao2024tradingagents}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=1dc85b32b142a3c2d3c0ee96e4338fb7}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yijia},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=23cb076a301e056a5661833c4d40f4b1}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5e3531d9238a57e68af8286bb22fc43e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Di},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f27ec46ccd272a021fd78bdac92dd490}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d1738a030449b923df2300902acc66b}
+      \strng{fullhash}{c33150eed00ec1ed6f824c680ea92aab}
+      \strng{fullhashraw}{c33150eed00ec1ed6f824c680ea92aab}
+      \strng{bibnamehash}{c33150eed00ec1ed6f824c680ea92aab}
+      \strng{authorbibnamehash}{c33150eed00ec1ed6f824c680ea92aab}
+      \strng{authornamehash}{4d1738a030449b923df2300902acc66b}
+      \strng{authorfullhash}{c33150eed00ec1ed6f824c680ea92aab}
+      \strng{authorfullhashraw}{c33150eed00ec1ed6f824c680ea92aab}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2412.20138}
+      \field{title}{TradingAgents: Multi-agents LLM financial trading framework}
+      \field{year}{2024}
+    \endentry
+    \entry{tian2025tradinggroup}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1487e60477fb6a315fa69b2f8ee53c9f}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=d7b1c8b2fc8ddee85f4564ab5c04fd8c}{%
+           family={Salim},
+           familyi={S\bibinitperiod},
+           given={Flora\bibnamedelima D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=8d0fb4d4886377d7fb9974b52ecf4831}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{752afcb070710b0b26a5470465ec03f0}
+      \strng{fullhash}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \strng{fullhashraw}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \strng{bibnamehash}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \strng{authorbibnamehash}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \strng{authornamehash}{752afcb070710b0b26a5470465ec03f0}
+      \strng{authorfullhash}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \strng{authorfullhashraw}{cbff33d3eda15a81ad15d3a78605bbd2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{title}{TradingGroup: A Multi-Agent Trading System with Self-Reflection and Data-Synthesis}
+      \field{year}{2025}
+    \endentry
+    \entry{lu2025p1gpt}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=eee1c1ac43ca1fb693397a9eb3a00d1b}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Chen-Che},
+           giveni={C\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=5fa6a4ad7eb8ebcd44d89df4026b2eff}{%
+           family={Chou},
+           familyi={C\bibinitperiod},
+           given={Yun-Cheng},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=c8992f42c1bef756a48c34ada8328886}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Teng-Ruei},
+           giveni={T\bibinithyphendelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{22d221e82c343ec0d30608e9b15abc73}
+      \strng{fullhash}{74478be254f45b63a324d6cc41b9056f}
+      \strng{fullhashraw}{74478be254f45b63a324d6cc41b9056f}
+      \strng{bibnamehash}{74478be254f45b63a324d6cc41b9056f}
+      \strng{authorbibnamehash}{74478be254f45b63a324d6cc41b9056f}
+      \strng{authornamehash}{22d221e82c343ec0d30608e9b15abc73}
+      \strng{authorfullhash}{74478be254f45b63a324d6cc41b9056f}
+      \strng{authorfullhashraw}{74478be254f45b63a324d6cc41b9056f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{note}{Neurowatt AI}
+      \field{title}{P1GPT: A Multi-Agent LLM Workflow Module for Multi-Modal Financial Information Analysis}
+      \field{year}{2025}
+    \endentry
+    \entry{hu2022lora}{inproceedings}{}{}
+      \name{author}{8}{}{%
+        {{hash=e6a95d07b8ae7f14e4eb777c6980a059}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Edward\bibnamedelima J},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1701c0f05662e92cf52cfc8c16437496}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Yelong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ab0fdbc1586103dda7ac5e0852e5b2c3}{%
+           family={Wallis},
+           familyi={W\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=eaa5cc98b7f19b4ce07c832213a13b9d}{%
+           family={Allen-Zhu},
+           familyi={A\bibinithyphendelim Z\bibinitperiod},
+           given={Zeyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0d2c91b24f885b22d373a892a768abc8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yuanzhi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b654b88ecd4c3ff1ea29da275bce701c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Shean},
+           giveni={S\bibinitperiod}}}%
+        {{hash=55f210233ac686af68eba11a97bd84e2}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=05d71a9c5e7ac79222e01a55af0ccb93}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Weizhu},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{d775178c34083951ab1e07df578582c3}
+      \strng{fullhash}{08f4b49735d5d145be00bc9c07f38975}
+      \strng{fullhashraw}{08f4b49735d5d145be00bc9c07f38975}
+      \strng{bibnamehash}{d775178c34083951ab1e07df578582c3}
+      \strng{authorbibnamehash}{d775178c34083951ab1e07df578582c3}
+      \strng{authornamehash}{d775178c34083951ab1e07df578582c3}
+      \strng{authorfullhash}{08f4b49735d5d145be00bc9c07f38975}
+      \strng{authorfullhashraw}{08f4b49735d5d145be00bc9c07f38975}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Learning Representations (ICLR)}
+      \field{title}{LoRA: Low-Rank Adaptation of Large Language Models}
+      \field{year}{2022}
+    \endentry
+    \entry{schulman2017ppo}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=3e09bd2a25d237ebdaed560a07c0451e}{%
+           family={Schulman},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=674ede0b9cd02a2bf5fc662972efb9f0}{%
+           family={Wolski},
+           familyi={W\bibinitperiod},
+           given={Filip},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4164e43d8cf919f5e3f8d80f5ea23f36}{%
+           family={Dhariwal},
+           familyi={D\bibinitperiod},
+           given={Prafulla},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a812c46caad94fc8701be37871f303ba}{%
+           family={Radford},
+           familyi={R\bibinitperiod},
+           given={Alec},
+           giveni={A\bibinitperiod}}}%
+        {{hash=be38507da6ab98e7ac01ac2c6b7e13eb}{%
+           family={Klimov},
+           familyi={K\bibinitperiod},
+           given={Oleg},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d6613ae59595910252a86a61babf6c8}
+      \strng{fullhash}{a6c6ed5a5aeb74e536f16291276ae392}
+      \strng{fullhashraw}{a6c6ed5a5aeb74e536f16291276ae392}
+      \strng{bibnamehash}{a6c6ed5a5aeb74e536f16291276ae392}
+      \strng{authorbibnamehash}{a6c6ed5a5aeb74e536f16291276ae392}
+      \strng{authornamehash}{8d6613ae59595910252a86a61babf6c8}
+      \strng{authorfullhash}{a6c6ed5a5aeb74e536f16291276ae392}
+      \strng{authorfullhashraw}{a6c6ed5a5aeb74e536f16291276ae392}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1707.06347}
+      \field{title}{Proximal policy optimization algorithms}
+      \field{year}{2017}
+    \endentry
+    \entry{xiong2025flagtrader}{article}{}{}
+      \name{author}{13}{}{%
+        {{hash=f86517db61ac1855f0db800789a2bb46}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Guojun},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7a25358eadd3cf3539289334d3625050}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Zhiyang},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=2da02b72678438b17bda0a9160a46ce5}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Keyi},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4e86535695e6100e6d0f491301cbcf87}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yupeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c1d3472476b822cc19924d9d58c258d6}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Haohang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d773cda88ae4dc9fa6b8e60a9162a244}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0a1c7e99ccc42c29dabb2c9792b7c1e0}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Xueqing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e32456a56ea2d1fae4a98a758f89104f}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Mingquan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b98a1d4bc5f3ff181da762b18ad278ac}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Kaleb\bibnamedelima E},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=62de333ae9544c8109bebdd547b05a93}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xiao-Yang},
+           giveni={X\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=c799210ddd2e3ba89470e43c253a83b1}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jimin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3780b2d12b907a7196c92d8269005aba}{%
+           family={Ananiadou},
+           familyi={A\bibinitperiod},
+           given={Sophia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=214f89b14830ae0b7bf236994ee2e8e7}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Qianqian},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{09eeecafea863075a9b08ed58ab4553b}
+      \strng{fullhash}{42c6c69c2d3665271c0b2bf256f233d2}
+      \strng{fullhashraw}{42c6c69c2d3665271c0b2bf256f233d2}
+      \strng{bibnamehash}{09eeecafea863075a9b08ed58ab4553b}
+      \strng{authorbibnamehash}{09eeecafea863075a9b08ed58ab4553b}
+      \strng{authornamehash}{09eeecafea863075a9b08ed58ab4553b}
+      \strng{authorfullhash}{42c6c69c2d3665271c0b2bf256f233d2}
+      \strng{authorfullhashraw}{42c6c69c2d3665271c0b2bf256f233d2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2502.11433}
+      \field{title}{FLAG-TRADER: Fusion LLM-Agent with Gradient-based Reinforcement Learning for Financial Trading}
+      \field{year}{2025}
+    \endentry
+    \entry{shao2024deepseekmath}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=76ff010a59ccc9f5f1a0018fc1f1f34b}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Zhihong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=87a8cdc413eb9ae298d444f4939e351f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Peiyi},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2e0f6670310682601840be6267950e06}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qihao},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=1921948240c259729e2ec8093fcf848b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Runxin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1fe78774ca64f7faf5c4146809895eda}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Junxiao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=762edc61728d98f1821f6020a1203986}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod}}}%
+        {{hash=8cb1dcd229cb02dbc21ed4c6bc6bce8a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haowei},
+           giveni={H\bibinitperiod}}}%
+        {{hash=812d3dc5af2363482ace273325f5509d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Mingchuan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0ccf1f56ca1014c387c912bb2c760441}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={YK},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fba592628541fb8e22f9195ccaca6459}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{18308a4825687375ed15118861d7b16e}
+      \strng{fullhash}{49213063c8d346f7a3960fea5556b3d2}
+      \strng{fullhashraw}{49213063c8d346f7a3960fea5556b3d2}
+      \strng{bibnamehash}{18308a4825687375ed15118861d7b16e}
+      \strng{authorbibnamehash}{18308a4825687375ed15118861d7b16e}
+      \strng{authornamehash}{18308a4825687375ed15118861d7b16e}
+      \strng{authorfullhash}{49213063c8d346f7a3960fea5556b3d2}
+      \strng{authorfullhashraw}{49213063c8d346f7a3960fea5556b3d2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2402.03300}
+      \field{title}{DeepSeekMath: Pushing the limits of mathematical reasoning in open language models}
+      \field{year}{2024}
+    \endentry
+    \entry{deepseek2025deepseekr1}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{8}{}{%
+        {{hash=d597faee5c847cfbb2346d3b8725ba38}{%
+           family={DeepSeek-AI},
+           familyi={D\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=a65b6db35516aecf6dcadd97221ae4cf}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Daya},
+           giveni={D\bibinitperiod}}}%
+        {{hash=39ba26b2f24e305fc74063eeb50e3758}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Dejian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8cb1dcd229cb02dbc21ed4c6bc6bce8a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haowei},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1fe78774ca64f7faf5c4146809895eda}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Junxiao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e2b49c18158617c0fd76406ee1a75a0c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ruoyu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1921948240c259729e2ec8093fcf848b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Runxin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2e0f6670310682601840be6267950e06}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qihao},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{5fdab74d243b9b82fe0d349e46676941}
+      \strng{fullhash}{927cc739107adb44afed63867eed21e7}
+      \strng{fullhashraw}{927cc739107adb44afed63867eed21e7}
+      \strng{bibnamehash}{5fdab74d243b9b82fe0d349e46676941}
+      \strng{authorbibnamehash}{5fdab74d243b9b82fe0d349e46676941}
+      \strng{authornamehash}{5fdab74d243b9b82fe0d349e46676941}
+      \strng{authorfullhash}{927cc739107adb44afed63867eed21e7}
+      \strng{authorfullhashraw}{927cc739107adb44afed63867eed21e7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2501.12948}
+      \field{title}{DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning}
+      \field{year}{2025}
+    \endentry
+  \enddatalist
+  \missing{araci2019finbert}
+  \missing{zhang2023fingpt}
+\endrefsection
+\endinput
+
