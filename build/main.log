@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  26 MAY 2026 18:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.1) (preloaded format=pdflatex 2026.2.15)  28 MAY 2026 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,6 +741,8 @@ Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count408
@@ -848,6 +850,14 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip22
 \c@smartand=\count484
 )
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
@@ -858,23 +868,26 @@ Package biblatex Info: ... file 'standard.bbx' found.
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count485
 \c@bbx:relatedtotal=\count486
-))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
- (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
-File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+File: ieee.cbx 2025-08-01 v1.4f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-verb'...
+Package biblatex Info: ... file 'numeric-verb.cbx' found.
+ (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-verb.cbx
+File: numeric-verb.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
-)
+Package biblatex Info: Redefining '\textcites'.
+))
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
@@ -907,20 +920,20 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -991,167 +1004,199 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.bbl)
-Package biblatex Info: Reference section=0 on input line 83.
-Package biblatex Info: Reference segment=0 on input line 83.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+ (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                yu2024finmem
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 84.
+Package biblatex Info: Reference segment=0 on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
  (C:\Users\Joni\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) (lib/chapter1.tex [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
 {C:/Users/Joni/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (21.65135pt too wide) in paragraph at lines 111--112
+
+LaTeX Warning: Citation 'yu2024finmem' on page 2 undefined on input line 16.
+
+
+Overfull \hbox (21.65135pt too wide) in paragraph at lines 18--19
 []\OT1/cmr/m/n/10.95 Training these agents at scale typ-i-cally re-quires parameter-efficient fine-tuning and reinforcement-
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 133.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 133.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 30.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 30.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 133.
+(Font)              for symbol `textbraceleft' on input line 30.
 
-
-Overfull \hbox (46.53658pt too wide) in paragraph at lines 133--134
-\OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 asset\OMS/cmtt/m/n/10.95 g[]\OT1/cmtt/m/n/10.95 escalares.csv\OT1/cmr/m/n/10.95 , and \OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 asset\OMS/cmtt/m/n/10.95 g[]\OT1/cmtt/m/n/10.95 temporal.csv\OT1/cmr/m/n/10.95 ), which are then con-sumed by the \OT1/cmtt/m/n/10.95 DatasetBuilder
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]\OT1/cmr/m/n/10 Yahoo Fi-
  []
 
 
-Overfull \hbox (13.7845pt too wide) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]\OT1/cmr/m/n/10 Hugging
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]\OT1/cmr/m/n/10 Unstructured sum-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+[]\OT1/cmr/m/n/10 Out-of-sample
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+[]\OT1/cmr/m/n/10 In-house
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 58--58
+[]\OT1/cmr/m/n/10 Fused scalars, sen-ti-
+ []
+
+
+Overfull \hbox (13.7845pt too wide) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10.95 ETH[]YAHOO\OT1/cmr/m/n/10.95 , and \OT1/cmtt/m/n/10.95 SOL[]YAHOO\OT1/cmr/m/n/10.95 ), while the out-of-sample CLEF as-sets (\OT1/cmtt/m/n/10.95 BTC[]CLEF\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 ETH[]CLEF\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 TSLA[]CLEF\OT1/cmr/m/n/10.95 ,
  []
 
-[3]
-Overfull \hbox (1.57935pt too wide) in paragraph at lines 170--171
-\OT1/cmr/m/n/10.95 proaches, Chronos learns a dis-tri-bu-tion over fu-ture val-ues, en-abling the ex-trac-tion of uncertainty-
- []
-
-
-Overfull \hbox (8.45966pt too wide) in paragraph at lines 180--181
+[4] [5]
+Overfull \hbox (8.45966pt too wide) in paragraph at lines 120--121
 \OT1/cmr/m/n/10.95 Chronos out-puts a prob-a-bilis-tic fore-cast ten-sor of shape $([] \OMS/cmtt/m/n/10.95 ^^B [] ^^B []\OT1/cmr/m/n/10.95 )$,
  []
 
-[4]
-Overfull \hbox (69.30618pt too wide) in paragraph at lines 210--211
+[6]
+Overfull \hbox (69.30618pt too wide) in paragraph at lines 150--151
 []\OT1/cmr/m/n/10.95 where $\OML/cmm/m/it/10.95 C \OMS/cmtt/m/n/10.95 2 f[]\OML/cmm/m/it/10.95 ; []; []\OMS/cmtt/m/n/10.95 g$\OT1/cmr/m/n/10.95 . The out-put is cached per as-set in \OT1/cmtt/m/n/10.95 models/\OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 asset\OMS/cmtt/m/n/10.95 g[]\OT1/cmtt/m/n/10.95 sentiment.csv
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 215.
-[5]
-Overfull \hbox (31.39331pt too wide) in paragraph at lines 230--231
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 155.
+[7]
+Overfull \hbox (31.39331pt too wide) in paragraph at lines 172--173
  \OT1/cmr/bx/n/10.95 Base Model and Quan-ti-za-tion Strat-egy[] \OT1/cmr/m/n/10.95 All ex-per-i-ments uti-lize \OT1/cmtt/m/n/10.95 unsloth/Phi-4-mini-instruct
  []
 
-[6]
-Overfull \hbox (94.92206pt too wide) in paragraph at lines 267--268
+[8]
+Overfull \hbox (94.92206pt too wide) in paragraph at lines 217--218
 \OT1/cmr/m/n/10.95 ward com-pu-ta-tion are de-rived from a volatility-normalized mo-men-tum sig-nal: $[] = []\OML/cmm/m/it/10.95 =[]\OT1/cmr/m/n/10.95 (20)$.
  []
 
-[7] [8] [9]
-Underfull \hbox (badness 1577) in paragraph at lines 348--349
+[9] [10] [11] [12] [13]
+Underfull \hbox (badness 1577) in paragraph at lines 349--350
 \OT1/cmr/m/n/10 tive; higher is bet-ter; se-
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 348--349
+Underfull \hbox (badness 2103) in paragraph at lines 349--350
 \OT1/cmr/m/n/10 vere penalty for ex-ceed-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 []\OT1/cmr/m/n/10 Risk-adjusted prof-itabil-ity;
  []
 
 
-Underfull \hbox (badness 2744) in paragraph at lines 350--351
+Underfull \hbox (badness 2744) in paragraph at lines 351--352
 \OT1/cmr/m/n/10 higher in-di-cates sta-ble re-
  []
 
 
-Underfull \hbox (badness 5817) in paragraph at lines 354--355
+Underfull \hbox (badness 5817) in paragraph at lines 355--356
 []\OT1/cmr/m/n/10 Absolute prof-itabil-ity over
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--356
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 []\OT1/cmr/m/n/10 Proportion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--356
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \OT1/cmr/m/n/10 BUY/HOLD/SELL
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--356
+Underfull \hbox (badness 10000) in paragraph at lines 357--357
 \OT1/cmr/m/n/10 de-ci-sions aligned with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 []\OT1/cmr/m/n/10 Directional cor-rect-ness of
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 356--357
+Underfull \hbox (badness 6893) in paragraph at lines 357--358
 \OT1/cmr/m/n/10 model pre-dic-tions; higher
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
 []\OT1/cmr/m/n/10 Percentage of closed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 []\OT1/cmr/m/n/10 Trade suc-cess fre-quency
  []
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 358--359
+Underfull \hbox (badness 3679) in paragraph at lines 359--360
 \OT1/cmr/m/n/10 in-de-pen-dent of mag-ni-tude;
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 358--359
+Underfull \hbox (badness 5345) in paragraph at lines 359--360
 \OT1/cmr/m/n/10 higher in-di-cates con-sis-tent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 []\OT1/cmr/m/n/10 Net prof-itabil-ity; $\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 1.0
  []
 
 
-Underfull \hbox (badness 1163) in paragraph at lines 360--361
+Underfull \hbox (badness 1163) in paragraph at lines 361--362
 \OT1/cmr/m/n/10 prof-itable, $\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 1.0 net losses,
  []
 
 
-Underfull \hbox (badness 5893) in paragraph at lines 360--361
+Underfull \hbox (badness 5893) in paragraph at lines 361--362
 \OT1/cmr/m/n/10 Inf/undefined in-di-cates no
  []
 
-[10] [11]
-Overfull \hbox (51.20226pt too wide) in paragraph at lines 406--406
-[]\OT1/cmr/m/n/10.95 John Schul-man et al. \  Prox-i-mal pol-icy op-ti-miza-tion al-go-rithms". In: \OT1/cmr/m/it/10.95 arXiv preprint arXiv:1707.06347
+[14] [15] [16])
+Overfull \hbox (20.4919pt too wide) in paragraph at lines 99--99
+[]\OT1/cmr/m/n/10.95 TheFinAI, \OT1/cmr/m/it/10.95 daily[]news: Daily Fi-nan-cial News Dataset for Fin-M-MEval\OT1/cmr/m/n/10.95 , $\OT1/cmtt/m/n/10.95 https : / / huggingface .
  []
 
 
-Overfull \hbox (20.49913pt too wide) in paragraph at lines 406--406
-[]\OT1/cmr/m/n/10.95 TheFinAI. \OT1/cmr/m/it/10.95 daily[]news: Daily Fi-nan-cial News Dataset for Fin-M-MEval\OT1/cmr/m/n/10.95 . $\OT1/cmtt/m/n/10.95 https : / / huggingface .
+Overfull \hbox (29.69589pt too wide) in paragraph at lines 99--99
+\OT1/cmr/m/n/10.95 struc-tion Tun-ing of General-Purpose Large Lan-guage Mod-els," \OT1/cmr/m/it/10.95 arXiv preprint arXiv:2306.12659\OT1/cmr/m/n/10.95 ,
  []
 
-[12] [13] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
+[17] [18] (c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1165,17 +1210,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37945 strings out of 467866
- 918036 string characters out of 5418809
- 2081226 words of memory out of 5000000
- 66243 multiletter control sequences out of 15000+600000
- 645226 words of font info for 105 fonts, out of 8000000 for 9000
+ 38034 strings out of 467866
+ 920012 string characters out of 5418809
+ 2083684 words of memory out of 5000000
+ 66307 multiletter control sequences out of 15000+600000
+ 648536 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,118p,1365b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (13 pages, 310304 bytes).
+ 99i,14n,118p,1823b,1762s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0600.pk> <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\Joni\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Joni/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on c:\Users\Joni\Documents\Programas\CLEF-FinMMEval-Task3-2026\build\main.pdf (18 pages, 406863 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 174 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
